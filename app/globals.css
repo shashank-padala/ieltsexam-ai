@@ -19,3 +19,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+@layer base {
+  body {
+    @apply text-gray-900; /* Sets default text color to near-black */
+  }
+}
