@@ -1,4 +1,4 @@
-import Navigation from '@/components/Navigation'
+import Navigation from '@/components/HeaderNavigation'
 import HeroSection from '@/components/HeroSection'
 import IELTSExamLibrary from '@/components/IELTSExamLibrary';
 

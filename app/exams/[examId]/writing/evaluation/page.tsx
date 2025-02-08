@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import HeaderNavigation from "@/components/HeaderNavigation";
 
 interface Feedback {
   task_response: string;
@@ -61,8 +62,10 @@ const EvalPage = () => {
   }
 
   return (
-    <div className="container mx-auto px-10 py-8 bg-white">
-      {/* Header Section with Overall Band Score Highlight */}
+    <>
+      <HeaderNavigation />
+      <div className="container mx-auto px-10 py-8 bg-white">
+        {/* Header Section with Overall Band Score Highlight */}
       <div className="bg-blue-600 p-6 rounded-lg text-center shadow-md">
         <h2 className="text-2xl font-bold text-white">Writing Module Evaluation</h2>
         <p className="text-lg font-semibold text-white mt-2">
@@ -116,6 +119,7 @@ const EvalPage = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
