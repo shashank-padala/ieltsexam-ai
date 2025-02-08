@@ -1,4 +1,3 @@
-import WritingModule from "@/components/WritingModule";
 import { useState } from "react";
 
 export default function ExamPage({ params }: { params: { examId: string } }) {
@@ -23,9 +22,6 @@ export default function ExamPage({ params }: { params: { examId: string } }) {
           </button>
         ))}
       </div>
-
-      {/* Dynamic Module Rendering */}
-      {selectedModule === "Writing" && <WritingModule />}
     </div>
   );
 }

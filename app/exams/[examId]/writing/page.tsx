@@ -50,17 +50,20 @@ export default function WritingModule() {
     setSubmitted(true);
 
     const payload = {
-      user_id: "c42c996c-461a-4e12-b430-9431c58e1335", // 🔹 Replace with actual logged-in user ID
+      user_id: "c42c996c-461a-4e12-b430-9431c58e1335", 
+      //TODO: Replace with actual logged-in user ID
       exam_id: examId,
       task_1_answer: answers.task1.trim(),
       task_2_answer: answers.task2.trim(),
+      task_1_question: questions[0].content,
+      task_2_question: questions[1].content,
       submitted_at: new Date().toISOString(),
     };
 
     console.log("Submitting payload:", payload); // Debugging
 
     try {
-      const response = await fetch(`/api/exams/${examId}/writing/evaluate`, {
+      const response = await fetch(`/api/exams/${examId}/writing/evaluation`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
