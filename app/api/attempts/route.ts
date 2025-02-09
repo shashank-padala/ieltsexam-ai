@@ -1,4 +1,4 @@
-import { supabase } from '../../utils/supabaseClient';
+import { supabase } from '../../../lib/supabaseClient';
 
 export async function POST(req: Request) {
     const { user_id, exam_id, question_id } = await req.json();

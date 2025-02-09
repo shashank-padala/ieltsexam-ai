@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { supabaseClient } from "@/app/utils/supabaseClient";
+import { supabaseClient } from "@/lib/supabaseClient";
 
 export default function WritingModule() {
   const { examId } = useParams();
