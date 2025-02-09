@@ -162,7 +162,7 @@ const FeedbackSection = ({
 const FeedbackCard = ({ title, content, fullWidth }: { title: string; content: string; fullWidth?: boolean }) => (
   <div className={`p-5 bg-white rounded-lg shadow-md border border-gray-200 transition transform hover:scale-105 ${fullWidth ? "col-span-2" : ""}`}>
     <h5 className="font-semibold text-gray-900">{title}</h5>
-    <p className="mt-3 text-gray-700 leading-relaxed">{content}</p>
+    <p className="mt-3 text-gray-700 leading-relaxed whitespace-pre-line">{content}</p>
   </div>
 );
 

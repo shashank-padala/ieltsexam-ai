@@ -53,10 +53,10 @@ export default function WritingModule() {
       user_id: "c42c996c-461a-4e12-b430-9431c58e1335", 
       //TODO: Replace with actual logged-in user ID
       exam_id: examId,
-      task_1_answer: answers.task1.trim(),
-      task_2_answer: answers.task2.trim(),
       task_1_question: questions[0].content,
       task_2_question: questions[1].content,
+      task_1_answer: answers.task1.trim(),
+      task_2_answer: answers.task2.trim(),
       submitted_at: new Date().toISOString(),
     };
 
