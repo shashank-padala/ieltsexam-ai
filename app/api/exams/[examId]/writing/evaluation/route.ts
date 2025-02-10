@@ -41,7 +41,7 @@ async function evaluateTask(taskAnswer: string, taskNumber: number, taskQuestion
   return JSON.parse(aiResponse.choices[0]?.message?.content || "{}");
 }
 
-export async function POST(req: NextRequest, context: { params: { examId: string } }) {
+export async function POST(req: NextRequest, context: any) {
   try {
     if (!context?.params?.examId) {
       return NextResponse.json({ error: "Missing exam ID in URL" }, { status: 400 });
@@ -106,7 +106,7 @@ export async function POST(req: NextRequest, context: { params: { examId: string
   }    
 }
 
-export async function GET(req: NextRequest, context: { params: { examId: string } }) {
+export async function GET(req: NextRequest, context: any) {
   try {
     const { examId } = context.params;
     const authHeader = req.headers.get("Authorization")?.replace("Bearer ", "");
