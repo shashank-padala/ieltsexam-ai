@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { supabaseClient } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function WritingModule() {
   const { examId } = useParams();
@@ -12,12 +12,38 @@ export default function WritingModule() {
   const [answers, setAnswers] = useState({ task1: "", task2: "" });
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds
   const [submitted, setSubmitted] = useState(false);
+  const [user, setUser] = useState<any>(null);
 
+  // Fetch user session
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data } = await supabase.auth.getSession();
+      if (!data.session?.user) {
+        router.push("/login");
+      } else {
+        setUser(data.session.user);
+      }
+    };
+
+    checkUser();
+
+    const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!session?.user) {
+        router.push("/login");
+      } else {
+        setUser(session.user);
+      }
+    });
+
+    return () => authListener.subscription.unsubscribe();
+  }, [router]);
+
+  // Fetch questions
   useEffect(() => {
     if (!examId) return;
 
     async function fetchQuestions() {
-      const { data, error } = await supabaseClient
+      const { data, error } = await supabase
         .from("writing_questions")
         .select("id, content, image_url")
         .eq("exam_id", examId);
@@ -46,26 +72,38 @@ export default function WritingModule() {
   }, []);
 
   const handleSubmit = async () => {
-    if (submitted) return;
+    if (submitted || !user) return;
     setSubmitted(true);
 
+    // Get the current session to extract the fresh token
+    const { data } = await supabase.auth.getSession();
+    const token = data?.session?.access_token;
+
+    if (!token) {
+      console.error("Missing authentication token");
+      setSubmitted(false);
+      return;
+    }
+
     const payload = {
-      user_id: "c42c996c-461a-4e12-b430-9431c58e1335", 
-      //TODO: Replace with actual logged-in user ID
+      user_id: user.id, // using actual logged-in user ID
       exam_id: examId,
-      task_1_question: questions[0].content,
-      task_2_question: questions[1].content,
+      task_1_question: questions[0]?.content || "",
+      task_2_question: questions[1]?.content || "",
       task_1_answer: answers.task1.trim(),
       task_2_answer: answers.task2.trim(),
       submitted_at: new Date().toISOString(),
     };
 
-    console.log("Submitting payload:", payload); // Debugging
+    console.log("Submitting payload:", payload);
 
     try {
       const response = await fetch(`/api/exams/${examId}/writing/evaluation`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`, // token sent to API
+        },
         body: JSON.stringify(payload),
       });
 
@@ -78,16 +116,12 @@ export default function WritingModule() {
     } catch (error) {
       console.error("Error submitting test:", error);
     }
-};
-
+  };
 
   if (!examId) return <div className="text-red-500">Invalid Exam</div>;
+  if (!user) return <div className="flex justify-center items-center h-screen text-xl">Checking authentication...</div>;
   if (questions.length === 0)
-    return (
-      <div className="flex justify-center items-center h-screen text-xl">
-        Loading...
-      </div>
-    );
+    return <div className="flex justify-center items-center h-screen text-xl">Loading...</div>;
 
   const currentTask = questions[activeTask - 1];
   const formattedTime =
@@ -117,28 +151,14 @@ export default function WritingModule() {
           </svg>
           <span className="text-lg font-bold text-black">{formattedTime}</span>
         </div>
-        <div className="flex gap-4">
-          <button
-            onClick={() => setActiveTask(1)}
-            className={`px-4 py-2 rounded-md font-medium transition-all ${
-              activeTask === 1
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-black"
-            }`}
-          >
-            Task 1
-          </button>
-          <button
-            onClick={() => setActiveTask(2)}
-            className={`px-4 py-2 rounded-md font-medium transition-all ${
-              activeTask === 2
-                ? "bg-green-600 text-white"
-                : "bg-gray-200 text-black"
-            }`}
-          >
-            Task 2
-          </button>
-        </div>
+        {/* Submit Button */}
+        <button
+          onClick={handleSubmit}
+          disabled={submitted}
+          className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50"
+        >
+          Submit Test
+        </button>
       </div>
 
       {/* Main Content Area */}
@@ -146,13 +166,9 @@ export default function WritingModule() {
         {/* Left: Question Panel */}
         <div className="w-1/2 p-4 bg-white rounded-lg shadow-md overflow-auto">
           <h3 className="text-lg font-bold text-black mb-2">{`Task ${activeTask}`}</h3>
-          <p className="text-black">{currentTask.content}</p>
-          {currentTask.image_url && (
-            <img
-              src={currentTask.image_url}
-              alt="Task Image"
-              className="mt-4 rounded-lg shadow-sm"
-            />
+          <p className="text-black">{currentTask?.content}</p>
+          {currentTask?.image_url && (
+            <img src={currentTask.image_url} alt="Task Image" className="mt-4 rounded-lg shadow-sm" />
           )}
         </div>
 
@@ -180,15 +196,22 @@ export default function WritingModule() {
           </div>
         </div>
       </div>
-
-      {/* Submit Button */}
-      <div className="p-4 bg-white shadow-md flex justify-end">
+      <div className="p-4 bg-white shadow-md flex justify-end gap-4">
         <button
-          onClick={handleSubmit}
-          disabled={submitted}
-          className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50"
+          onClick={() => setActiveTask(1)}
+          className={`px-4 py-2 rounded-md font-medium transition-all ${
+            activeTask === 1 ? "bg-blue-600 text-white" : "bg-gray-200 text-black"
+          }`}
         >
-          Submit Test
+          Task 1
+        </button>
+        <button
+          onClick={() => setActiveTask(2)}
+          className={`px-4 py-2 rounded-md font-medium transition-all ${
+            activeTask === 2 ? "bg-green-600 text-white" : "bg-gray-200 text-black"
+          }`}
+        >
+          Task 2
         </button>
       </div>
     </div>

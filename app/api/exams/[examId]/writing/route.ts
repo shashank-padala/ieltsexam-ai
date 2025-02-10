@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseClient } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 
 export async function GET(
   req: NextRequest,
@@ -13,7 +13,7 @@ export async function GET(
 
   try {
     // Fetch writing questions for the exam
-    const { data, error } = await supabaseClient
+    const { data, error } = await supabase
       .from("writing_questions")
       .select("id, content, image_url")
       .eq("exam_id", examId);
@@ -52,7 +52,7 @@ export async function POST(
     }
 
     // Insert writing attempt into Supabase
-    const { data, error } = await supabaseClient
+    const { data, error } = await supabase
       .from("writing_attempts")
       .upsert(
         {

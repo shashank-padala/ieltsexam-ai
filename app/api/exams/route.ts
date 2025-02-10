@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabaseClient } from '@/lib/supabaseClient';
+import { supabase } from '@/lib/supabaseClient';
 
 export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
@@ -10,7 +10,7 @@ export async function GET(req: Request) {
         return NextResponse.json({ error: "Year and type are required" }, { status: 400 });
     }
 
-    const { data, error } = await supabaseClient
+    const { data, error } = await supabase
         .from('exams')
         .select('*')
         .eq('year', year)

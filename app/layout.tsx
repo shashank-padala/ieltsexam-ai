@@ -1,5 +1,9 @@
+'use client';
+
 import { Geist, Geist_Mono } from "next/font/google";
+import { usePathname } from "next/navigation";
 import "./globals.css";
+import HeaderNav from "@/components/HeaderNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,11 +20,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isTestPage = pathname.match(/^\/exams\/[^/]+\/(listening|reading|writing|speaking)$/); 
+
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {!isTestPage && <HeaderNav />} {/* Hide header only on test pages */}
         {children}
       </body>
     </html>

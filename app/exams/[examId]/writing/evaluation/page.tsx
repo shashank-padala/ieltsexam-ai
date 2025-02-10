@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import HeaderNavigation from "@/components/HeaderNavigation";
+import { supabase } from "@/lib/supabaseClient";
 
 interface Feedback {
   task_response: string;
@@ -28,54 +28,75 @@ const EvalPage = () => {
   const [activeTab, setActiveTab] = useState("task_1");
 
   useEffect(() => {
-    if (!examId) {
-      console.error("Error: examId is undefined!");
-      return;
-    }
-
+    if (!examId) return;
+  
     const fetchEvaluation = async () => {
+      const { data, error } = await supabase.auth.getSession();
+      if (error || !data?.session?.user) {
+        console.error("User session is invalid or expired", error);
+        setLoading(false);
+        return;
+      }
+      
+      const token = data.session.access_token;
+      if (!token) {
+        console.error("Failed to retrieve authentication token");
+        setLoading(false);
+        return;
+      }
+      console.log("Supabase User Session:", data);
       try {
-        console.log("Fetching evaluation for examId:", examId);
-        const response = await fetch(`/api/exams/${examId}/writing/evaluation?user_id=c42c996c-461a-4e12-b430-9431c58e1335`);
-
-        if (!response.ok) throw new Error("Failed to fetch evaluation data");
-
-        const data = await response.json();
-        console.log("Fetched evaluation:", data);
-        setEvaluation(data);
+        console.log("Auth Token:", token);
+        const response = await fetch(`/api/exams/${examId}/writing/evaluation`, {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        });
+  
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error(`API Error (Status: ${response.status}):`, errorText);
+          throw new Error("Failed to fetch evaluation data");
+        }
+  
+        const dataJson = await response.json();
+        console.log("Evaluation Data:", dataJson);
+        setEvaluation(dataJson);
       } catch (error) {
         console.error("Error fetching evaluation data:", error);
       } finally {
         setLoading(false);
       }
     };
-
+  
     fetchEvaluation();
   }, [examId]);
-
+  
   if (loading) {
     return <div className="text-center text-blue-500 text-lg font-semibold">Loading evaluation data...</div>;
   }
-
+  
   if (!evaluation) {
     return <div className="text-center text-red-500 text-lg font-semibold">Failed to load evaluation data.</div>;
   }
-
+  
   return (
-    <>
-      <HeaderNavigation />
-      <div className="container mx-auto px-10 py-8 bg-white">
-        {/* Header Section with Overall Band Score Highlight */}
+    <div className="container mx-auto px-10 py-8 bg-white">
+      {/* Header Section with Overall Band Score Highlight */}
       <div className="bg-blue-600 p-6 rounded-lg text-center shadow-md">
         <h2 className="text-2xl font-bold text-white">Writing Module Evaluation</h2>
         <p className="text-lg font-semibold text-white mt-2">
-          <span className="text-xl font-bold">Overall Band Score:</span> <span className="text-yellow-300 text-2xl font-bold">{evaluation.overall_band}</span>
+          <span className="text-xl font-bold">Overall Band Score:</span>{" "}
+          <span className="text-yellow-300 text-2xl font-bold">{evaluation.overall_band}</span>
         </p>
       </div>
 
       {/* Info Section */}
       <div className="mt-8 text-center">
-        <h3 className="text-xl font-semibold text-gray-900">IELTS writing examiners evaluate an exam on the following four criteria:</h3>
+        <h3 className="text-xl font-semibold text-gray-900">
+          IELTS writing examiners evaluate an exam on the following four criteria:
+        </h3>
       </div>
 
       {/* Tab Navigation */}
@@ -119,7 +140,6 @@ const EvalPage = () => {
         )}
       </div>
     </div>
-    </>
   );
 };
 

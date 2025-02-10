@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabaseClient"; // Import Supabase
 import {
   PlayIcon,
   MusicalNoteIcon,
@@ -25,10 +26,31 @@ const defaultModules: ModuleType[] = [
 
 export default function ExamCard({ exam }: { exam: any }) {
   const router = useRouter();
+  const [user, setUser] = useState(null);
   const [loadingModule, setLoadingModule] = useState<string | null>(null);
   const [tooltipModule, setTooltipModule] = useState<string | null>(null);
 
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data } = await supabase.auth.getSession();
+      setUser(data?.session?.user || null);
+    };
+
+    checkUser();
+
+    const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user || null);
+    });
+
+    return () => authListener.subscription.unsubscribe();
+  }, []);
+
   const handleModuleClick = async (moduleName: string) => {
+    if (!user) {
+      router.push("/login"); // Redirect to login if not logged in
+      return;
+    }
+
     setLoadingModule(moduleName);
     setTooltipModule(null);
 
