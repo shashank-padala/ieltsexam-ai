@@ -41,13 +41,9 @@ async function evaluateTask(taskAnswer: string, taskNumber: number, taskQuestion
   return JSON.parse(aiResponse.choices[0]?.message?.content || "{}");
 }
 
-export async function POST(req: NextRequest, context: any) {
+export async function POST(req: NextRequest) {
   try {
-    if (!context?.params?.examId) {
-      return NextResponse.json({ error: "Missing exam ID in URL" }, { status: 400 });
-    }
-    
-    const { examId } = context.params;
+    const examId = req.nextUrl.searchParams.get("examId");
     const body = await req.json();
     const { task_1_question, task_2_question, task_1_answer, task_2_answer } = body;
 
@@ -106,9 +102,9 @@ export async function POST(req: NextRequest, context: any) {
   }    
 }
 
-export async function GET(req: NextRequest, context: any) {
+export async function GET(req: NextRequest) {
   try {
-    const { examId } = context.params;
+    const examId = req.nextUrl.searchParams.get("examId");
     const authHeader = req.headers.get("Authorization")?.replace("Bearer ", "");
     if (!authHeader) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
