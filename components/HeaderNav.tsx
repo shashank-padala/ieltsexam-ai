@@ -5,9 +5,10 @@ import { supabase } from "@/lib/supabaseClient";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BookOpenIcon, UserCircleIcon } from "@heroicons/react/24/outline";
+import { User } from "@supabase/supabase-js";
 
 export default function HeaderNav() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const router = useRouter();

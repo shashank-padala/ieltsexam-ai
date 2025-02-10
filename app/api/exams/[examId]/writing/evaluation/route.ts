@@ -41,9 +41,9 @@ async function evaluateTask(taskAnswer: string, taskNumber: number, taskQuestion
   return JSON.parse(aiResponse.choices[0]?.message?.content || "{}");
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest, { params }: { params: { examId: string } }) {
   try {
-    const examId = req.nextUrl.searchParams.get("examId");
+    const examId = params.examId;
     const body = await req.json();
     const { task_1_question, task_2_question, task_1_answer, task_2_answer } = body;
 
@@ -102,9 +102,9 @@ export async function POST(req: NextRequest) {
   }    
 }
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest, { params }: { params: { examId: string } }) {
   try {
-    const examId = req.nextUrl.searchParams.get("examId");
+    const examId = params.examId;
     const authHeader = req.headers.get("Authorization")?.replace("Bearer ", "");
     if (!authHeader) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

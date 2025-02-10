@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabaseClient";
 
-export async function GET(req: NextRequest): Promise<NextResponse> {
-  const examId = req.nextUrl.searchParams.get("examId");
 
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { examId: string } }
+): Promise<NextResponse> {
+  const { examId } = params;
+  console.log(examId); //Debugging
   if (!examId) {
     return NextResponse.json({ error: "Exam ID is required" }, { status: 400 });
   }
@@ -31,15 +35,15 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   }
 }
 
-export async function POST( req: NextRequest): Promise<NextResponse> {
-  const examId = req.nextUrl.searchParams.get("examId");
+export async function POST( req: NextRequest, { params }: { params: { examId: string } }): Promise<NextResponse> {
+  const examId = params.examId;
 
   if (!examId) {
     return NextResponse.json({ error: "Exam ID is required" }, { status: 400 });
   }
 
   try {
-    const { user_id, task_1_answer, task_2_answer, submit } = await req.json();
+    const { user_id, task_1_answer, task_2_answer} = await req.json();
 
     if (!user_id || !task_1_answer || !task_2_answer) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -54,9 +58,9 @@ export async function POST( req: NextRequest): Promise<NextResponse> {
           exam_id: examId,
           task_1_answer,
           task_2_answer,
-          submitted_at: submit ? new Date().toISOString() : null,
+          submitted_at: new Date()
         },
-        { onConflict: ["user_id", "exam_id"] }
+        { onConflict: "user_id,exam_id" }
       )
       .select();
 

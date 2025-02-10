@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import ExamCard from "./ExamCard";
+import { Exam } from './ExamCard';  // Import the Exam interface
 
 export default function IELTSExamLibrary() {
-  const [exams, setExams] = useState([]);
-  const [moduleAvailability, setModuleAvailability] = useState({});
+  const [exams, setExams] = useState<Exam[]>([]);
   const [selectedType, setSelectedType] = useState("Academic");
   const [selectedYear, setSelectedYear] = useState("2024");
 
@@ -13,10 +13,8 @@ export default function IELTSExamLibrary() {
     async function fetchExams() {
       const res = await fetch(`/api/exams?year=${selectedYear}&type=${selectedType}`);
       const data = await res.json();
-      
       if (!data.error) {
         setExams(data.exams);
-        setModuleAvailability(data.moduleAvailability);
       }
     }
     fetchExams();
@@ -42,7 +40,7 @@ export default function IELTSExamLibrary() {
       </div>
       <div className="space-y-6">
         {exams.map((exam) => (
-          <ExamCard key={exam.id} exam={exam} moduleAvailability={moduleAvailability} />
+          <ExamCard key={exam.id} exam={exam} />
         ))}
       </div>
     </section>

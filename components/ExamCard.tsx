@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabaseClient"; // Import Supabase
+import { supabase } from "@/lib/supabaseClient"; 
 import {
   PlayIcon,
   MusicalNoteIcon,
@@ -18,7 +18,7 @@ interface ModuleType {
   duration: number;
 }
 
-interface Exam {
+export interface Exam {
   id: string;
   title: string;
   type: "Academic" | "General";
@@ -32,7 +32,8 @@ const defaultModules: ModuleType[] = [
   { name: "Speaking", icon: MicrophoneIcon, duration: 15 },
 ];
 
-export default function ExamCard({ exam }: { exam: Exam}) {
+
+export default function ExamCard({ exam }: {exam: Exam}) {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [loadingModule, setLoadingModule] = useState<string | null>(null);
@@ -68,7 +69,7 @@ export default function ExamCard({ exam }: { exam: Exam}) {
       if (response.status === 404) {
         setTooltipModule(moduleName); // ❌ No questions → Show tooltip
       } else if (response.ok) {
-        router.push(`/exams/${exam.id}/${moduleName.toLowerCase()}`); // ✅ Navigate to test page
+        router.push(`/exams/${exam.id}/${moduleName.toLowerCase()}`); // ✅ Navigate to exam page
       } else {
         console.error(`Unexpected error for ${moduleName}:`, response.statusText);
         setTooltipModule(moduleName);
