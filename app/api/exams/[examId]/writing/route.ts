@@ -1,11 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabaseClient";
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { examId?: string } } // ✅ Optional to prevent runtime errors
-): Promise<NextResponse> {
-  const examId = params?.examId;
+export async function GET(req: NextRequest): Promise<NextResponse> {
+  const examId = req.nextUrl.searchParams.get("examId");
 
   if (!examId) {
     return NextResponse.json({ error: "Exam ID is required" }, { status: 400 });
@@ -34,11 +31,8 @@ export async function GET(
   }
 }
 
-export async function POST(
-  req: NextRequest,
-  { params }: { params: { examId?: string } }
-): Promise<NextResponse> {
-  const examId = params?.examId;
+export async function POST( req: NextRequest): Promise<NextResponse> {
+  const examId = req.nextUrl.searchParams.get("examId");
 
   if (!examId) {
     return NextResponse.json({ error: "Exam ID is required" }, { status: 400 });
