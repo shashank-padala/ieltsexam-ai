@@ -11,7 +11,6 @@ export default function WritingModule() {
   const [activeTask, setActiveTask] = useState(1);
   const [answers, setAnswers] = useState({ task1: "", task2: "" });
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds
-  const [submitted, setSubmitted] = useState(false);
   const [user, setUser] = useState<any>(null);
 
   // Fetch user session
@@ -72,27 +71,20 @@ export default function WritingModule() {
   }, []);
 
   const handleSubmit = async () => {
-    if (submitted || !user) return;
-    setSubmitted(true);
-
     // Get the current session to extract the fresh token
     const { data } = await supabase.auth.getSession();
     const token = data?.session?.access_token;
 
     if (!token) {
       console.error("Missing authentication token");
-      setSubmitted(false);
       return;
     }
 
     const payload = {
-      user_id: user.id, // using actual logged-in user ID
-      exam_id: examId,
       task_1_question: questions[0]?.content || "",
       task_2_question: questions[1]?.content || "",
       task_1_answer: answers.task1.trim(),
       task_2_answer: answers.task2.trim(),
-      submitted_at: new Date().toISOString(),
     };
 
     console.log("Submitting payload:", payload);
@@ -154,7 +146,6 @@ export default function WritingModule() {
         {/* Submit Button */}
         <button
           onClick={handleSubmit}
-          disabled={submitted}
           className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50"
         >
           Submit Test
@@ -184,7 +175,6 @@ export default function WritingModule() {
                 [activeTask === 1 ? "task1" : "task2"]: e.target.value,
               }))
             }
-            disabled={submitted}
           ></textarea>
           <div className="flex justify-between mt-2 text-gray-800">
             <span>

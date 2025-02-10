@@ -70,17 +70,6 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const { data: existingData, error: fetchError } = await supabase
-      .from("writing_evaluations")
-      .select("id")
-      .eq("exam_id", examId)
-      .eq("user_id", user_id)
-      .single();
-
-    if (fetchError && fetchError.code !== "PGRST116") {
-      return NextResponse.json({ error: fetchError.message }, { status: 500 });
-    }
-
     const [task1Evaluation, task2Evaluation] = await Promise.all([
       evaluateTask(task_1_answer, 1, task_1_question),
       evaluateTask(task_2_answer, 2, task_2_question)
@@ -88,7 +77,7 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
 
     const overallBand = Math.round(((task1Evaluation.band + (2 * task2Evaluation.band)) / 3) * 2) / 2;
 
-    const newRecord = {
+    const upsertPayload = {
       user_id,
       exam_id: examId,
       task_1_band: task1Evaluation.band,
@@ -98,29 +87,18 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
       task_2_feedback: task2Evaluation.feedback,
       task_1_rewrite: task1Evaluation.improved_response,
       task_2_rewrite: task2Evaluation.improved_response,
-      created_at: new Date().toISOString(),
     };
-
-    if (existingData) {
-      const { error: updateError } = await supabase
-        .from("writing_evaluations")
-        .update(newRecord)
-        .eq("exam_id", examId)
-        .eq("user_id", user_id);
-
-      if (updateError) {
-        return NextResponse.json({ error: updateError.message }, { status: 500 });
-      }
-    } else {
-      const { error: insertError } = await supabase
-        .from("writing_evaluations")
-        .insert([{ user_id, ...newRecord }]); // Ensure `user_id` is explicitly included
-
-      if (insertError) {
-        return NextResponse.json({ error: insertError.message }, { status: 500 });
-      }
+    
+    const { error } = await supabase
+      .from("writing_evaluations")
+      .upsert(upsertPayload, { 
+        onConflict: "exam_id,user_id"
+      });
+      
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
-
+    
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: "Failed to evaluate writing response" }, { status: 500 });
