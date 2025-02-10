@@ -101,6 +101,7 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
     
     return NextResponse.json({ success: true });
   } catch (error) {
+    console.error("Error in writing evaluation POST request:", error);
     return NextResponse.json({ error: "Failed to evaluate writing response" }, { status: 500 });
   }    
 }
@@ -139,6 +140,7 @@ export async function GET(req: NextRequest, { params }: { params: { examId: stri
 
     return NextResponse.json(data);
   } catch (error) {
+    console.error("Error in fetching evaluation:", error);
     return NextResponse.json({ error: "Failed to fetch evaluation" }, { status: 500 });
   }
 }

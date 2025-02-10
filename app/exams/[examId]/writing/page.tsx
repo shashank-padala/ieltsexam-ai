@@ -3,15 +3,23 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
+import { User } from "@supabase/supabase-js";
+
+interface WritingQuestion {
+  id: string;
+  task_number: number;
+  content: string;
+  image_url?: string;
+}
 
 export default function WritingModule() {
   const { examId } = useParams();
   const router = useRouter();
-  const [questions, setQuestions] = useState<any[]>([]);
+  const [questions, setQuestions] = useState<WritingQuestion[]>([]);
   const [activeTask, setActiveTask] = useState(1);
   const [answers, setAnswers] = useState({ task1: "", task2: "" });
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
 
   // Fetch user session
   useEffect(() => {
@@ -44,7 +52,7 @@ export default function WritingModule() {
     async function fetchQuestions() {
       const { data, error } = await supabase
         .from("writing_questions")
-        .select("id, content, image_url")
+        .select("id, task_number, content, image_url")
         .eq("exam_id", examId);
 
       if (!error && data) {

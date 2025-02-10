@@ -10,11 +10,19 @@ import {
   PencilSquareIcon,
   MicrophoneIcon,
 } from "@heroicons/react/24/solid";
+import { User } from '@supabase/supabase-js';
 
 interface ModuleType {
   name: "Listening" | "Reading" | "Writing" | "Speaking";
   icon: React.ElementType;
   duration: number;
+}
+
+interface Exam {
+  id: string;
+  title: string;
+  type: "Academic" | "General";
+  year: number;
 }
 
 const defaultModules: ModuleType[] = [
@@ -24,9 +32,9 @@ const defaultModules: ModuleType[] = [
   { name: "Speaking", icon: MicrophoneIcon, duration: 15 },
 ];
 
-export default function ExamCard({ exam }: { exam: any }) {
+export default function ExamCard({ exam }: { exam: Exam}) {
   const router = useRouter();
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const [loadingModule, setLoadingModule] = useState<string | null>(null);
   const [tooltipModule, setTooltipModule] = useState<string | null>(null);
 
