@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import ReactMarkdown from "react-markdown";
 
 interface SummaryCompletionProps {
   section: {
@@ -10,9 +9,17 @@ interface SummaryCompletionProps {
       blanks: number[];
     };
   };
+  questions: Array<{
+    id: string;
+    question_text: string;
+    question_number: number;
+  }>;
 }
 
-export default function SummaryCompletion({ section }: SummaryCompletionProps) {
+export default function SummaryCompletion({ 
+  section,
+  questions = [],
+}: SummaryCompletionProps) {
   const { paragraph } = section.content || { paragraph: "", blanks: [] };
 
   // Split the paragraph on placeholders of the form {number}
@@ -28,7 +35,9 @@ export default function SummaryCompletion({ section }: SummaryCompletionProps) {
             <span dangerouslySetInnerHTML={{ __html: part }} />
             {i < placeholders.length && (
               <>
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white font-bold mx-2">
+                <span
+                id={`q-${questions.find(q => q.question_number === parseInt(placeholders[i].replace(/[{}]/g, "")))?.id}`}
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white font-bold mx-2">
                   {placeholders[i].replace(/[{}]/g, "")}
                 </span>
                 <input

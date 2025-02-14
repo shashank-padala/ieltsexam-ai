@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BookOpenIcon, UserCircleIcon } from "@heroicons/react/24/outline";
+import { BookOpenIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { User } from "@supabase/supabase-js";
 
 export default function HeaderNav() {

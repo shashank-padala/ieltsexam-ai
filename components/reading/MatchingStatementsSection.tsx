@@ -34,7 +34,7 @@ export default function MatchingStatementsSection({
       </div>
       {/* Render Each Matching Question */}
       {questions.map((question) => (
-        <p key={question.id} className="mb-2 text-lg">
+        <div key={question.id} id={`q-${question.id}`}  className="mb-2 text-lg">
           <strong>{question.question_number}.</strong>{" "}
           <select className="border border-gray-300 rounded px-2 py-1 mr-2">
             <option value=""></option>
@@ -45,7 +45,7 @@ export default function MatchingStatementsSection({
             ))}
           </select>{" "}
           {question.question_text}
-        </p>
+        </div>
       ))}
     </div>
   );

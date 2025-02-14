@@ -9,7 +9,7 @@ import ReactMarkdown from "react-markdown";
 // Import question-type components
 import MultipleChoice from "@/components/reading/MultipleChoiceSection";
 import SummaryCompletion from "@/components/reading/SummaryCompletionSection";
-import MatchingStatementsSection from "@/components/reading/MatchingStatementsSection";
+import MatchingStatements from "@/components/reading/MatchingStatementsSection";
 import TrueFalseNotGiven from "@/components/reading/TrueFalseNotGivenSection";
 import YesNoNotGiven from "@/components/reading/YesNoNotGivenSection";
 
@@ -154,11 +154,6 @@ export default function ReadingPage() {
     switch (qType) {
       case "multiple_choice":
         return <MultipleChoice question={question} />;
-      case "summary_completion":
-        return <SummaryCompletion section={section} />;
-      case "matching_statements":
-        // This type is handled once at the section level, so we rarely get here.
-        return <div className="text-sm text-gray-500">[Handled at section level]</div>;
       case "true_false_not_given":
         return <TrueFalseNotGiven question={question} />;
       case "yes_no_not_given":
@@ -194,7 +189,7 @@ export default function ReadingPage() {
                     : "bg-white text-black"
                 }`}
               >
-                Passage {passage.passage_number} ({minQ}-{maxQ} questions)
+                Passage {passage.passage_number} (<strong>{minQ} - {maxQ}</strong> questions)
               </button>
             );
           })}
@@ -268,10 +263,15 @@ export default function ReadingPage() {
               {/* Check the section type */}
               {section.section_question_type === "summary_completion" ? (
                 // Summary completion is rendered once per section
-                <SummaryCompletion section={section} />
+                <SummaryCompletion 
+                section={section} 
+                questions={sortedQuestions.filter(
+                  (q) => q.section_number === section.section_number
+                )}
+                />
               ) : section.section_question_type === "matching_statements" ? (
                 // Matching statements is rendered once per section
-                <MatchingStatementsSection
+                <MatchingStatements
                   questions={sortedQuestions.filter(
                     (q) => q.section_number === section.section_number
                   )}
