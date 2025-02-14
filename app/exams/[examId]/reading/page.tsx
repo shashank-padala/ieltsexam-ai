@@ -4,6 +4,14 @@ import { useEffect, useState, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ClockIcon, BookOpenIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
+
+// Import question-type components
+import MultipleChoice from "@/components/reading/MultipleChoiceSection";
+import SummaryCompletion from "@/components/reading/SummaryCompletionSection";
+import MatchingStatementsSection from "@/components/reading/MatchingStatementsSection";
+import TrueFalseNotGiven from "@/components/reading/TrueFalseNotGivenSection";
+import YesNoNotGiven from "@/components/reading/YesNoNotGivenSection";
 
 interface Passage {
   id: string;
@@ -21,6 +29,9 @@ interface Section {
   section_number: number;
   section_header: string;
   section_instructions: string;
+  section_question_type: string;
+  shared_options?: any;
+  content?: any;
   created_at: string;
 }
 
@@ -30,10 +41,9 @@ interface Question {
   passage_number: number;
   section_number: number;
   question_number: number;
-  question_type: string;
   question_text: string;
-  question_payload: any;
-  correct_answer: string;
+  question_payload?: any;
+  correct_answer?: string | null;
   created_at: string;
 }
 
@@ -79,7 +89,7 @@ export default function ReadingPage() {
     return () => clearInterval(timerRef.current);
   }, []);
 
-  // When data or current passage changes, update active question navigation
+  // Update active question navigation when data or current passage changes
   useEffect(() => {
     if (data) {
       const currentPassageQuestions = data.questions
@@ -94,13 +104,12 @@ export default function ReadingPage() {
     router.push(`/exams/${examId}/reading/submitted`);
   };
 
-  // Helper: Sorted passages
+  // Helper: Sort passages by passage_number
   const sortedPassages = () => {
     return data ? [...data.passages].sort((a, b) => a.passage_number - b.passage_number) : [];
   };
 
   if (!data) {
-    // All hooks have been declared above; safe to return early now.
     return <div className="bg-white min-h-screen text-black">Loading...</div>;
   }
 
@@ -111,16 +120,16 @@ export default function ReadingPage() {
   const questionsForPassage = data.questions.filter(
     (q) => q.passage_number === currentPassage.passage_number
   );
-  const questionNumbers = questionsForPassage.map(q => q.question_number);
+  const questionNumbers = questionsForPassage.map((q) => q.question_number);
   const minQuestion = Math.min(...questionNumbers);
   const maxQuestion = Math.max(...questionNumbers);
 
-  // Filter sections for the current passage
+  // Filter sections for the current passage and sort by section_number
   const sectionsForPassage = data.sections
     .filter((sec) => sec.passage_number === currentPassage.passage_number)
     .sort((a, b) => a.section_number - b.section_number);
 
-  // Sorted questions (for rendering in right pane)
+  // Sorted questions for the active passage (for individual rendering)
   const sortedQuestions = [...questionsForPassage].sort(
     (a, b) => a.question_number - b.question_number
   );
@@ -133,12 +142,38 @@ export default function ReadingPage() {
         READING PASSAGE {currentPassage.passage_number}
       </h3>
       <p className="text-base">
-        You should spend about 20 minutes on Questions {minQuestion}-{maxQuestion}, which are based on Reading Passage {currentPassage.passage_number}.
+        You should spend about 20 minutes on Questions {minQuestion}-{maxQuestion}, which are based
+        on Reading Passage {currentPassage.passage_number}.
       </p>
     </div>
   );
 
-  // Bottom Navigation: Passage Tabs & Active Passage Question Nav
+  // Render question based on section's question type using imported components
+  const renderQuestion = (question: Question, section: Section) => {
+    const qType = section.section_question_type;
+    switch (qType) {
+      case "multiple_choice":
+        return <MultipleChoice question={question} />;
+      case "summary_completion":
+        return <SummaryCompletion section={section} />;
+      case "matching_statements":
+        // This type is handled once at the section level, so we rarely get here.
+        return <div className="text-sm text-gray-500">[Handled at section level]</div>;
+      case "true_false_not_given":
+        return <TrueFalseNotGiven question={question} />;
+      case "yes_no_not_given":
+        return <YesNoNotGiven question={question} />;
+
+      default:
+        return (
+          <div className="p-4 border rounded bg-white">
+            <p>[Data for {qType}]</p>
+          </div>
+        );
+    }
+  };
+
+  // Render bottom navigation: Passage Tabs & Active Passage Question Navigation
   const renderBottomNav = () => {
     return (
       <div className="fixed bottom-0 left-0 right-0 bg-gray-100 border-t">
@@ -189,7 +224,7 @@ export default function ReadingPage() {
         <div className="absolute left-4">
           <Link href="/" className="flex items-center gap-2">
             <BookOpenIcon className="w-8 h-8 text-blue-600" />
-            <span className="text-xl font-bold">IELTSExam.AI</span>
+            <span className="text-xl font-bold">IELTSExam.ai</span>
           </Link>
         </div>
         <div className="flex items-center gap-2">
@@ -212,7 +247,7 @@ export default function ReadingPage() {
       {/* Main Content: Two Scrollable Panes */}
       <div className="flex flex-1">
         {/* Left Pane: Passage with Default Header */}
-        <div className="w-1/2 p-6 overflow-y-scroll border-r" style={{ maxHeight: "calc(100vh - 160px)" }}>
+        <div className="w-1/2 p-6 overflow-y-scroll border-r pb-32" style={{ maxHeight: "calc(100vh - 160px)" }}>
           {defaultHeader}
           <h1 className="text-3xl font-bold mb-6">{currentPassage.passage_title}</h1>
           <p className="whitespace-pre-wrap text-lg leading-relaxed">
@@ -225,41 +260,36 @@ export default function ReadingPage() {
           {sectionsForPassage.map((section) => (
             <div key={section.id} className="mb-8 border-b pb-4">
               <h2 className="text-2xl font-semibold mb-2">{section.section_header}</h2>
-              <p className="text-gray-600 mb-4">{section.section_instructions}</p>
-              {sortedQuestions
-                .filter((q) => q.section_number === section.section_number)
-                .map((question) => (
-                  <div
-                    key={question.id}
-                    id={`q-${question.id}`}
-                    className="mb-6 p-4 bg-gray-50 rounded shadow-sm"
-                  >
-                    <p className="font-medium text-lg">
-                      {question.question_number}. {question.question_text}
-                    </p>
-                    {question.question_type === "multiple_choice" &&
-                      question.question_payload?.options && (
-                        <div className="ml-4 mt-2">
-                          {Object.entries(question.question_payload.options).map(
-                            ([optionKey, optionText]) => (
-                              <div key={optionKey} className="flex items-center mb-1">
-                                <input
-                                  type="radio"
-                                  name={`question-${question.id}`}
-                                  value={optionKey}
-                                  className="mr-2"
-                                />
-                                <span>
-                                  {optionKey}: {optionText}
-                                </span>
-                              </div>
-                            )
-                          )}
-                        </div>
-                      )}
-                    {/* Render other question types as needed */}
-                  </div>
-                ))}
+              <div
+                className="text-gray-600 mb-4 whitespace-pre-wrap"
+                dangerouslySetInnerHTML={{ __html: section.section_instructions }}
+              />
+
+              {/* Check the section type */}
+              {section.section_question_type === "summary_completion" ? (
+                // Summary completion is rendered once per section
+                <SummaryCompletion section={section} />
+              ) : section.section_question_type === "matching_statements" ? (
+                // Matching statements is rendered once per section
+                <MatchingStatementsSection
+                  questions={sortedQuestions.filter(
+                    (q) => q.section_number === section.section_number
+                  )}
+                  sharedOptions={section.shared_options ?? {}}
+                />
+              ) : (
+                // All other question types are rendered individually
+                sortedQuestions
+                  .filter((q) => q.section_number === section.section_number)
+                  .map((question) => (
+                    <div key={question.id} id={`q-${question.id}`} className="mb-6 p-4 bg-gray-50 rounded shadow-sm">
+                      <p className="font-medium text-lg whitespace-pre-wrap">
+                        {question.question_number}. {question.question_text}
+                      </p>
+                      {renderQuestion(question, section)}
+                    </div>
+                  ))
+              )}
             </div>
           ))}
         </div>

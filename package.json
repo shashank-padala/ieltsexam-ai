@@ -19,7 +19,9 @@
     "openai": "^4.83.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.1"
+    "react-hot-toast": "^2.5.1",
+    "react-markdown": "^9.0.3",
+    "remark-breaks": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

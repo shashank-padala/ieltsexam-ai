@@ -9,11 +9,12 @@ export async function GET(
 ) {
   const examId = params.examId;
 
-  // Fetch all passages for this exam
+  // Fetch all passages for this exam, ordered by passage_number
   const { data: passages, error: passageError } = await supabase
     .from('reading_passages')
     .select('*')
-    .eq('exam_id', examId);
+    .eq('exam_id', examId)
+    .order('passage_number', { ascending: true });
 
   if (passageError) {
     return NextResponse.json(
@@ -22,11 +23,13 @@ export async function GET(
     );
   }
 
-  // Fetch all sections for this exam
+  // Fetch all sections for this exam, ordered by passage_number then section_number
   const { data: sections, error: sectionError } = await supabase
     .from('reading_sections')
     .select('*')
-    .eq('exam_id', examId);
+    .eq('exam_id', examId)
+    .order('passage_number', { ascending: true })
+    .order('section_number', { ascending: true });
 
   if (sectionError) {
     return NextResponse.json(
@@ -35,11 +38,14 @@ export async function GET(
     );
   }
 
-  // Fetch all questions for this exam
+  // Fetch all questions for this exam, ordered by passage_number, section_number and question_number
   const { data: questions, error: questionError } = await supabase
     .from('reading_questions')
     .select('*')
-    .eq('exam_id', examId);
+    .eq('exam_id', examId)
+    .order('passage_number', { ascending: true })
+    .order('section_number', { ascending: true })
+    .order('question_number', { ascending: true });
 
   if (questionError) {
     return NextResponse.json(
