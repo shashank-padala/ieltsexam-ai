@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 interface Question {
   id: string;
@@ -17,8 +18,8 @@ const partTimes: { [key: number]: string } = {
   3: "4-5 minutes",
 };
 
-export default function SpeakingPage({ params }: { params: { examId: string } }) {
-  const examId = params.examId;
+export default function SpeakingPage() {
+  const { examId } = useParams();
   // Global state
   const [questions, setQuestions] = useState<{ [key: number]: Question[] }>({});
   const [currentPart, setCurrentPart] = useState(1); // 1 = Part 1, 2 = Part 2, 3 = Part 3

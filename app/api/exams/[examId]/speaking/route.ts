@@ -8,12 +8,9 @@ interface Params {
 
 export async function GET(req: NextRequest, { params }: { params: Params }) {
   const { examId } = params;
-
   if (!examId) {
     return NextResponse.json({ error: "exam_id is required" }, { status: 400 });
   }
-
-  console.log("Extracted exam_id:", examId); // Debugging
 
   const { data, error } = await supabase
     .from("speaking_questions")
