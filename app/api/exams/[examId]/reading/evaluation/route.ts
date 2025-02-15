@@ -121,6 +121,24 @@ export async function POST(
       return NextResponse.json({ error: evalError.message }, { status: 500 });
     }
 
+    // --- Insert a new record into user_exam_summary ---
+    const { error: summaryInsertError } = await supabaseClient
+    .from("user_exam_summary")
+    .insert([
+      {
+        user_id,
+        exam_id: examId,
+        reading_band_score: bandScore,
+        last_attempt_at: new Date().toISOString(),
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      }
+    ]);
+
+    if (summaryInsertError) {
+      console.error("Error inserting user_exam_summary:", summaryInsertError);
+    }
+
     return NextResponse.json({ evaluation });
   } catch (error) {
     console.error("Error in POST evaluation:", error);

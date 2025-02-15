@@ -85,10 +85,10 @@ export async function POST(
       .insert([
         {
           user_id,
-          exam_id,
+          exam_id: examId,
           responses,
           correct_count: correctCount,
-          band_score,
+          band_score: bandScore,
           attempt_number: newAttemptNumber,
           submitted_at: new Date().toISOString(),
         },

@@ -73,9 +73,28 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
 
     const overallBand = Math.round(((task1Evaluation.band + (2 * task2Evaluation.band)) / 3) * 2) / 2;
 
-    const upsertPayload = {
+    // 1. Determine the new attempt number for writing evaluations:
+    const { data: lastAttemptData, error: lastAttemptError } = await supabase
+    .from("writing_evaluations")
+    .select("attempt_number")
+    .eq("exam_id", examId)
+    .eq("user_id", user_id)
+    .order("attempt_number", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+    if (lastAttemptError) {
+      return NextResponse.json({ error: lastAttemptError.message }, { status: 500 });
+    }
+
+    const newAttemptNumber = lastAttemptData && lastAttemptData.attempt_number
+      ? lastAttemptData.attempt_number + 1
+      : 1;
+
+    const insertPayload = {
       user_id,
       exam_id: examId,
+      attempt_number: newAttemptNumber,
       task_1_band: task1Evaluation.band,
       task_2_band: task2Evaluation.band,
       overall_band: overallBand,
@@ -84,15 +103,33 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
       task_1_rewrite: task1Evaluation.improved_response,
       task_2_rewrite: task2Evaluation.improved_response,
     };
-    
-    const { error } = await supabase
+
+    // 2. Insert new writing evaluation record
+    const insertResponse = await supabase
       .from("writing_evaluations")
-      .upsert(upsertPayload, { 
-        onConflict: "exam_id,user_id"
-      });
-      
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+      .insert(insertPayload)
+      .single();
+
+    if (insertResponse.error) {
+      return NextResponse.json({ error: insertResponse.error.message }, { status: 500 });
+    }
+    
+    // 3. Insert record into user_exam_summary table:
+    const { error: summaryInsertError } = await supabase
+    .from("user_exam_summary")
+    .insert([
+      {
+        user_id,
+        exam_id: examId,
+        writing_band_score: insertPayload.overall_band,
+        last_attempt_at: new Date().toISOString(),
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      },
+    ]);
+
+    if (summaryInsertError) {
+      console.error("Error inserting user_exam_summary:", summaryInsertError);
     }
     
     return NextResponse.json({ success: true });
@@ -124,7 +161,9 @@ export async function GET(req: NextRequest, { params }: { params: { examId: stri
       .select("*")
       .eq("exam_id", examId)
       .eq("user_id", user_id)
-      .single();
+      .order("attempt_number", { ascending: false })
+      .limit(1)
+      .maybeSingle();
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
