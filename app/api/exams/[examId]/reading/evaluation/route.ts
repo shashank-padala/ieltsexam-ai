@@ -79,28 +79,41 @@ export async function POST(
       }
     }
 
-    let bandScore = 0;
-    if (exam_type === "Academic") {
-      bandScore = calculateAcademicBand(correctCount);
-    } else {
-      bandScore = calculateGeneralBand(correctCount);
+    let bandScore = exam_type === "Academic"
+      ? calculateAcademicBand(correctCount)
+      : calculateGeneralBand(correctCount);
+
+    // Determine the new attempt number by fetching the latest attempt for this user and exam
+    const { data: lastAttemptData, error: lastAttemptError } = await supabaseClient
+      .from("reading_evaluations")
+      .select("attempt_number")
+      .eq("exam_id", examId)
+      .eq("user_id", user_id)
+      .order("attempt_number", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (lastAttemptError) {
+      return NextResponse.json({ error: lastAttemptError.message }, { status: 500 });
     }
 
-    // Use upsert to update the evaluation if it already exists (unique on user_id, exam_id)
+    const newAttemptNumber = lastAttemptData && lastAttemptData.attempt_number
+      ? lastAttemptData.attempt_number + 1
+      : 1;
+
+    // Insert a new evaluation record with the new attempt number
     const { data: evaluation, error: evalError } = await supabaseClient
       .from("reading_evaluations")
-      .upsert(
+      .insert([
         {
           user_id,
           exam_id: examId,
           responses,
           correct_count: correctCount,
           band_score: bandScore,
+          attempt_number: newAttemptNumber,
           submitted_at: new Date().toISOString(),
         },
-        { onConflict: ["user_id", "exam_id"] }
-      )
-      .select()
+      ])
       .single();
 
     if (evalError) {
@@ -115,8 +128,7 @@ export async function POST(
   }
 }
 
-
-// GET: Fetch evaluation for the authenticated user
+// GET: Fetch the latest evaluation for the authenticated user
 export async function GET(
   req: NextRequest,
   { params }: { params: { examId: string } }
@@ -134,12 +146,15 @@ export async function GET(
     }
     const user_id = userSession.user.id;
 
+    // Fetch the latest evaluation (ordered by attempt_number descending)
     const { data, error } = await supabaseClient
       .from("reading_evaluations")
       .select("*")
       .eq("exam_id", examId)
       .eq("user_id", user_id)
-      .single();
+      .order("attempt_number", { ascending: false })
+      .limit(1)
+      .maybeSingle();
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }

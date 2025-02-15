@@ -31,7 +31,7 @@ export default function TrueFalseNotGiven({
         value={value}
         onChange={(e) => onAnswerChange(e.target.value)}
       >
-        <option value="">Select</option>
+        <option value=""></option>
         {options.map((opt) => (
           <option key={opt} value={opt}>
             {opt}
