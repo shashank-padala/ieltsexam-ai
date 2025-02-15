@@ -2,7 +2,12 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ClockIcon, BookOpenIcon } from "@heroicons/react/24/solid";
+import {
+  ClockIcon,
+  BookOpenIcon,
+  CheckCircleIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 
@@ -61,6 +66,11 @@ export default function ReadingPage() {
   const [activeQuestionNav, setActiveQuestionNav] = useState<Question[]>([]);
   const [timeLeft, setTimeLeft] = useState(60); // minutes left
   const timerRef = useRef<NodeJS.Timeout>();
+  const [responses, setResponses] = useState<{ [key: string]: string }>({});
+  const [evaluation, setEvaluation] = useState<any>(null);
+  const [examSubmitted, setExamSubmitted] = useState(false);
+  const leftPaneRef = useRef<HTMLDivElement>(null);
+  const rightPaneRef = useRef<HTMLDivElement>(null);
 
   // Fetch reading data once examId is available
   useEffect(() => {
@@ -93,89 +103,104 @@ export default function ReadingPage() {
   useEffect(() => {
     if (data) {
       const currentPassageQuestions = data.questions
-        .filter((q) => q.passage_number === sortedPassages()[currentPassageIndex].passage_number)
+        .filter(
+          (q) =>
+            q.passage_number === sortedPassages()[currentPassageIndex].passage_number
+        )
         .sort((a, b) => a.question_number - b.question_number);
       setActiveQuestionNav(currentPassageQuestions);
     }
   }, [data, currentPassageIndex]);
 
-  // --- Add these helper functions inside your component, before handleSubmitTest ---
-
-// Helper: Gather user responses from the DOM
-const getUserResponses = (): { [key: string]: string } => {
-  const responses: { [key: string]: string } = {};
-  data!.questions.forEach((q) => {
-    // Try to get a checked radio button for multiple-choice questions.
-    const radioInput = document.querySelector(
-      `input[name="question-${q.id}"]:checked`
-    ) as HTMLInputElement;
-    if (radioInput) {
-      responses[q.question_number.toString()] = radioInput.value;
-    } else {
-      // Otherwise, try to get a text input (e.g., for summary_completion).
-      const textInput = document.getElementById(`question-${q.id}`) as HTMLInputElement;
-      responses[q.question_number.toString()] = textInput ? textInput.value : "";
+  // Helper: Fetch exam type from /api/exams/[examId]
+  const fetchExamType = async (examId: string): Promise<string | null> => {
+    const res = await fetch(`/api/exams/${examId}`, {
+      headers: { "Content-Type": "application/json" },
+    });
+    if (!res.ok) {
+      console.error("Failed to fetch exam type:", await res.text());
+      return null;
     }
-  });
-  return responses;
-};
+    const json = await res.json();
+    return json.exam.type;
+  };
 
-// Helper: Fetch exam type from /api/exams/[examId]
-const fetchExamType = async (examId: string): Promise<string | null> => {
-  const res = await fetch(`/api/exams/${examId}`, {
-    headers: { "Content-Type": "application/json" },
-  });
-  if (!res.ok) {
-    console.error("Failed to fetch exam type:", await res.text());
-    return null;
-  }
-  const json = await res.json();
-  return json.exam.type;
-};
+  // Handler for answer change from child components
+  const handleAnswerChange = (questionNumber: string, value: string) => {
+    setResponses((prev) => ({
+      ...prev,
+      [questionNumber]: value,
+    }));
+  };
 
-// --- Updated handleSubmitTest function ---
-const handleSubmitTest = async () => {
-  console.log("Time's up! Auto-submitting test...");
+  // Updated handleSubmitTest function
+  const handleSubmitTest = async () => {
+    if (examSubmitted) return; // Prevent multiple submissions
+    console.log("Submitting test...");
 
-  // Retrieve current session from Supabase Auth
-  const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-  if (sessionError || !session) {
-    console.error("No valid session found.");
-    return;
-  }
-  const token = session.access_token;
-  const user_id = session.user.id;
+    // Retrieve current session from Supabase Auth
+    const {
+      data: { session },
+      error: sessionError,
+    } = await supabase.auth.getSession();
+    if (sessionError || !session) {
+      console.error("No valid session found.");
+      return;
+    }
+    const token = session.access_token;
+    const user_id = session.user.id;
 
-  // Fetch exam type from the exams table using our dedicated API route.
-  const exam_type = await fetchExamType(examId);
-  if (!exam_type) {
-    console.error("Exam type could not be determined.");
-    return;
-  }
+    // Fetch exam type from the exams table using our dedicated API route.
+    const exam_type = await fetchExamType(examId);
+    if (!exam_type) {
+      console.error("Exam type could not be determined.");
+      return;
+    }
 
-  // Gather user responses from the DOM
-  const responses = getUserResponses();
-  console.log(responses);
-  // Submit evaluation via POST endpoint on the reading evaluation route
-  const res = await fetch(`/api/exams/${examId}/reading/evaluation`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({
-      user_id,
-      exam_type,
-      responses,
-    }),
-  });
+    // Build complete responses: ensure every question number is included,
+    // using an empty string for unanswered questions.
+    const completeResponses = { ...responses };
+    if (data) {
+      data.questions.forEach((q) => {
+        const key = q.question_number.toString();
+        if (completeResponses[key] === undefined) {
+          completeResponses[key] = "";
+        }
+      });
+    }
 
-  if (res.ok) {
-    router.push(`/exams/${examId}/reading/evaluation`);
-  } else {
-    console.error("Failed to submit evaluation", await res.text());
-  }
-};
+    // Submit evaluation via POST endpoint on the reading evaluation route
+    const postRes = await fetch(`/api/exams/${examId}/reading/evaluation`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        user_id,
+        exam_type,
+        responses: completeResponses,
+      }),
+    });
+
+    if (postRes.ok) {
+      // Once POST is successful, make a GET call to fetch the evaluation data
+      const getRes = await fetch(`/api/exams/${examId}/reading/evaluation`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (getRes.ok) {
+        const result = await getRes.json();
+        setEvaluation(result);
+        setExamSubmitted(true);
+      } else {
+        console.error("Failed to fetch evaluation", await getRes.text());
+      }
+    } else {
+      console.error("Failed to submit evaluation", await postRes.text());
+    }
+  };
 
   // Helper: Sort passages by passage_number
   const sortedPassages = () => {
@@ -221,17 +246,23 @@ const handleSubmitTest = async () => {
     </div>
   );
 
-  // Render question based on section's question type using imported components
+  // Render question based on section's question type using imported components.
+  // Pass value and onAnswerChange so that each component updates the global responses state.
   const renderQuestion = (question: Question, section: Section) => {
     const qType = section.section_question_type;
+    const questionNumber = question.question_number.toString();
+    const value = responses[questionNumber] || "";
+    const commonProps = {
+      value,
+      onAnswerChange: (val: string) => handleAnswerChange(questionNumber, val),
+    };
     switch (qType) {
       case "multiple_choice":
-        return <MultipleChoice question={question} />;
+        return <MultipleChoice question={question} {...commonProps} />;
       case "true_false_not_given":
-        return <TrueFalseNotGiven question={question} />;
+        return <TrueFalseNotGiven question={question} {...commonProps} />;
       case "yes_no_not_given":
-        return <YesNoNotGiven question={question} />;
-
+        return <YesNoNotGiven question={question} {...commonProps} />;
       default:
         return (
           <div className="p-4 border rounded bg-white">
@@ -241,6 +272,26 @@ const handleSubmitTest = async () => {
     }
   };
 
+  // Function to render feedback for a question after evaluation is available
+  const renderFeedback = (question: Question) => {
+    if (!evaluation) return null;
+    const userAnswer = (evaluation.responses[question.question_number.toString()] || "");
+    const correct = question.correct_answer ? question.correct_answer.trim().toLowerCase() : "";
+    const isCorrect = userAnswer.trim().toLowerCase() === correct;
+    return (
+      <div className="mt-2 flex items-center">
+        {isCorrect ? (
+          <CheckCircleIcon className="w-5 h-5 text-green-600" />
+        ) : (
+          <XCircleIcon className="w-5 h-5 text-red-600" />
+        )}
+        <span className="ml-2">
+          {question.question_number}. Correct Answer: {question.correct_answer}
+        </span>
+      </div>
+    );
+  };
+
   // Render bottom navigation: Passage Tabs & Active Passage Question Navigation
   const renderBottomNav = () => {
     return (
@@ -248,14 +299,21 @@ const handleSubmitTest = async () => {
         {/* Passage Tabs */}
         <div className="flex justify-around p-3">
           {passages.map((passage, idx) => {
-            const qs = data.questions.filter(q => q.passage_number === passage.passage_number);
-            const nums = qs.map(q => q.question_number);
+            const qs = data.questions.filter(
+              (q) => q.passage_number === passage.passage_number
+            );
+            const nums = qs.map((q) => q.question_number);
             const minQ = Math.min(...nums);
             const maxQ = Math.max(...nums);
             return (
               <button
                 key={passage.id}
-                onClick={() => setCurrentPassageIndex(idx)}
+                onClick={() => {
+                  setCurrentPassageIndex(idx);
+                  // Reset scroll position of both panes
+                  leftPaneRef.current?.scrollTo(0, 0);
+                  rightPaneRef.current?.scrollTo(0, 0);
+                }}                
                 className={`px-4 py-2 rounded-lg text-base border ${
                   idx === currentPassageIndex
                     ? "bg-blue-600 text-white"
@@ -296,18 +354,47 @@ const handleSubmitTest = async () => {
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <ClockIcon className="w-6 h-6 text-blue-600" />
-          <span className="text-lg font-semibold">{timeLeft} minutes left</span>
+          {examSubmitted ? (
+            <span className="text-lg font-semibold text-green-600">
+              Exam Submitted
+            </span>
+          ) : (
+            <>
+              <ClockIcon className="w-6 h-6 text-blue-600" />
+              <span className="text-lg font-semibold">{timeLeft} minutes left</span>
+            </>
+          )}
         </div>
         <div className="absolute right-4">
-          <button
-            onClick={handleSubmitTest}
-            className="px-4 py-2 bg-blue-600 text-white rounded text-base"
-          >
-            Submit Test
-          </button>
+          {!examSubmitted && (
+            <button
+              onClick={handleSubmitTest}
+              disabled={examSubmitted}
+              className={`px-4 py-2 bg-blue-600 text-white rounded text-base ${
+                examSubmitted ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+            >
+              Submit Test
+            </button>
+          )}
         </div>
       </header>
+
+      {/* Evaluation Header Section */}
+      {evaluation && (
+        <div className="p-4 bg-blue-50 rounded-lg mx-6 mb-4 shadow-md mt-20">
+          <h1 className="text-3xl font-bold text-center">Reading Evaluation</h1>
+          <p className="mt-2 text-xl text-center">
+            Band Score: <strong>{evaluation.band_score}</strong>
+          </p>
+          <p className="mt-1 text-lg text-center">
+            Correct Answers: <strong>{evaluation.correct_count}</strong> out of 40
+          </p>
+          <h2 className="mt-4 text-xl font-semibold text-center">
+            Please refer to correct answers below as it will help you improve.
+          </h2>
+        </div>
+      )}
 
       {/* Spacer for Fixed Header */}
       <div className="h-20"></div>
@@ -315,7 +402,9 @@ const handleSubmitTest = async () => {
       {/* Main Content: Two Scrollable Panes */}
       <div className="flex flex-1">
         {/* Left Pane: Passage with Default Header */}
-        <div className="w-1/2 p-6 overflow-y-scroll border-r pb-32" style={{ maxHeight: "calc(100vh - 160px)" }}>
+        <div 
+        ref={leftPaneRef}
+        className="w-1/2 p-6 overflow-y-scroll border-r pb-32" style={{ maxHeight: "calc(100vh - 160px)" }}>
           {defaultHeader}
           <h1 className="text-3xl font-bold mb-6">{currentPassage.passage_title}</h1>
           <p className="whitespace-pre-wrap text-lg leading-relaxed">
@@ -324,7 +413,9 @@ const handleSubmitTest = async () => {
         </div>
 
         {/* Right Pane: Questions */}
-        <div className="w-1/2 p-6 overflow-y-scroll" style={{ maxHeight: "calc(100vh - 160px)" }}>
+        <div 
+        ref={rightPaneRef}
+        className="w-1/2 p-6 overflow-y-scroll" style={{ maxHeight: "calc(100vh - 160px)" }}>
           {sectionsForPassage.map((section) => (
             <div key={section.id} className="mb-8 border-b pb-4">
               <h2 className="text-2xl font-semibold mb-2">{section.section_header}</h2>
@@ -333,23 +424,68 @@ const handleSubmitTest = async () => {
                 dangerouslySetInnerHTML={{ __html: section.section_instructions }}
               />
 
-              {/* Check the section type */}
               {section.section_question_type === "summary_completion" ? (
-                // Summary completion is rendered once per section
-                <SummaryCompletion 
-                section={section} 
-                questions={sortedQuestions.filter(
-                  (q) => q.section_number === section.section_number
-                )}
-                />
+                <>
+                  <SummaryCompletion
+                    section={section}
+                    questions={sortedQuestions.filter(
+                      (q) => q.section_number === section.section_number
+                    )}
+                    responses={responses}
+                    onAnswerChange={handleAnswerChange}
+                  />
+                  {evaluation &&
+                    sortedQuestions
+                      .filter((q) => q.section_number === section.section_number)
+                      .map((q) => (
+                        <div key={`feedback-${q.id}`} className="mt-2 flex items-center">
+                          {(() => {
+                            const userAnswer = (evaluation.responses[q.question_number.toString()] || "");
+                            const correct = q.correct_answer ? q.correct_answer.trim().toLowerCase() : "";
+                            const isCorrect = userAnswer.trim().toLowerCase() === correct;
+                            return isCorrect ? (
+                              <CheckCircleIcon className="w-5 h-5 text-green-600" />
+                            ) : (
+                              <XCircleIcon className="w-5 h-5 text-red-600" />
+                            );
+                          })()}
+                          <span className="ml-2">
+                            {q.question_number}. Correct Answer: {q.correct_answer}
+                          </span>
+                        </div>
+                      ))}
+                </>
               ) : section.section_question_type === "matching_statements" ? (
-                // Matching statements is rendered once per section
-                <MatchingStatements
-                  questions={sortedQuestions.filter(
-                    (q) => q.section_number === section.section_number
-                  )}
-                  sharedOptions={section.shared_options ?? {}}
-                />
+                <>
+                  <MatchingStatements
+                    questions={sortedQuestions.filter(
+                      (q) => q.section_number === section.section_number
+                    )}
+                    sharedOptions={section.shared_options ?? {}}
+                    responses={responses}
+                    onAnswerChange={handleAnswerChange}
+                  />
+                  {evaluation &&
+                    sortedQuestions
+                      .filter((q) => q.section_number === section.section_number)
+                      .map((q) => (
+                        <div key={`feedback-${q.id}`} className="mt-2 flex items-center">
+                          {(() => {
+                            const userAnswer = (evaluation.responses[q.question_number.toString()] || "");
+                            const correct = q.correct_answer ? q.correct_answer.trim().toLowerCase() : "";
+                            const isCorrect = userAnswer.trim().toLowerCase() === correct;
+                            return isCorrect ? (
+                              <CheckCircleIcon className="w-5 h-5 text-green-600" />
+                            ) : (
+                              <XCircleIcon className="w-5 h-5 text-red-600" />
+                            );
+                          })()}
+                          <span className="ml-2">
+                            {q.question_number}. Correct Answer: {q.correct_answer}
+                          </span>
+                        </div>
+                      ))}
+                </>
               ) : (
                 // All other question types are rendered individually
                 sortedQuestions
@@ -360,6 +496,7 @@ const handleSubmitTest = async () => {
                         {question.question_number}. {question.question_text}
                       </p>
                       {renderQuestion(question, section)}
+                      {evaluation && renderFeedback(question)}
                     </div>
                   ))
               )}

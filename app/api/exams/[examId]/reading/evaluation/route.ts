@@ -86,9 +86,10 @@ export async function POST(
       bandScore = calculateGeneralBand(correctCount);
     }
 
+    // Use upsert to update the evaluation if it already exists (unique on user_id, exam_id)
     const { data: evaluation, error: evalError } = await supabaseClient
       .from("reading_evaluations")
-      .insert([
+      .upsert(
         {
           user_id,
           exam_id: examId,
@@ -97,7 +98,9 @@ export async function POST(
           band_score: bandScore,
           submitted_at: new Date().toISOString(),
         },
-      ])
+        { onConflict: ["user_id", "exam_id"] }
+      )
+      .select()
       .single();
 
     if (evalError) {
@@ -111,6 +114,7 @@ export async function POST(
     return NextResponse.json({ error: "Failed to evaluate reading response" }, { status: 500 });
   }
 }
+
 
 // GET: Fetch evaluation for the authenticated user
 export async function GET(

@@ -9,11 +9,15 @@ interface MatchingStatementsSectionProps {
     question_number: number;
   }>;
   sharedOptions?: { [key: string]: string } | null;
+  responses?: { [key: string]: string };
+  onAnswerChange?: (questionNumber: string, value: string) => void;
 }
 
 export default function MatchingStatementsSection({
   questions = [],
   sharedOptions,
+  responses = {},
+  onAnswerChange,
 }: MatchingStatementsSectionProps) {
   const options = sharedOptions ?? {};
   
@@ -33,24 +37,31 @@ export default function MatchingStatementsSection({
         </table>
       </div>
       {/* Render Each Matching Question */}
-      {questions.map((question) => (
-        <div key={question.id} id={`q-${question.id}`} className="mb-2 text-lg">
-          <strong>{question.question_number}.</strong>{" "}
-          <select
-            id={`question-${question.id}`}
-            name={`question-${question.id}`}
-            className="border border-gray-300 rounded px-2 py-1 mr-2"
-          >
-            <option value=""></option>
-            {Object.entries(options).map(([key]) => (
-              <option key={key} value={key}>
-                {key}
-              </option>
-            ))}
-          </select>{" "}
-          {question.question_text}
-        </div>
-      ))}
+      {questions.map((question) => {
+        const questionNumber = question.question_number.toString();
+        return (
+          <div key={question.id} id={`q-${question.id}`} className="mb-2 text-lg">
+            <strong>{question.question_number}.</strong>{" "}
+            <select
+              id={`question-${question.id}`}
+              name={`question-${question.id}`}
+              className="border border-gray-300 rounded px-2 py-1 mr-2"
+              value={responses[questionNumber] || ""}
+              onChange={(e) =>
+                onAnswerChange && onAnswerChange(questionNumber, e.target.value)
+              }
+            >
+              <option value=""></option>
+              {Object.entries(options).map(([key]) => (
+                <option key={key} value={key}>
+                  {key}
+                </option>
+              ))}
+            </select>{" "}
+            {question.question_text}
+          </div>
+        );
+      })}
     </div>
   );
 }

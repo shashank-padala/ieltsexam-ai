@@ -10,9 +10,11 @@ interface MultipleChoiceProps {
       options: { [key: string]: string };
     };
   };
+  value: string;
+  onAnswerChange: (value: string) => void;
 }
 
-export default function MultipleChoice({ question }: MultipleChoiceProps) {
+export default function MultipleChoice({ question, value, onAnswerChange }: MultipleChoiceProps) {
   const options = question.question_payload?.options || {};
 
   return (
@@ -28,6 +30,8 @@ export default function MultipleChoice({ question }: MultipleChoiceProps) {
             type="radio"
             name={`question-${question.id}`}
             value={optionKey}
+            checked={value === optionKey}
+            onChange={() => onAnswerChange(optionKey)}
             className="mr-2"
           />
           <label htmlFor={`question-${question.id}-option-${optionKey}`} className="text-lg">

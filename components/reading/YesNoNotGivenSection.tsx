@@ -7,9 +7,15 @@ interface YesNoNotGivenProps {
     id: string;
     question_text: string;
   };
+  value: string;
+  onAnswerChange: (value: string) => void;
 }
 
-export default function YesNoNotGiven({ question }: YesNoNotGivenProps) {
+export default function YesNoNotGiven({
+  question,
+  value,
+  onAnswerChange,
+}: YesNoNotGivenProps) {
   const options = ["Yes", "No", "Not Given"];
 
   return (
@@ -22,6 +28,8 @@ export default function YesNoNotGiven({ question }: YesNoNotGivenProps) {
         id={`question-${question.id}`}
         name={`question-${question.id}`}
         className="border border-gray-300 rounded px-2 py-1"
+        value={value}
+        onChange={(e) => onAnswerChange(e.target.value)}
       >
         <option value="">Select</option>
         {options.map((opt) => (
