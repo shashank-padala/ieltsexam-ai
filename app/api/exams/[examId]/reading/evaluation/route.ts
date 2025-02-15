@@ -123,17 +123,16 @@ export async function POST(
 
     // --- Insert a new record into user_exam_summary ---
     const { error: summaryInsertError } = await supabaseClient
-    .from("user_exam_summary")
-    .insert([
-      {
-        user_id,
-        exam_id: examId,
-        reading_band_score: bandScore,
-        last_attempt_at: new Date().toISOString(),
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString()
-      }
-    ]);
+      .from("user_exam_summary")
+      .upsert([
+        {
+          user_id,
+          exam_id: examId,
+          reading_band_score: bandScore,
+          last_attempt_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        }
+      ], { onConflict: "user_id,exam_id" });
 
     if (summaryInsertError) {
       console.error("Error inserting user_exam_summary:", summaryInsertError);

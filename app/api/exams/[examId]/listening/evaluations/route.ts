@@ -82,7 +82,7 @@ export async function POST(
     // Insert a new listening evaluation record with the new attempt number
     const { data: evaluation, error: evalError } = await supabaseClient
       .from("listening_evaluations")
-      .insert([
+      .upsert([
         {
           user_id,
           exam_id: examId,
@@ -92,8 +92,8 @@ export async function POST(
           attempt_number: newAttemptNumber,
           submitted_at: new Date().toISOString(),
         },
-      ])
-      .single();
+      ], { onConflict: "user_id,exam_id" });
+      
     if (evalError) {
       console.error("Error in POST listening evaluation:", evalError);
       return NextResponse.json({ error: evalError.message }, { status: 500 });

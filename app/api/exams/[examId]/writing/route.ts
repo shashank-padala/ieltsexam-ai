@@ -7,7 +7,6 @@ export async function GET(
   { params }: { params: { examId: string } }
 ): Promise<NextResponse> {
   const { examId } = params;
-  console.log(examId); //Debugging
   if (!examId) {
     return NextResponse.json({ error: "Exam ID is required" }, { status: 400 });
   }

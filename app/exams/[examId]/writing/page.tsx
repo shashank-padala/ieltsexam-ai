@@ -95,8 +95,6 @@ export default function WritingModule() {
       task_2_answer: answers.task2.trim(),
     };
 
-    console.log("Submitting payload:", payload);
-
     try {
       const response = await fetch(`/api/exams/${examId}/writing/evaluation`, {
         method: "POST",

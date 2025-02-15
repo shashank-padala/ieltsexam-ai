@@ -44,9 +44,8 @@ const EvalPage = () => {
         setLoading(false);
         return;
       }
-      console.log("Supabase User Session:", data);
+      
       try {
-        console.log("Auth Token:", token);
         const response = await fetch(`/api/exams/${examId}/writing/evaluation`, {
           method: "GET",
           headers: {
