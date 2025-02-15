@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ClockIcon, BookOpenIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
+import { supabase } from "@/lib/supabaseClient";
 
 // Import question-type components
 import MultipleChoice from "@/components/reading/MultipleChoiceSection";
@@ -99,10 +99,83 @@ export default function ReadingPage() {
     }
   }, [data, currentPassageIndex]);
 
-  const handleSubmitTest = () => {
-    console.log("Time's up! Auto-submitting test...");
-    router.push(`/exams/${examId}/reading/submitted`);
-  };
+  // --- Add these helper functions inside your component, before handleSubmitTest ---
+
+// Helper: Gather user responses from the DOM
+const getUserResponses = (): { [key: string]: string } => {
+  const responses: { [key: string]: string } = {};
+  data!.questions.forEach((q) => {
+    // Try to get a checked radio button for multiple-choice questions.
+    const radioInput = document.querySelector(
+      `input[name="question-${q.id}"]:checked`
+    ) as HTMLInputElement;
+    if (radioInput) {
+      responses[q.question_number.toString()] = radioInput.value;
+    } else {
+      // Otherwise, try to get a text input (e.g., for summary_completion).
+      const textInput = document.getElementById(`question-${q.id}`) as HTMLInputElement;
+      responses[q.question_number.toString()] = textInput ? textInput.value : "";
+    }
+  });
+  return responses;
+};
+
+// Helper: Fetch exam type from /api/exams/[examId]
+const fetchExamType = async (examId: string): Promise<string | null> => {
+  const res = await fetch(`/api/exams/${examId}`, {
+    headers: { "Content-Type": "application/json" },
+  });
+  if (!res.ok) {
+    console.error("Failed to fetch exam type:", await res.text());
+    return null;
+  }
+  const json = await res.json();
+  return json.exam.type;
+};
+
+// --- Updated handleSubmitTest function ---
+const handleSubmitTest = async () => {
+  console.log("Time's up! Auto-submitting test...");
+
+  // Retrieve current session from Supabase Auth
+  const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+  if (sessionError || !session) {
+    console.error("No valid session found.");
+    return;
+  }
+  const token = session.access_token;
+  const user_id = session.user.id;
+
+  // Fetch exam type from the exams table using our dedicated API route.
+  const exam_type = await fetchExamType(examId);
+  if (!exam_type) {
+    console.error("Exam type could not be determined.");
+    return;
+  }
+
+  // Gather user responses from the DOM
+  const responses = getUserResponses();
+  console.log(responses);
+  // Submit evaluation via POST endpoint on the reading evaluation route
+  const res = await fetch(`/api/exams/${examId}/reading/evaluation`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      user_id,
+      exam_type,
+      responses,
+    }),
+  });
+
+  if (res.ok) {
+    router.push(`/exams/${examId}/reading/evaluation`);
+  } else {
+    console.error("Failed to submit evaluation", await res.text());
+  }
+};
 
   // Helper: Sort passages by passage_number
   const sortedPassages = () => {

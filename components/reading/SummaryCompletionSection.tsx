@@ -41,6 +41,7 @@ export default function SummaryCompletion({
                   {placeholders[i].replace(/[{}]/g, "")}
                 </span>
                 <input
+                  id={`question-${questions.find(q => q.question_number === parseInt(placeholders[i].replace(/[{}]/g, "")))?.id}`}
                   type="text"
                   className="border-2 border-blue-500 rounded-md px-3 py-1 w-32 text-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
                 />
