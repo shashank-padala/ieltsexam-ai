@@ -20,10 +20,6 @@ export default function TrueFalseNotGiven({
 
   return (
     <div className="mt-4">
-      <div
-        className="mb-2 text-lg whitespace-pre-wrap"
-        dangerouslySetInnerHTML={{ __html: question.question_text }}
-      />
       <select
         id={`question-${question.id}`}
         name={`question-${question.id}`}
