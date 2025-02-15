@@ -19,10 +19,6 @@ export default function MultipleChoice({ question, value, onAnswerChange }: Mult
 
   return (
     <div className="mt-4">
-      <div
-        className="mb-2 text-lg whitespace-pre-wrap"
-        dangerouslySetInnerHTML={{ __html: question.question_text }}
-      />
       {Object.entries(options).map(([optionKey, optionText]) => (
         <div key={optionKey} className="flex items-center mb-2">
           <input
