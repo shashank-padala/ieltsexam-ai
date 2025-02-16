@@ -60,7 +60,6 @@ const EvalPage = () => {
         }
   
         const dataJson = await response.json();
-        console.log("Evaluation Data:", dataJson);
         setEvaluation(dataJson);
       } catch (error) {
         console.error("Error fetching evaluation data:", error);

@@ -27,9 +27,9 @@ async function evaluateTask(taskAnswer: string, taskNumber: number, taskQuestion
       "improved_response": "<Rewrite the user's response to improve it to get a higher band score. If your improved response contains multiple paragraphs, separate them with \\n\\n>"
     }
 
-    IELTS Writing Task ${taskNumber}
-    Question: ${taskQuestion}
-    Response: ${taskAnswer}
+    IELTS Writing Task ${taskNumber} Question: ${taskQuestion}
+    
+    Candidate's Response: ${taskAnswer}
   `;
 
   const aiResponse = await openai.chat.completions.create({
@@ -66,6 +66,7 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    // Evaluate both tasks in parallel using OpenAI API
     const [task1Evaluation, task2Evaluation] = await Promise.all([
       evaluateTask(task_1_answer, 1, task_1_question),
       evaluateTask(task_2_answer, 2, task_2_question)

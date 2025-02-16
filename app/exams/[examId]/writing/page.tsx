@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 import { User } from "@supabase/supabase-js";
+import { ClockIcon, BookOpenIcon } from "@heroicons/react/24/solid";
 
 interface WritingQuestion {
   id: string;
@@ -18,9 +20,10 @@ export default function WritingModule() {
   const [questions, setQuestions] = useState<WritingQuestion[]>([]);
   const [activeTask, setActiveTask] = useState(1);
   const [answers, setAnswers] = useState({ task1: "", task2: "" });
-  const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(60); // minutes left
+  const timerRef = useRef<NodeJS.Timeout>();
   const [user, setUser] = useState<User | null>(null);
-
+  const [examSubmitted, setExamSubmitted] = useState(false);
   // Fetch user session
   useEffect(() => {
     const checkUser = async () => {
@@ -63,22 +66,24 @@ export default function WritingModule() {
     fetchQuestions();
   }, [examId]);
 
-  // Timer: decrease timeLeft each second; when 0, auto-submit the test.
+  // Countdown timer: update every minute
   useEffect(() => {
-    const timer = setInterval(() => {
+    timerRef.current = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
-          clearInterval(timer);
-          handleSubmit();
+          clearInterval(timerRef.current);
+          handleSubmitTest();
           return 0;
         }
         return prev - 1;
       });
-    }, 1000);
-    return () => clearInterval(timer);
+    }, 60000);
+    return () => clearInterval(timerRef.current);
   }, []);
 
-  const handleSubmit = async () => {
+  const handleSubmitTest = async () => {
+    if (examSubmitted) return; // Prevent multiple submissions
+    setExamSubmitted(true);
     // Get the current session to extract the fresh token
     const { data } = await supabase.auth.getSession();
     const token = data?.session?.access_token;
@@ -122,41 +127,46 @@ export default function WritingModule() {
     return <div className="flex justify-center items-center h-screen text-xl">Loading...</div>;
 
   const currentTask = questions[activeTask - 1];
-  const formattedTime =
-    timeLeft > 60
-      ? `${Math.floor(timeLeft / 60)} min remaining`
-      : `00:${timeLeft.toString().padStart(2, "0")} remaining`;
 
   return (
-    <div className="h-screen flex flex-col">
-      {/* Header */}
-      <div className="flex justify-between items-center p-4 border-b bg-white shadow-md">
-        <h2 className="text-2xl font-bold text-black">Writing Test</h2>
-        <div className="flex items-center space-x-2 bg-gray-200 px-3 py-1 rounded-full">
-          <svg
-            className="w-6 h-6 text-black"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          <span className="text-lg font-bold text-black">{formattedTime}</span>
+    <div className="bg-white min-h-screen text-black flex flex-col">
+      {/* Fixed Top Navigation */}
+      <header className="fixed top-0 left-0 right-0 flex items-center justify-center p-4 bg-white border-b z-20">
+        <div className="absolute left-4">
+          <Link href="/" className="flex items-center gap-2">
+            <BookOpenIcon className="w-8 h-8 text-blue-600" />
+            <span className="text-xl font-bold">IELTSExam.ai</span>
+          </Link>
         </div>
-        {/* Submit Button */}
-        <button
-          onClick={handleSubmit}
-          className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50"
-        >
-          Submit Test
-        </button>
-      </div>
+        <div className="flex items-center gap-2">
+          {examSubmitted ? (
+            <span className="text-lg font-semibold text-green-600">
+              Exam Submitted
+            </span>
+          ) : (
+            <>
+              <ClockIcon className="w-6 h-6 text-blue-600" />
+              <span className="text-lg font-semibold">{timeLeft} minutes left</span>
+            </>
+          )}
+        </div>
+        <div className="absolute right-4">
+          {!examSubmitted && (
+            <button
+              onClick={handleSubmitTest}
+              disabled={examSubmitted}
+              className={`px-4 py-2 bg-blue-600 text-white rounded text-base ${
+                examSubmitted ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+            >
+              Submit Test
+            </button>
+          )}
+        </div>
+      </header>
+
+      {/* Spacer for Fixed Header */}
+      <div className="h-10"></div>
 
       {/* Main Content Area */}
       <div className="flex flex-1 p-6 bg-gray-100">
