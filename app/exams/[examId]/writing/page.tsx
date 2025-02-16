@@ -24,6 +24,9 @@ export default function WritingModule() {
   const timerRef = useRef<NodeJS.Timeout>();
   const [user, setUser] = useState<User | null>(null);
   const [examSubmitted, setExamSubmitted] = useState(false);
+  const [isEvaluating, setIsEvaluating] = useState(false);
+  const [LoaderMessage, setLoaderMessage] = useState("Your writing exam is being evaluated using AI powered evaluator. Please wait up to 30 seconds.");
+
   // Fetch user session
   useEffect(() => {
     const checkUser = async () => {
@@ -84,6 +87,8 @@ export default function WritingModule() {
   const handleSubmitTest = async () => {
     if (examSubmitted) return; // Prevent multiple submissions
     setExamSubmitted(true);
+    setIsEvaluating(true);
+
     // Get the current session to extract the fresh token
     const { data } = await supabase.auth.getSession();
     const token = data?.session?.access_token;
@@ -112,11 +117,14 @@ export default function WritingModule() {
 
       const result = await response.json();
       if (response.ok) {
+        setIsEvaluating(false);
         router.push(`/exams/${examId}/writing/evaluation`);
       } else {
+        setLoaderMessage("Evaluation failed. Please try again or return to the home page.");
         console.error("Evaluation failed:", result.error);
       }
     } catch (error) {
+      setLoaderMessage("Evaluation failed. Please try again or return to the home page.");
       console.error("Error submitting test:", error);
     }
   };
@@ -220,6 +228,40 @@ export default function WritingModule() {
           Task 2
         </button>
       </div>
+
+      {/* Intermediate Evaluation Modal */}
+      {isEvaluating && (
+        <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-75 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-md mx-4">
+            <p className="text-lg mb-4">
+              {LoaderMessage}
+            </p>
+            <div className="flex justify-center items-center">
+              <svg className="animate-spin h-8 w-8 text-blue-600" viewBox="0 0 24 24">
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8H4z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <button
+            onClick={() => router.push("/")}
+            className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+          >
+            <span className="text-xl font-bold">Return to Home Page</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
