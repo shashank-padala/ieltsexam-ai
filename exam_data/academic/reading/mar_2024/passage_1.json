@@ -1,0 +1,134 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-5",
+      "section_instructions": "Choose the correct letter, <strong>A, B, C or D</strong>.<br><br>Write the correct letter in boxes <strong>1-5</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 1,
+          "question_text": "According to the writer, which marketing technique attempts to make consumers stay in a shop for longer?",
+          "question_payload": {
+            "options": {
+              "A": "Playing appealing music",
+              "B": "Emitting pleasant scents",
+              "C": "Displaying attractive posters",
+              "D": "Making in-store announcements"
+            }
+          }
+        },
+        {
+          "question_number": 2,
+          "question_text": "The writer mentions bottled water in order to show that",
+          "question_payload": {
+            "options": {
+              "A": "Consumers buy it because of the fact that it is marketed.",
+              "B": "People purchase it despite the fact that it has no taste.",
+              "C": "Marketers need not do taste tests when a campaign is effective.",
+              "D": "Tests prove that people cannot differentiate it from tap water."
+            }
+          }
+        },
+        {
+          "question_number": 3,
+          "question_text": "According to the writer, socially transmitted food preference occurs when",
+          "question_payload": {
+            "options": {
+              "A": "Only dominant members of an animal group influence what others eat.",
+              "B": "The same types of animals naturally prefer the same types of food.",
+              "C": "Animals are influenced by what any other animals of the same species eat.",
+              "D": "A food type is more desirable because an animal views that food as scarce."
+            }
+          }
+        },
+        {
+          "question_number": 4,
+          "question_text": "According to the writer, how is learning by observation and imitation a useful feature of the brain?",
+          "question_payload": {
+            "options": {
+              "A": "It helps people overcome challenges.",
+              "B": "Positive models can influence social behaviour.",
+              "C": "It can give an advantage when communicating with others.",
+              "D": "Cultural norms and relationships can be understood more easily."
+            }
+          }
+        },
+        {
+          "question_number": 5,
+          "question_text": "According to the writer, how does television advertising exploit the human tendency to imitate others?",
+          "question_payload": {
+            "options": {
+              "A": "It shows buying behaviour that marketers want to encourage in viewers.",
+              "B": "It features people who have a desirable image.",
+              "C": "It shows older people whom teenagers admire.",
+              "D": "It features successful people endorsing products responsible for their success."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 6-10",
+      "section_instructions": "Do the following statements agree with the claims of the writer in Reading Passage?<br><br>In boxes <strong>6-10</strong> on your answer sheet, write:<br><br><strong>YES.</strong> if the statement agrees with the views of the writer<br><strong>NO.</strong> if the statement contradicts the views of the writer<br><strong>NOT GIVEN.</strong> if it is impossible to say what the writer thinks about this",
+      "section_question_type": "yes_no_not_given",
+      "questions": [
+        {
+          "question_number": 6,
+          "question_text": "The diamond campaign worked by making a connection in people's minds between diamonds and luxury."
+        },
+        {
+          "question_number": 7,
+          "question_text": "People are more aware of visual marketing than auditory marketing."
+        },
+        {
+          "question_number": 8,
+          "question_text": "The campaign advertising diamonds had a positive influence on society."
+        },
+        {
+          "question_number": 9,
+          "question_text": "There is still some uncertainty about whether animals copy the behaviour of the most powerful animals among them."
+        },
+        {
+          "question_number": 10,
+          "question_text": "Consumers make a logical connection between celebrities' achievements and the products they promote."
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 11-14",
+      "section_instructions": "Complete each sentence with the correct ending, <strong>A-G</strong>, below.<br><br>Write the correct letter, <strong>A-G</strong>, in boxes <strong>11-14</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "People imitated behaviour that was linked with success.",
+        "B": "Younger animals of a certain species are more likely to imitate each other.",
+        "C": "An animal would imitate another that had higher status.",
+        "D": "Imitation of popular sportspeople has occurred for many decades.",
+        "E": "Products are marketed to potential consumers who are unaware that marketing is occurring.",
+        "F": "Animals can develop new habits by observation.",
+        "G": "Incentives are provided for consumers who behave in a certain way."
+      },
+      "questions": [
+        {
+          "question_number": 11,
+          "question_text": "The behaviour of the monkeys on the island of Koshima showed that"
+        },
+        {
+          "question_number": 12,
+          "question_text": "Primatologist Frans de Waal found that"
+        },
+        {
+          "question_number": 13,
+          "question_text": "Dick Fosbury is mentioned in order to show that"
+        },
+        {
+          "question_number": 14,
+          "question_text": "A feature of some modern marketing campaigns is that"
+        }
+      ]
+    }
+  ]
+}
