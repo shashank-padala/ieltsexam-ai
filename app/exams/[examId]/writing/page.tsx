@@ -134,7 +134,7 @@ export default function WritingModule() {
   if (questions.length === 0)
     return <div className="flex justify-center items-center h-screen text-xl">Loading...</div>;
 
-  const currentTask = questions[activeTask - 1];
+  const currentQuestion = questions.find((question) => question.task_number === activeTask);
 
   return (
     <div className="bg-white min-h-screen text-black flex flex-col">
@@ -180,10 +180,10 @@ export default function WritingModule() {
       <div className="flex flex-1 p-6 bg-gray-100">
         {/* Left: Question Panel */}
         <div className="w-1/2 p-4 bg-white rounded-lg shadow-md overflow-auto">
-          <h3 className="text-lg font-bold text-black mb-2">{`Task ${activeTask}`}</h3>
-          <p className="text-black">{currentTask?.content}</p>
-          {currentTask?.image_url && (
-            <img src={currentTask.image_url} alt="Task Image" className="mt-4 rounded-lg shadow-sm" />
+          <h3 className="text-xl font-bold text-black mb-2">{`Task ${activeTask}`}</h3>
+          <p className="text-black whitespace-pre-line">{currentQuestion?.content}</p>
+          {currentQuestion?.image_url && (
+            <img src={currentQuestion.image_url} alt="Task Image" className="mt-4 rounded-lg shadow-sm" />
           )}
         </div>
 
