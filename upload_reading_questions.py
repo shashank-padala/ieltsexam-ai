@@ -111,7 +111,7 @@ def main():
     conn.commit()
     cursor.close()
     conn.close()
-    print("Reading sections and questions loaded successfully.")
+    print(f"Reading sections and questions loaded successfully for exam_id: {EXAM_ID}.")
 
 if __name__ == "__main__":
     main()
