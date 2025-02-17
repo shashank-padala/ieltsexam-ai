@@ -1,0 +1,66 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-33",
+      "section_instructions": "The reading passage has six paragraphs <strong>A-F</strong>.<br><br>Choose the correct heading for each paragraph from the list of headings below.<br><br>Write the correct number, <strong>i-viii</strong>, in boxes 28-33 on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "i": "Different areas of professional expertise",
+        "ii": "Reasons why it is unfair to criticise lawyers",
+        "iii": "The disadvantages of the legal system",
+        "iv": "The law applies throughout our lives",
+        "v": "The law has affected historical events",
+        "vi": "A negative regard for lawyers",
+        "vii": "Public's increasing ability to influence the law",
+        "viii": "Growth in laws"
+      },
+      "questions": [
+        { "question_number": 28, "question_text": "Paragraph A" },
+        { "question_number": 29, "question_text": "Paragraph B" },
+        { "question_number": 30, "question_text": "Paragraph C" },
+        { "question_number": 31, "question_text": "Paragraph D" },
+        { "question_number": 32, "question_text": "Paragraph E" },
+        { "question_number": 33, "question_text": "Paragraph F" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 34-35",
+      "section_instructions": "Choose <strong>TWO</strong> letters, <strong>A-E</strong>.<br><br>Write the correct letters in boxes 34-35 on your answer sheet.",
+      "section_question_type": "multiple_select",
+      "content": {
+        "shared_question_text": "Which <strong>TWO</strong> of the following statements does the writer make about legal skills in today's world?"
+      },
+      "shared_options": {
+        "A": "There should be a person with legal training in every hospital.",
+        "B": "Lawyers with experience in commercial law are the most in demand.",
+        "C": "Knowledge of the law is as important as having computer skills.",
+        "D": "Society could not function effectively without legal experts.",
+        "E": "Schools should teach students about the law."
+      },
+      "questions": [
+        { "question_number": 34, "question_text": "" },
+        { "question_number": 35, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 36-40",
+      "section_instructions": "Complete the summary below.<br><br>Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.<br><br>Write your answers in boxes 36-40 on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Lawyers as professionals People sometimes say that {36} is of little interest to lawyers, who are more concerned with making money. This may well be the case with some individuals, in the same way that some {37} or scientific experts may also be driven purely by financial greed. However, criticising lawyers because their work is concerned with people's problems would be similar to attacking IT staff or {38} for the same reason. In fact, many lawyers focus on questions relating, for example, to housing or civil liberties, which requires them to have {39} to their work. What's more, a lot of lawyers' time is spent writing {40} rather than dealing with people's misfortunes.",
+        "blanks": [36, 37, 38, 39, 40]
+      },
+      "questions": [
+        { "question_number": 36, "question_text": "" },
+        { "question_number": 37, "question_text": "" },
+        { "question_number": 38, "question_text": "" },
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}

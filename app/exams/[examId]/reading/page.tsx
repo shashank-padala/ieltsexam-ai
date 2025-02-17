@@ -17,8 +17,10 @@ import SummaryCompletion from "@/components/reading/SummaryCompletionSection";
 import MatchingStatements from "@/components/reading/MatchingStatementsSection";
 import TrueFalseNotGiven from "@/components/reading/TrueFalseNotGivenSection";
 import YesNoNotGiven from "@/components/reading/YesNoNotGivenSection";
+import MultipleSelectSection from "@/components/reading/MultipleSelectSection";
 
 interface Passage {
+  
   id: string;
   exam_id: string;
   passage_number: number;
@@ -331,17 +333,27 @@ export default function ReadingPage() {
         </div>
         {/* Active Passage Question Navigation */}
         <div className="flex flex-wrap gap-3 justify-center p-3">
-          {activeQuestionNav.map((q) => (
-            <button
-              key={q.id}
-              onClick={() => {
-                document.getElementById(`q-${q.id}`)?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white text-base"
-            >
-              {q.question_number}
-            </button>
-          ))}
+          {activeQuestionNav.map((q) => {
+            // Find the section for this question (assuming sectionsForPassage is in scope)
+            const section = sectionsForPassage.find(
+              (sec) => sec.section_number === q.section_number
+            );
+            const targetId =
+              section && section.section_question_type === "multiple_select"
+                ? `q-multi-${section.id}`
+                : `q-${q.id}`;
+            return (
+              <button
+                key={q.id}
+                onClick={() => {
+                  document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white text-base"
+              >
+                {q.question_number}
+              </button>
+            );
+          })}
         </div>
       </div>
     );
@@ -428,7 +440,41 @@ export default function ReadingPage() {
                 dangerouslySetInnerHTML={{ __html: section.section_instructions }}
               />
 
-              {section.section_question_type === "summary_completion" ? (
+              {section.section_question_type === "multiple_select" ? (
+                <>
+                  <MultipleSelectSection
+                    sectionId={section.id}
+                    questions={sortedQuestions.filter((q) => q.section_number === section.section_number)}
+                    sharedOptions={section.shared_options ?? {}}
+                    sharedQuestionText={section.content?.shared_question_text || ""}
+                    responses={responses}
+                    onAnswerChange={handleAnswerChange}
+                  />
+                  {evaluation &&
+                    sortedQuestions
+                      .filter((q) => q.section_number === section.section_number)
+                      .map((q) => (
+                        <div key={`feedback-${q.id}`} className="mt-2 flex items-center">
+                          {(() => {
+                            const userAnswer =
+                              evaluation.responses[q.question_number.toString()] || "";
+                            const correct = q.correct_answer
+                              ? q.correct_answer.trim().toLowerCase()
+                              : "";
+                            const isCorrect = userAnswer.trim().toLowerCase() === correct;
+                            return isCorrect ? (
+                              <CheckCircleIcon className="w-5 h-5 text-green-600" />
+                            ) : (
+                              <XCircleIcon className="w-5 h-5 text-red-600" />
+                            );
+                          })()}
+                          <span className="ml-2">
+                            {q.question_number}. Correct Answer: {q.correct_answer}
+                          </span>
+                        </div>
+                      ))}
+                </>
+              ) :section.section_question_type === "summary_completion" ? (
                 <>
                   <SummaryCompletion
                     section={section}

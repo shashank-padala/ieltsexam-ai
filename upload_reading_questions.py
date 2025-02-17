@@ -16,7 +16,7 @@ DBNAME = os.getenv("dbname")
 
 # These values should match your loaded passage:
 EXAM_ID = "7fc0836d-0b77-426c-b66d-12fdffc5036c"           
-PASSAGE_NUMBER = 2             
+PASSAGE_NUMBER = 3             
 
 def load_data(json_file):
     with open(json_file, "r", encoding="utf-8") as f:
