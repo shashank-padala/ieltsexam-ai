@@ -12,14 +12,14 @@ PASSWORD = os.getenv("password")
 HOST = os.getenv("host")
 PORT = os.getenv("port")
 DBNAME = os.getenv("dbname")
-EXAM_ID = "e58f9517-89b6-4d6a-b572-7f9b9acf42e5"  # Replace with your exam id
+EXAM_ID = "5701eb48-70ab-43d5-b726-e86e0491b4cf"  # Replace with your exam id
 
 def load_answers(json_file):
     with open(json_file, "r", encoding="utf-8") as f:
         return json.load(f)
 
 def main():
-    answers_data = load_answers("exam_data/academic/jan_2024/reading/answers.json")  
+    answers_data = load_answers("exam_data/academic/reading/feb_2024/answers.json")  
     
     answers = answers_data.get("answers", {})
 

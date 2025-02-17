@@ -1,0 +1,95 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-5",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage?<br><br>In boxes <strong>1-5</strong> on your answer sheet, write:<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        {
+          "question_number": 1,
+          "question_text": "Brantingham and Beekman were the first researchers to investigate the relationship between health problems and flat floors."
+        },
+        {
+          "question_number": 2,
+          "question_text": "The subjects in Fisher's control group experienced a decline in their physical condition."
+        },
+        {
+          "question_number": 3,
+          "question_text": "The manufacturers are increasing the number of cobblestone mats they are making."
+        },
+        {
+          "question_number": 4,
+          "question_text": "Fisher based his ideas on what he saw during an overseas trip."
+        },
+        {
+          "question_number": 5,
+          "question_text": "The Masai Barefoot Technology shoes are made to fit people of all ages."
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 6-8",
+      "section_instructions": "Choose the correct letter, <strong>A, B, C or D</strong>.<br><br>Write the correct letter in boxes <strong>6-8</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 6,
+          "question_text": "The writer suggests that Brantingham and Beekman's findings were",
+          "question_payload": {
+            "options": {
+              "A": "ignored by big companies.",
+              "B": "doubted by other researchers.",
+              "C": "applicable to a narrow range of people.",
+              "D": "surprising to them."
+            }
+          }
+        },
+        {
+          "question_number": 7,
+          "question_text": "What claim is made by the designers of the cobblestone mats?",
+          "question_payload": {
+            "options": {
+              "A": "They need to be used continuously in order to have a lasting effect.",
+              "B": "They would be as beneficial to younger people as to older people.",
+              "C": "They could be an effective alternative to medical intervention.",
+              "D": "Their effects may vary depending on individual users."
+            }
+          }
+        },
+        {
+          "question_number": 8,
+          "question_text": "Which of the following points does the writer make in the final paragraph?",
+          "question_payload": {
+            "options": {
+              "A": "People should question new theories that scientists put forward.",
+              "B": "High prices do not necessarily equate to a quality product.",
+              "C": "People are setting up home in the country for health reasons.",
+              "D": "The natural environment is fast disappearing."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 9-14",
+      "section_instructions": "Complete the summary below.<br><br>Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.<br><br>Write your answers in boxes <strong>9-14</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "In their research, Brantingham and Beekman looked at the complex physical {9} of the foot and noted that the surfaces of modern environments restrict its movement. They invented a mat which they tried out on factory workers. Whenever the workers walked on it, the different levels of {10} in the mat would encourage greater muscle action. In turn, this lessened the effect of {11} on the cardiovascular system.<br><br>Similar research was undertaken by John Fisher and colleagues in Oregon. As a result of their findings, they decided to market cobblestone mats to the elderly as a means of dealing with {12}.<br><br>Reflexologists claim that by manipulating specific parts of the feet, the performance of certain {13} will also improve. Finally, Benno Nigg at Calgary University believes that specially shaped {14} on shoes should give health benefits.",
+        "blanks": [9, 10, 11, 12, 13, 14]
+      },
+      "questions": [
+        { "question_number": 9, "question_text": "" },
+        { "question_number": 10, "question_text": "" },
+        { "question_number": 11, "question_text": "" },
+        { "question_number": 12, "question_text": "" },
+        { "question_number": 13, "question_text": "" },
+        { "question_number": 14, "question_text": "" }
+      ]
+    }
+  ]
+}

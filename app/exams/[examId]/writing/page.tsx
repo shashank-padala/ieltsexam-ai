@@ -229,7 +229,7 @@ export default function WritingModule() {
         </button>
       </div>
 
-      {/* Intermediate Evaluation Modal */}
+      {/* Intermediate Evaluation Modal - Loading Spinner */}
       {isEvaluating && (
         <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-75 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-md mx-4">

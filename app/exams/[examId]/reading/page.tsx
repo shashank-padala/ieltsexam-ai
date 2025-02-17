@@ -71,6 +71,8 @@ export default function ReadingPage() {
   const [examSubmitted, setExamSubmitted] = useState(false);
   const leftPaneRef = useRef<HTMLDivElement>(null);
   const rightPaneRef = useRef<HTMLDivElement>(null);
+  const [isEvaluating, setIsEvaluating] = useState(false);
+  const [LoaderMessage, setLoaderMessage] = useState("Your reading exam is being evaluated. Please wait up to 30 seconds.");
 
   // Fetch reading data once examId is available
   useEffect(() => {
@@ -136,7 +138,7 @@ export default function ReadingPage() {
   // Updated handleSubmitTest function
   const handleSubmitTest = async () => {
     if (examSubmitted) return; // Prevent multiple submissions
-    console.log("Submitting test...");
+    setIsEvaluating(true);
 
     // Retrieve current session from Supabase Auth
     const {
@@ -191,13 +193,16 @@ export default function ReadingPage() {
         },
       });
       if (getRes.ok) {
+        setIsEvaluating(false);
         const result = await getRes.json();
         setEvaluation(result);
         setExamSubmitted(true);
       } else {
+        setLoaderMessage("Failed to fetch evaluation. Please retry or return to home page.");
         console.error("Failed to fetch evaluation", await getRes.text());
       }
     } else {
+      setLoaderMessage("Failed to submit evaluation. Please retry or return to home page.");
       console.error("Failed to submit evaluation", await postRes.text());
     }
   };
@@ -235,13 +240,12 @@ export default function ReadingPage() {
   // Default header for left pane above passage title
   const defaultHeader = (
     <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-      <h2 className="text-2xl font-bold mb-1">Part {currentPassage.passage_number}</h2>
-      <h3 className="text-xl font-semibold mb-1">
-        READING PASSAGE {currentPassage.passage_number}
-      </h3>
+      <h2 className="text-2xl font-bold mb-1">
+        Part {currentPassage.passage_number} : READING PASSAGE {currentPassage.passage_number}
+      </h2>
       <p className="text-base">
-        You should spend about 20 minutes on Questions {minQuestion}-{maxQuestion}, which are based
-        on Reading Passage {currentPassage.passage_number}.
+        You should spend about <strong>20 minutes</strong> on Questions <strong>{minQuestion}-{maxQuestion}</strong>, which are based
+        on Reading Passage <strong>{currentPassage.passage_number}</strong>.
       </p>
     </div>
   );
@@ -504,6 +508,40 @@ export default function ReadingPage() {
           ))}
         </div>
       </div>
+
+      {/* Intermediate Evaluation Modal - Loading Spinner */}
+      {isEvaluating && (
+        <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-75 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-md mx-4">
+            <p className="text-lg mb-4">
+              {LoaderMessage}
+            </p>
+            <div className="flex justify-center items-center">
+              <svg className="animate-spin h-8 w-8 text-blue-600" viewBox="0 0 24 24">
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8H4z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <button
+            onClick={() => router.push("/")}
+            className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+          >
+            <span className="text-xl font-bold">Return to Home Page</span>
+          </button>
+        </div>
+      )}
 
       {/* Fixed Bottom Navigation */}
       {renderBottomNav()}
