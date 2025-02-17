@@ -180,7 +180,7 @@ export default function WritingModule() {
       <div className="flex flex-1 p-6 bg-gray-100">
         {/* Left: Question Panel */}
         <div className="w-1/2 p-4 bg-white rounded-lg shadow-md overflow-auto">
-          <h3 className="text-xl font-bold text-black mb-2">{`Task ${activeTask}`}</h3>
+          <h3 className="text-xl font-bold text-black mb-2">{`Writing Task ${activeTask}`}</h3>
           <p className="text-black whitespace-pre-line">{currentTask?.content}</p>
           {currentTask?.image_url && (
             <img src={currentTask.image_url} alt="Task Image" className="mt-4 rounded-lg shadow-sm" />
