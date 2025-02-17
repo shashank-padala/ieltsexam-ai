@@ -99,8 +99,8 @@ export default function WritingModule() {
     }
 
     const payload = {
-      task_1_question: questions[0]?.content || "",
-      task_2_question: questions[1]?.content || "",
+      task_1_question: questions.find((question) => question.task_number === 1)?.content || "",
+      task_2_question: questions.find((question) => question.task_number === 2)?.content || "",
       task_1_answer: answers.task1.trim(),
       task_2_answer: answers.task2.trim(),
     };
@@ -134,7 +134,7 @@ export default function WritingModule() {
   if (questions.length === 0)
     return <div className="flex justify-center items-center h-screen text-xl">Loading...</div>;
 
-  const currentQuestion = questions.find((question) => question.task_number === activeTask);
+  const currentTask = questions.find((question) => question.task_number === activeTask);
 
   return (
     <div className="bg-white min-h-screen text-black flex flex-col">
@@ -181,9 +181,9 @@ export default function WritingModule() {
         {/* Left: Question Panel */}
         <div className="w-1/2 p-4 bg-white rounded-lg shadow-md overflow-auto">
           <h3 className="text-xl font-bold text-black mb-2">{`Task ${activeTask}`}</h3>
-          <p className="text-black whitespace-pre-line">{currentQuestion?.content}</p>
-          {currentQuestion?.image_url && (
-            <img src={currentQuestion.image_url} alt="Task Image" className="mt-4 rounded-lg shadow-sm" />
+          <p className="text-black whitespace-pre-line">{currentTask?.content}</p>
+          {currentTask?.image_url && (
+            <img src={currentTask.image_url} alt="Task Image" className="mt-4 rounded-lg shadow-sm" />
           )}
         </div>
 
