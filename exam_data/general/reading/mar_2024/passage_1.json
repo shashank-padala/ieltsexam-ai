@@ -1,0 +1,82 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-5",
+      "section_instructions": "For which advertisement are the following statements <strong>True</strong>?<br><br>Write the appropriate letter, <strong>A-D</strong>, in boxes 1-5 on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Advertisement A",
+        "B": "Advertisement B",
+        "C": "Advertisement C",
+        "D": "Advertisement D"
+      },
+      "questions": [
+        { "question_number": 1, "question_text": "TWO places to stay have restaurants." },
+        { "question_number": 2, "question_text": "The place claims to offer the cheapest rate." },
+        { "question_number": 3, "question_text": "You can ring the place without charge for more information." },
+        { "question_number": 4, "question_text": "Guests can cook their own food." },
+        { "question_number": 5, "question_text": "The place was not originally used by holiday makers." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 6-8",
+      "section_instructions": "Choose the appropriate letter, <strong>A, B or C</strong>.<br><br>Write the appropriate letter in <strong>boxes 6-8</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 6,
+          "question_text": "<strong>Morpeth developed into a town because</strong>",
+          "question_payload": {
+            "options": {
+              "A": "it was serviced by a railroad line.",
+              "B": "of Lieutenant Close's planning.",
+              "C": "it was conveniently situated on a waterway."
+            }
+          }
+        },
+        {
+          "question_number": 7,
+          "question_text": "<strong>The town of Morpeth was known for</strong>",
+          "question_payload": {
+            "options": {
+              "A": "the goods and services it provided.",
+              "B": "transporting goods to Sydney.",
+              "C": "bringing goods inland."
+            }
+          }
+        },
+        {
+          "question_number": 8,
+          "question_text": "<strong>Morpeth is popular with visitors today because of</strong>",
+          "question_payload": {
+            "options": {
+              "A": "the historic railway line of 1870.",
+              "B": "the many historic shops.",
+              "C": "the many attractive historic buildings."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 9-13",
+      "section_instructions": "Answer the questions below.<br><br>Choose <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> from the text for each answer.<br><br>Write your answers in <strong>boxes 9-13</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "When should you call to ask about selling techniques? {9}<br>How should you apply for the position in the chemist shop? {10}<br>What number should you ring for the job being offered after school? {11}<br>What qualification is essential for the position with Beecroft Hearts and Flowers? {12}<br>What names do you need to provide for the job in publishing? {13}",
+        "blanks": [9, 10, 11, 12, 13]
+      },
+      "questions": [
+        { "question_number": 9, "question_text": "" },
+        { "question_number": 10, "question_text": "" },
+        { "question_number": 11, "question_text": "" },
+        { "question_number": 12, "question_text": "" },
+        { "question_number": 13, "question_text": "" }
+      ]
+    }
+  ]
+}

@@ -12,16 +12,17 @@ PASSWORD = os.getenv("password")
 HOST = os.getenv("host")
 PORT = os.getenv("port")
 DBNAME = os.getenv("dbname")
-EXAM_ID = "4defebd7-9096-4568-b1cf-d843df3a0f66"  
+
 #TODO: Replace with your exam id
+EXAM_ID = "65ee692b-ec43-4bcc-b51e-209373293a0f"  
 
 def load_answers(json_file):
     with open(json_file, "r", encoding="utf-8") as f:
         return json.load(f)
 
 def main():
-    #TODO: Change the exam_id path to the one you want to update
-    answers_data = load_answers("exam_data/general/reading/jan_2024/answers.json")  
+    #TODO: Change the path to the answers file
+    answers_data = load_answers("exam_data/general/reading/mar_2024/answers.json")  
     
     answers = answers_data.get("answers", {})
 
