@@ -542,10 +542,8 @@ export default function ReadingPage() {
                 sortedQuestions
                   .filter((q) => q.section_number === section.section_number)
                   .map((question) => (
-                    <div key={question.id} id={`q-${question.id}`} className="mb-6 p-4 bg-gray-50 rounded shadow-sm">
-                      <p className="font-medium text-lg whitespace-pre-wrap">
-                        {question.question_number}. {question.question_text}
-                      </p>
+                    <div key={question.id} id={`q-${question.id}`} className="mb-6 p-4 bg-gray-50 rounded shadow-sm"> 
+                      <div className="font-medium text-lg whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: question.question_number + ". " + question.question_text}} />
                       {renderQuestion(question, section)}
                       {evaluation && renderFeedback(question)}
                     </div>

@@ -14,8 +14,8 @@ HOST = os.getenv("host")
 PORT = os.getenv("port")
 DBNAME = os.getenv("dbname")
 
-# These values should match your loaded passage:
-EXAM_ID = "4defebd7-9096-4568-b1cf-d843df3a0f66"           
+# TODO: These values should match your loaded passage:
+EXAM_ID = "f6ece23a-b323-4123-97fb-3e2e52ece3b8"           
 PASSAGE_NUMBER = 3            
 
 def load_data(json_file):
@@ -23,8 +23,8 @@ def load_data(json_file):
         return json.load(f)
 
 def main():
-    # Update the path to your JSON file.
-    data = load_data("exam_data/general/reading/jan_2024/passage_{}.json".format(PASSAGE_NUMBER))
+    # TODO: Update the path to your JSON file.
+    data = load_data("exam_data/general/reading/feb_2024/passage_{}.json".format(PASSAGE_NUMBER))
     
     conn = psycopg2.connect(
         user=USER,

@@ -1,0 +1,66 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 15-21",
+      "section_instructions": "The text on the next page has seven sections, <strong>A-G</strong>.<br><br>Choose the correct heading for each section from the list of headings below.<br><br>Write the correct number, <strong>i-x</strong>, in boxes 15-21 on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "i": "Ahead of their time",
+        "ii": "The role played by the observer",
+        "iii": "Hidden potential",
+        "iv": "A limited appeal",
+        "v": "A scientific failing",
+        "vi": "An amazing transformation",
+        "vii": "No coincidence",
+        "viii": "A rough science",
+        "ix": "A hypothesis proven",
+        "x": "An unforeseen consequence"
+      },
+      "questions": [
+        { "question_number": 15, "question_text": "Section A" },
+        { "question_number": 16, "question_text": "Section B" },
+        { "question_number": 17, "question_text": "Section C" },
+        { "question_number": 18, "question_text": "Section D" },
+        { "question_number": 19, "question_text": "Section E" },
+        { "question_number": 20, "question_text": "Section F" },
+        { "question_number": 21, "question_text": "Section G" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 22-23",
+      "section_instructions": "Complete the sentences below.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> from the text for each answer.<br><br>Write your answers in boxes 22-23 on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Sometimes it is debatable as to which leadership style is the most {22} since different styles meet different needs.<br>When dynamics within a company change, then {23} to leadership may be called for.",
+        "blanks": [22, 23]
+      },
+      "questions": [
+        { "question_number": 22, "question_text": "" },
+        { "question_number": 23, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 24-28",
+      "section_instructions": "Look at the following descriptions and the list of terms in the box below.<br><br>Match each description with the correct term, <strong>A-E</strong>.<br><br>Write the appropriate letter, <strong>A-E</strong>, in boxes 24-28 on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Laissez-faire",
+        "B": "Autocratic",
+        "C": "Participative",
+        "D": "Transactional",
+        "E": "Transformational"
+      },
+      "questions": [
+        { "question_number": 24, "question_text": "A reciprocal relationship between the leader and employees is encouraged, to the benefit of all concerned." },
+        { "question_number": 25, "question_text": "A two-way relationship between the leader and employees is harshly discouraged." },
+        { "question_number": 26, "question_text": "Employees are constantly monitored and encouraged to realise goals in a positive way." },
+        { "question_number": 27, "question_text": "Employees receive positive or negative reinforcement on the basis of their performance." },
+        { "question_number": 28, "question_text": "Leaders are notably absent in the workplace, relying on worker autonomy to get the job done." }
+      ]
+    }
+  ]
+}

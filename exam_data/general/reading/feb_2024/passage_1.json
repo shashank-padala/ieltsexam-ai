@@ -1,0 +1,120 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-6",
+      "section_instructions": "Write the correct letter, <strong>A, B, C or D</strong>, in boxes 1-6 on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 1,
+          "question_text": "<strong>Gonzalez</strong>",
+          "question_payload": {
+            "options": {
+              "A": "has a proven track record in design.",
+              "B": "is a winning designer.",
+              "C": "has yet to produce a publicly approved design.",
+              "D": "currently sells designs online."
+            }
+          }
+        },
+        {
+          "question_number": 2,
+          "question_text": "<strong>Action on plastic pollution is necessary since</strong>",
+          "question_payload": {
+            "options": {
+              "A": "crude oil used in plastic bottle manufacturing is polluting the ocean.",
+              "B": "too many discarded plastic water bottles are floating on the ocean.",
+              "C": "the debris from plastic water bottles is polluting the ocean.",
+              "D": "the public are demanding action on pollution."
+            }
+          }
+        },
+        {
+          "question_number": 3,
+          "question_text": "<strong>People may hesitate to consume the Ooho bottle</strong>",
+          "question_payload": {
+            "options": {
+              "A": "due to its unpleasant flavour.",
+              "B": "because of its unattractive appearance and feel.",
+              "C": "as it is likely to be indigestible.",
+              "D": "since it is unconventional in design."
+            }
+          }
+        },
+        {
+          "question_number": 4,
+          "question_text": "<strong>Structurally, the Ooho bottle is</strong>",
+          "question_payload": {
+            "options": {
+              "A": "stronger than the skin found in fruit.",
+              "B": "as strong as the skin found in fruit.",
+              "C": "stronger than the current bottles.",
+              "D": "similar in appearance to fruit skin."
+            }
+          }
+        },
+        {
+          "question_number": 5,
+          "question_text": "<strong>The manufacture of Ooho bottles is</strong>",
+          "question_payload": {
+            "options": {
+              "A": "a response to public demand.",
+              "B": "a process that needs refining.",
+              "C": "a response to pressure by environmentalists.",
+              "D": "a better alternative to recycling plastic water bottles."
+            }
+          }
+        },
+        {
+          "question_number": 6,
+          "question_text": "<strong>Choose the most suitable title for the text from the list below.</strong>",
+          "question_payload": {
+            "options": {
+              "A": "Changes in public attitude towards plastic pollution",
+              "B": "Problems in manufacturing recyclable plastic water bottles",
+              "C": "Environmental pollution caused by plastic",
+              "D": "The edible water bottle as a possible solution to plastic pollution"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 7-8",
+      "section_instructions": "Complete the following sentences using words from the text.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> for each sentence.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "The very {7} of Gonzalez’s water bottle makes it unappealing to consume.<br>Gonzalez’s bottles need to be {8} to withstand handling and transportation.",
+        "blanks": [7, 8]
+      },
+      "questions": [
+        { "question_number": 7, "question_text": "" },
+        { "question_number": 8, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 9-14",
+      "section_instructions": "Match each question with the appropriate tour, <strong>A, B, C, D or E</strong>, as described in the texts.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Tour A",
+        "B": "Tour B",
+        "C": "Tour C",
+        "D": "Tour D",
+        "E": "Tour E"
+      },
+      "questions": [
+        { "question_number": 9, "question_text": "has restricted places?" },
+        { "question_number": 10, "question_text": "caters for qualified experts as well as amateur enthusiasts?" },
+        { "question_number": 11, "question_text": "has the least restrictive itinerary?" },
+        { "question_number": 12, "question_text": "operates only in good weather?" },
+        { "question_number": 13, "question_text": "offers no price reduction for children?" },
+        { "question_number": 14, "question_text": "promises to be the most informative?" }
+      ]
+    }
+  ]
+}
