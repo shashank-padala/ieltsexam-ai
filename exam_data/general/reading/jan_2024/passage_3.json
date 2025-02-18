@@ -1,0 +1,47 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 29-35",
+      "section_instructions": "The text has eight paragraphs, <strong>A-H</strong>.<br><br>Which paragraph contains the following information?<br><br>Write the correct letter, <strong>A-H</strong>, in <strong>boxes 29-35</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Paragraph A",
+        "B": "Paragraph B",
+        "C": "Paragraph C",
+        "D": "Paragraph D",
+        "E": "Paragraph E",
+        "F": "Paragraph F",
+        "G": "Paragraph G",
+        "H": "Paragraph H"
+      },
+      "questions": [
+        { "question_number": 29, "question_text": "Deadly relations" },
+        { "question_number": 30, "question_text": "The potato as a catalyst for change" },
+        { "question_number": 31, "question_text": "The authorities intervene" },
+        { "question_number": 32, "question_text": "Pioneers meet with varied success" },
+        { "question_number": 33, "question_text": "Prejudices incite public action" },
+        { "question_number": 34, "question_text": "Unsound agricultural practice brings about a demographic shift" },
+        { "question_number": 35, "question_text": "Historical and modern solutions to a common problem" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 36-40",
+      "section_instructions": "Complete the summary below.<br><br>Choose <strong>NO MORE THAN TWO WORDS</strong> from the text for each answer.<br><br>Write your answers in <strong>boxes 36-40</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "The potato polarised public opinion from the outset. Whilst the potato won {36} with some, others reacted with extreme actions of prejudice.<br><br>Unwillingness to accept the potato was perfectly understandable. Coming from the same family as its deadlier counterparts, belladonna and henbane, the potato was believed to be poisonous and certainly not {37}. Those who did eat potatoes in the wild state had to neutralise the main {38} resent in the tuber by the addition of clay particles.<br><br>Various attempts over the centuries were made by historical figures and authorities alike to try and encourage the public to eat potatoes. Only later did the potato become a {39} European foodstuff.<br><br>So important was the potato as a source of calories and nutrients to the Europeans that it is said to have sustained European populations to such an extent that they were able to build global empires.<br><br>Unfortunately, {40} on just one crop proved Ireland’s undoing. Many died after the Irish Famine whilst others were forced to migrate en masse in order to survive.",
+        "blanks": [36, 37, 38, 39, 40]
+      },
+      "questions": [
+        { "question_number": 36, "question_text": "" },
+        { "question_number": 37, "question_text": "" },
+        { "question_number": 38, "question_text": "" },
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}

@@ -423,9 +423,10 @@ export default function ReadingPage() {
         className="w-1/2 p-6 overflow-y-scroll border-r pb-32" style={{ maxHeight: "calc(100vh - 160px)" }}>
           {defaultHeader}
           <h1 className="text-3xl font-bold mb-6">{currentPassage.passage_title}</h1>
-          <p className="whitespace-pre-wrap text-lg leading-relaxed">
-            {currentPassage.passage_text}
-          </p>
+          <div
+            className="whitespace-pre-wrap text-lg leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: currentPassage.passage_text }}
+          />
         </div>
 
         {/* Right Pane: Questions */}

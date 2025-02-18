@@ -1,0 +1,42 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-8",
+      "section_instructions": "Do the following statements agree with the information given in the text?<br><br>In <strong>boxes 1-8</strong> on your answer sheet, write:<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 1, "question_text": "So famous were the fictional characters of Conan Doyle and Christie’s crime novels that they eclipsed the fame of their authors." },
+        { "question_number": 2, "question_text": "The novels of Conan Doyle and Christie are less accomplished than those of modern crime writers." },
+        { "question_number": 3, "question_text": "It is more challenging to portray fictional than real-life characters in a novel." },
+        { "question_number": 4, "question_text": "To write about modern crime detection techniques, some knowledge of forensics may be required." },
+        { "question_number": 5, "question_text": "Would-be crime authors should always write about their own life experiences." },
+        { "question_number": 6, "question_text": "Creating characters based on real-life people is a practice best avoided." },
+        { "question_number": 7, "question_text": "First-time crime authors may be turned down by publishers." },
+        { "question_number": 8, "question_text": "Seasoned crime novel readers like being able to guess the culprit in advance." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 9-14",
+      "section_instructions": "Look at the five advertisements, <strong>A-E</strong>.<br><br>Which venue offers the following?<br><br>Write the correct letter, <strong>A-E</strong>, in <strong>boxes 9-14</strong> on your answer sheet.<br><br>You may use any <strong>letter more than once</strong>.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Venue A",
+        "B": "Venue B",
+        "C": "Venue C",
+        "D": "Venue D",
+        "E": "Venue E"
+      },
+      "questions": [
+        { "question_number": 9, "question_text": "Only non-alcoholic drinks" },
+        { "question_number": 10, "question_text": "Custom-made orders" },
+        { "question_number": 11, "question_text": "An outside seating area" },
+        { "question_number": 12, "question_text": "A room especially designated for small parties" },
+        { "question_number": 13, "question_text": "A constantly changing menu" },
+        { "question_number": 14, "question_text": "Simply cooked food" }
+      ]
+    }
+  ]
+}

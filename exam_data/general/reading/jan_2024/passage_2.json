@@ -1,0 +1,63 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 15-21",
+      "section_instructions": "The text on the next page has seven sections, <strong>A-G</strong>.<br><br>Choose the correct heading for each section from the list of headings below.<br><br>Write the correct number, <strong>i-x</strong>, in <strong>boxes 15-21</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "i": "Money can buy happiness",
+        "ii": "It’s what is inside that counts more",
+        "iii": "Recipients of gifts are rarely grateful",
+        "iv": "A familiar feeling",
+        "v": "Practicality is the key",
+        "vi": "It is better to give than to receive",
+        "vii": "Romance need not come at a price",
+        "viii": "Present-giving has become more challenging",
+        "ix": "Recipients value inexpensive gifts and pricey gadgets alike",
+        "x": "Don’t waste time and energy"
+      },
+      "questions": [
+        { "question_number": 15, "question_text": "Section A" },
+        { "question_number": 16, "question_text": "Section B" },
+        { "question_number": 17, "question_text": "Section C" },
+        { "question_number": 18, "question_text": "Section D" },
+        { "question_number": 19, "question_text": "Section E" },
+        { "question_number": 20, "question_text": "Section F" },
+        { "question_number": 21, "question_text": "Section G" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 22-23",
+      "section_instructions": "Complete the sentences below.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> from the text for each answer.<br><br>Write your answers in <strong>boxes 22-23</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "There is such a wealth of genealogy sites available online that at times you may feel {22} information.<br><br>It is preferable to {23} in their original rather than transcripted form.",
+        "blanks": [22, 23]
+      },
+      "questions": [
+        { "question_number": 22, "question_text": "" },
+        { "question_number": 23, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 24-28",
+      "section_instructions": "Complete the summary below.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> from the text for each answer.<br><br>Write your answers in <strong>boxes 24-28</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Many people are curious to find out about their family tree. Follow these steps to ensure you access the information you require.<br><br>First, enter the name of a family ancestor into {24}.<br><br>Next, choose a website that will {25} by providing sufficient information on your family tree.<br><br>When accessing a document from your chosen website, avoid {26} whenever possible, favouring instead the original version.<br><br>Once you have done the essential groundwork to obtain necessary documents to continue your search, you require access to more {27}. This may require a financial outlay.<br><br>Finally, if your research still fails to turn up the information you require, then it is best to resort to {28} as a back-up.",
+        "blanks": [24, 25, 26, 27, 28]
+      },
+      "questions": [
+        { "question_number": 24, "question_text": "" },
+        { "question_number": 25, "question_text": "" },
+        { "question_number": 26, "question_text": "" },
+        { "question_number": 27, "question_text": "" },
+        { "question_number": 28, "question_text": "" }
+      ]
+    }
+  ]
+}
