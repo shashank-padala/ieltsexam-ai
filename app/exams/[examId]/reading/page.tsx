@@ -12,12 +12,13 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 
 // Import question-type components
-import MultipleChoice from "@/components/reading/MultipleChoiceSection";
-import SummaryCompletion from "@/components/reading/SummaryCompletionSection";
-import MatchingStatements from "@/components/reading/MatchingStatementsSection";
-import TrueFalseNotGiven from "@/components/reading/TrueFalseNotGivenSection";
-import YesNoNotGiven from "@/components/reading/YesNoNotGivenSection";
-import MultipleSelectSection from "@/components/reading/MultipleSelectSection";
+import MultipleChoice from "@/components/reading_sections/MultipleChoiceSection";
+import SummaryCompletion from "@/components/reading_sections/SummaryCompletionSection";
+import MatchingStatements from "@/components/reading_sections/MatchingStatementsSection";
+import TrueFalseNotGiven from "@/components/reading_sections/TrueFalseNotGivenSection";
+import YesNoNotGiven from "@/components/reading_sections/YesNoNotGivenSection";
+import MultipleSelectSection from "@/components/reading_sections/MultipleSelectSection";
+import DiagramLabelingSection from "@/components/reading_sections/DiagramLabelingSection";
 
 interface Passage {
   
@@ -449,7 +450,17 @@ export default function ReadingPage() {
                 dangerouslySetInnerHTML={{ __html: section.section_instructions }}
               />
 
-              {section.section_question_type === "multiple_select" ? (
+              {section.section_question_type === "diagram_labeling" ? (
+                <>
+                  <DiagramLabelingSection
+                    section={section}
+                    questions={sortedQuestions.filter((q) => q.section_number === section.section_number)}
+                    responses={responses}
+                    onAnswerChange={handleAnswerChange}
+                  />
+                  {renderCorrectAnswersForSection(section)}
+                </>
+              ) : section.section_question_type === "multiple_select" ? (
                 <>
                   <MultipleSelectSection
                     sectionId={section.id}
@@ -465,9 +476,7 @@ export default function ReadingPage() {
                 <>
                   <SummaryCompletion
                     section={section}
-                    questions={sortedQuestions.filter(
-                      (q) => q.section_number === section.section_number
-                    )}
+                    questions={sortedQuestions.filter((q) => q.section_number === section.section_number)}
                     responses={responses}
                     onAnswerChange={handleAnswerChange}
                   />

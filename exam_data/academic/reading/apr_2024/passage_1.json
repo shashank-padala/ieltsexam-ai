@@ -1,0 +1,89 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-7",
+      "section_instructions": "Which paragraph contains the following information?<br><br>Write the correct letter, <strong>A-G</strong>, in boxes <strong>1-7</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Paragraph A",
+        "B": "Paragraph B",
+        "C": "Paragraph C",
+        "D": "Paragraph D",
+        "E": "Paragraph E",
+        "F": "Paragraph F",
+        "G": "Paragraph G"
+      },
+      "questions": [
+        {
+          "question_number": 1,
+          "question_text": "Some of the disadvantages related to synaesthesia."
+        },
+        {
+          "question_number": 2,
+          "question_text": "What scientists think about synaesthesia’s real-life usefulness."
+        },
+        {
+          "question_number": 3,
+          "question_text": "A prediction for the future of synaesthesia."
+        },
+        {
+          "question_number": 4,
+          "question_text": "An example of how grapheme-colour synaesthesia works."
+        },
+        {
+          "question_number": 5,
+          "question_text": "A brief history of synaesthesia."
+        },
+        {
+          "question_number": 6,
+          "question_text": "Some of the various different types of synaesthesia."
+        },
+        {
+          "question_number": 7,
+          "question_text": "Information about a study that suggests synaesthetic symptoms aren’t arbitrary."
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 8-11",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage 1?<br><br>In boxes <strong>8-11</strong> on your answer sheet, write:<br><strong>TRUE</strong> if the statement agrees with the information.<br><strong>FALSE</strong> if the statement contradicts the information.<br><strong>NOT GIVEN</strong> if there is no information on this.",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        {
+          "question_number": 8,
+          "question_text": "There are 60 different types of synaesthesia."
+        },
+        {
+          "question_number": 9,
+          "question_text": "Before Professor Simon Baron-Cohen’s research, synaesthesia was thought to be a myth."
+        },
+        {
+          "question_number": 10,
+          "question_text": "A lot of celebrities are affected by synaesthesia."
+        },
+        {
+          "question_number": 11,
+          "question_text": "Most scientists believe that synaesthesia runs in families."
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 12-14",
+      "section_instructions": "Complete the summary.<br><br>Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.<br><br>Write your answers in boxes <strong>12-14</strong>.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Synaesthesia is a unique neurological condition that causes different senses to get mixed.<br><br>Recent research has suggested that teaching synaesthesia to non-synaesthetes can enhance {12} and guard against the deterioration of cognitive {13}.<br><br>Unfortunately, it might be a while before we come up with a beneficial way to {14} it to the general population.",
+        "blanks": [12, 13, 14]
+      },
+      "questions": [
+        { "question_number": 12, "question_text": "" },
+        { "question_number": 13, "question_text": "" },
+        { "question_number": 14, "question_text": "" }
+      ]
+    }
+  ]
+}

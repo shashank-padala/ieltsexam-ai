@@ -1,0 +1,72 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-33",
+      "section_instructions": "Choose the correct heading for paragraphs <strong>A-F</strong> from the list below.<br><br>Write the correct number, <strong>i-x</strong>, in boxes <strong>28-33</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "i": "Overview of the benefits for application of E-training",
+        "ii": "IBM’s successful choice of training",
+        "iii": "Future directions and a new style of teaching",
+        "iv": "Learners’ achievement and advanced teaching materials",
+        "v": "Limitations when E-training compares with traditional class",
+        "vi": "Multimedia over the Internet can be a solution",
+        "vii": "Technology can be a huge financial burden",
+        "viii": "The distance learners outperformed the traditional university learners worldwide",
+        "ix": "Other advantages besides economic consideration",
+        "x": "Training offered to help people learn using computers"
+      },
+      "questions": [
+        { "question_number": 28, "question_text": "Paragraph A" },
+        { "question_number": 29, "question_text": "Paragraph B" },
+        { "question_number": 30, "question_text": "Paragraph C" },
+        { "question_number": 31, "question_text": "Paragraph D" },
+        { "question_number": 32, "question_text": "Paragraph E" },
+        { "question_number": 33, "question_text": "Paragraph F" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 34-37",
+      "section_instructions": "Which paragraph contains the following information?<br><br>Write the correct letter <strong>A-F</strong>, in boxes <strong>34-37</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Paragraph A",
+        "B": "Paragraph B",
+        "C": "Paragraph C",
+        "D": "Paragraph D",
+        "E": "Paragraph E",
+        "F": "Paragraph F"
+      },
+      "questions": [
+        { "question_number": 34, "question_text": "Projected Basic Blue in IBM achieved great success." },
+        { "question_number": 35, "question_text": "E-learning wins as a priority for many corporations as its flexibility." },
+        { "question_number": 36, "question_text": "The combination of traditional and e-training environments may prevail." },
+        { "question_number": 37, "question_text": "Example of fast electronic delivery for a company’s products to its customer." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 38-40",
+      "section_instructions": "Choose <strong>THREE</strong> correct letters, among <strong>A-E</strong>.<br><br>Write your answers in boxes <strong>38-40</strong> on your answer sheet.",
+      "section_question_type": "multiple_select",
+      "content": {
+        "shared_question_text": "Which of the following statements are mentioned as challenges of E-training?"
+      },
+      "shared_options": {
+        "A": "Technical facilities are hardly obtained.",
+        "B": "Presenting multimedia over the Internet is restricted due to the bandwidth limit.",
+        "C": "It is ineffective imparting a unique corporate value to fresh employees.",
+        "D": "Employees need to block a long time leaving their position attending training.",
+        "E": "More preparation time is needed to keep the course at a suitable level."
+      },
+      "questions": [
+        { "question_number": 38, "question_text": "" },
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}
