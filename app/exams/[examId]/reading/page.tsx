@@ -279,7 +279,7 @@ export default function ReadingPage() {
   };
 
   // Function to render feedback for a question after evaluation is available
-  const renderFeedback = (question: Question) => {
+  const renderCorrectAnswer = (question: Question) => {
     if (!evaluation) return null;
     const userAnswer = (evaluation.responses[question.question_number.toString()] || "");
     const correct = question.correct_answer ? question.correct_answer.trim().toLowerCase() : "";
@@ -297,6 +297,14 @@ export default function ReadingPage() {
       </div>
     );
   };
+
+  const renderCorrectAnswersForSection = (section: Section) => {
+    if (!evaluation) return null;
+                    
+    return sortedQuestions
+        .filter((q) => q.section_number === section.section_number)
+        .map((q) => (renderCorrectAnswer(q)));
+  }
 
   // Render bottom navigation: Passage Tabs & Active Passage Question Navigation
   const renderBottomNav = () => {
@@ -451,29 +459,7 @@ export default function ReadingPage() {
                     responses={responses}
                     onAnswerChange={handleAnswerChange}
                   />
-                  {evaluation &&
-                    sortedQuestions
-                      .filter((q) => q.section_number === section.section_number)
-                      .map((q) => (
-                        <div key={`feedback-${q.id}`} className="mt-2 flex items-center">
-                          {(() => {
-                            const userAnswer =
-                              evaluation.responses[q.question_number.toString()] || "";
-                            const correct = q.correct_answer
-                              ? q.correct_answer.trim().toLowerCase()
-                              : "";
-                            const isCorrect = userAnswer.trim().toLowerCase() === correct;
-                            return isCorrect ? (
-                              <CheckCircleIcon className="w-5 h-5 text-green-600" />
-                            ) : (
-                              <XCircleIcon className="w-5 h-5 text-red-600" />
-                            );
-                          })()}
-                          <span className="ml-2">
-                            {q.question_number}. Correct Answer: {q.correct_answer}
-                          </span>
-                        </div>
-                      ))}
+                  {renderCorrectAnswersForSection(section)}
                 </>
               ) :section.section_question_type === "summary_completion" ? (
                 <>
@@ -485,26 +471,7 @@ export default function ReadingPage() {
                     responses={responses}
                     onAnswerChange={handleAnswerChange}
                   />
-                  {evaluation &&
-                    sortedQuestions
-                      .filter((q) => q.section_number === section.section_number)
-                      .map((q) => (
-                        <div key={`feedback-${q.id}`} className="mt-2 flex items-center">
-                          {(() => {
-                            const userAnswer = (evaluation.responses[q.question_number.toString()] || "");
-                            const correct = q.correct_answer ? q.correct_answer.trim().toLowerCase() : "";
-                            const isCorrect = userAnswer.trim().toLowerCase() === correct;
-                            return isCorrect ? (
-                              <CheckCircleIcon className="w-5 h-5 text-green-600" />
-                            ) : (
-                              <XCircleIcon className="w-5 h-5 text-red-600" />
-                            );
-                          })()}
-                          <span className="ml-2">
-                            {q.question_number}. Correct Answer: {q.correct_answer}
-                          </span>
-                        </div>
-                      ))}
+                  {renderCorrectAnswersForSection(section)}
                 </>
               ) : section.section_question_type === "matching_statements" ? (
                 <>
@@ -516,26 +483,7 @@ export default function ReadingPage() {
                     responses={responses}
                     onAnswerChange={handleAnswerChange}
                   />
-                  {evaluation &&
-                    sortedQuestions
-                      .filter((q) => q.section_number === section.section_number)
-                      .map((q) => (
-                        <div key={`feedback-${q.id}`} className="mt-2 flex items-center">
-                          {(() => {
-                            const userAnswer = (evaluation.responses[q.question_number.toString()] || "");
-                            const correct = q.correct_answer ? q.correct_answer.trim().toLowerCase() : "";
-                            const isCorrect = userAnswer.trim().toLowerCase() === correct;
-                            return isCorrect ? (
-                              <CheckCircleIcon className="w-5 h-5 text-green-600" />
-                            ) : (
-                              <XCircleIcon className="w-5 h-5 text-red-600" />
-                            );
-                          })()}
-                          <span className="ml-2">
-                            {q.question_number}. Correct Answer: {q.correct_answer}
-                          </span>
-                        </div>
-                      ))}
+                  {renderCorrectAnswersForSection(section)}
                 </>
               ) : (
                 // All other question types are rendered individually
@@ -545,7 +493,7 @@ export default function ReadingPage() {
                     <div key={question.id} id={`q-${question.id}`} className="mb-6 p-4 bg-gray-50 rounded shadow-sm"> 
                       <div className="font-medium text-lg whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: question.question_number + ". " + question.question_text}} />
                       {renderQuestion(question, section)}
-                      {evaluation && renderFeedback(question)}
+                      {evaluation && renderCorrectAnswer(question)}
                     </div>
                   ))
               )}
