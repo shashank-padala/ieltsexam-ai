@@ -1,0 +1,85 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 14-16",
+      "section_instructions": "Choose the correct letter, <strong>A, B, C or D</strong>.<br>Write your answers in boxes <strong>14-16</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 14,
+          "question_text": "In which region is the biggest range of bovids to be found?",
+          "question_payload": {
+            "options": {
+              "A": "Africa",
+              "B": "Eurasia",
+              "C": "North America",
+              "D": "South-east Asia"
+            }
+          }
+        },
+        {
+          "question_number": 15,
+          "question_text": "Most bovids have a preference for living in",
+          "question_payload": {
+            "options": {
+              "A": "isolation",
+              "B": "small groups",
+              "C": "tropical forest",
+              "D": "wide open spaces"
+            }
+          }
+        },
+        {
+          "question_number": 16,
+          "question_text": "Which of the following features do all bovids have in common?",
+          "question_payload": {
+            "options": {
+              "A": "Their horns are short",
+              "B": "They have upper incisors",
+              "C": "They store food in the body",
+              "D": "Their hooves are undivided"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 17-21",
+      "section_instructions": "Match each characteristic with the correct sub-family, <strong>A, B, C or D</strong>.<br>Write the correct letter in boxes <strong>17-21</strong> on your answer sheet.<br><br><strong>NB</strong> You may use any letter more than once.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Antelope",
+        "B": "Bovinae",
+        "C": "Caprinae",
+        "D": "Cephalophinae"
+      },
+      "questions": [
+        { "question_number": 17, "question_text": "can endure very harsh environments" },
+        { "question_number": 18, "question_text": "includes the ox and the cow" },
+        { "question_number": 19, "question_text": "may supplement its diet with meat" },
+        { "question_number": 20, "question_text": "can usually move at speed" },
+        { "question_number": 21, "question_text": "does not defend a particular area of land" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 22-26",
+      "section_instructions": "Answer the questions below.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> from the passage for each answer.<br><br>Write your answers in boxes <strong>22-26</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "What is the smallest species of Bovid called? {22}<br>Which species of Bovinae has now died out? {23}<br>What facilitates the movement of the sitatunga over wetland? {24}<br>What sort of terrain do barbary sheep live in? {25}<br>What is the only living member of the Antilocapridae sub-family? {26}",
+        "blanks": [22, 23, 24, 25, 26]
+      },
+      "questions": [
+        { "question_number": 22, "question_text": "" },
+        { "question_number": 23, "question_text": "" },
+        { "question_number": 24, "question_text": "" },
+        { "question_number": 25, "question_text": "" },
+        { "question_number": 26, "question_text": "" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 27-33",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage?<br><br>In boxes <strong>27-33</strong> on your answer sheet, choose:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> if there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        {
+          "question_number": 27,
+          "question_text": "Shaking hands is an indicator of hospitality."
+        },
+        {
+          "question_number": 28,
+          "question_text": "Evidence showed that the handshake started as a sign of peace."
+        },
+        {
+          "question_number": 29,
+          "question_text": "When shaking hands, people often rolled up their sleeves."
+        },
+        {
+          "question_number": 30,
+          "question_text": "The use of a handshake in different situations can be unpredictable."
+        },
+        {
+          "question_number": 31,
+          "question_text": "In America, handshakes became prevalent because they represented equality and freedom."
+        },
+        {
+          "question_number": 32,
+          "question_text": "A research conducted in 2015 showed that exactly 25% of participants smelled their hands after a handshake."
+        },
+        {
+          "question_number": 33,
+          "question_text": "People often smell their hands to spot poisonous chemicals."
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 34-38",
+      "section_instructions": "Complete the summary below.<br><br>Choose <strong>no more than THREE WORDS AND/OR A NUMBER</strong> from the passage for each answer.<br><br>Write your answer in boxes.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "In the past, Christian used cheek kisses in {34}.<br>In the Middle Age, the kiss-as-greeting was used to show {35} or used in making agreements.<br>At present, it is a norm for people almost all over the world to greet each other.<br>In Rome, people named different types of kisses in different ways.<br>It is common for people in Paris to exchange {36}.<br>The standard is three in Provence and four in the Lore Valley.<br>A kiss on the cheek is also popular among people of Egypt, Latin America and the Philippines.<br>People believe that in the 14th century, the cheek kiss might have been paused and it remained so for {37}.<br>In 2009, due to {38}, cheek kisses were also stopped for a while.",
+        "blanks": [34, 35, 36, 37, 38]
+      },
+      "questions": [
+        {
+          "question_number": 34,
+          "question_text": ""
+        },
+        {
+          "question_number": 35,
+          "question_text": ""
+        },
+        {
+          "question_number": 36,
+          "question_text": ""
+        },
+        {
+          "question_number": 37,
+          "question_text": ""
+        },
+        {
+          "question_number": 38,
+          "question_text": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 39-40",
+      "section_instructions": "Answer the question below.<br><br>Choose <strong>NO MORE THAN TWO WORDS</strong> from the passage for each answer.<br><br>Write your answers in boxes.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "What did French Health Minister advise people to avoid to prevent the spread of coronavirus? {39}<br><br>What can be transferred from a handshake? {40}",
+        "blanks": [39, 40]
+      },
+      "questions": [
+        {
+          "question_number": 39,
+          "question_text": ""
+        },
+        {
+          "question_number": 40,
+          "question_text": ""
+        }
+      ]
+    }
+  ]
+}

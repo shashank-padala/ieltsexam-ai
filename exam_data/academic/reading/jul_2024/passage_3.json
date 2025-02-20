@@ -1,0 +1,67 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-32",
+      "section_instructions": "The reading passage has seven paragraphs, <strong>A-G</strong>. Choose the correct heading for paragraphs <strong>A, B, D, E, and F</strong> from the list of headings below.<br><br>Write the correct number, <strong>i-viii</strong>, in boxes <strong>28-32</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "i": "Parallels between bee and human activities",
+        "ii": "An evolutionary turning point",
+        "iii": "An evolutionary turning point",
+        "iv": "The preservation of individual plant species",
+        "v": "The commercial value of bees",
+        "vi": "The structure of flowering plants",
+        "vii": "The pursuit of self-interest",
+        "viii": "The need for further research"
+      },
+      "questions": [
+        { "question_number": 28, "question_text": "Paragraph A" },
+        { "question_number": 29, "question_text": "Paragraph B" },
+        { "question_number": 30, "question_text": "Paragraph D" },
+        { "question_number": 31, "question_text": "Paragraph E" },
+        { "question_number": 32, "question_text": "Paragraph F" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 33-39",
+      "section_instructions": "Complete the sentences below.<br><br>Choose <strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong> from the passage for each answer.<br><br>Write your answers in boxes <strong>33-39</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Hunting wasps used to feed on other {33}, rather than on vegetation.<br>Flowering plants started to reward bees with rich pollen and an additional food in the form of {34}.<br>Approximately {35} of human food production relies on the activity of bees.<br>If the process of {36} is to take place effectively, bees need to travel from one flower to another before going back to the nest.<br>Bees need to balance the {37} of each trip against the calorific rewards they obtain.<br>There can be over 120 different {38} in an acre of rainforest.<br>The bees that pollinate large forests regularly practise an activity known as {39}.",
+        "blanks": [33, 34, 35, 36, 37, 38, 39]
+      },
+      "questions": [
+        { "question_number": 33, "question_text": "" },
+        { "question_number": 34, "question_text": "" },
+        { "question_number": 35, "question_text": "" },
+        { "question_number": 36, "question_text": "" },
+        { "question_number": 37, "question_text": "" },
+        { "question_number": 38, "question_text": "" },
+        { "question_number": 39, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Question 40",
+      "section_instructions": "Choose the correct letter, <strong>A, B, C, or D</strong>. Write the correct letter in box <strong>40</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 40,
+          "question_text": "Which is the best title for Reading Passage?",
+          "question_payload": {
+            "options": {
+              "A": "The Ecological Importance of Bees",
+              "B": "The Evolutionary History of Bees",
+              "C": "The Social Behaviour of Bees",
+              "D": "The Geographical Distribution of Bees"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

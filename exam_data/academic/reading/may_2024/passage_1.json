@@ -1,0 +1,77 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-6",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage?<br><br>In boxes <strong>1-6</strong> on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> if there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        {
+          "question_number": 1,
+          "question_text": "Early Maori healers learned their skills through studying written texts."
+        },
+        {
+          "question_number": 2,
+          "question_text": "The first Europeans in New Zealand were surprised by how long the Maori lived."
+        },
+        {
+          "question_number": 3,
+          "question_text": "Diseases of the gods were believed to be more serious than physical diseases."
+        },
+        {
+          "question_number": 4,
+          "question_text": "The leaves of the pepper tree were used to treat toothache."
+        },
+        {
+          "question_number": 5,
+          "question_text": "Western religion was one reason why traditional Maori medicine became less popular."
+        },
+        {
+          "question_number": 6,
+          "question_text": "Modern day Maori healers often reach the same conclusion about the type of treatment which is best."
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 7-13",
+      "section_instructions": "Complete the notes below.<br><br>Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.<br><br>Write your answers in boxes <strong>7-13</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Maori were using plant-based remedies, as well as treatment including massage.<br>Diseases sent from the gods were thought to be caused by disobeying a spiritual {7}.<br>Sickness could be attributed to eating food from a sacred {8} or burning sacred wood.<br><br><strong>After European arrival</strong><br><br>1800s<br>The inability of Maori healers to cure new diseases meant the Maori people lost {9} in them.<br>Eventually the {10} for Maori healing began shutting down.<br><br>1970s<br>Published {11} showed that Maori were not as healthy as Europeans.<br><br>2000s<br>Maori healers can be seen working with Western doctors in {12} in cities.<br>Many patients appreciate the fact that the Maoris {13} in used by healers.",
+        "blanks": [7, 8, 9, 10, 11, 12, 13]
+      },
+      "questions": [
+        {
+          "question_number": 7,
+          "question_text": ""
+        },
+        {
+          "question_number": 8,
+          "question_text": ""
+        },
+        {
+          "question_number": 9,
+          "question_text": ""
+        },
+        {
+          "question_number": 10,
+          "question_text": ""
+        },
+        {
+          "question_number": 11,
+          "question_text": ""
+        },
+        {
+          "question_number": 12,
+          "question_text": ""
+        },
+        {
+          "question_number": 13,
+          "question_text": ""
+        }
+      ]
+    }
+  ]
+}

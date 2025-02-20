@@ -1,0 +1,86 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-9",
+      "section_instructions": "Reading Passage has seven paragraphs, <strong>A-G</strong>.<br><br>Which paragraph contains the following information?<br><br>Write the correct letter, <strong>A-G</strong>, in boxes <strong>1-9</strong> on your answer sheet.<br><br><strong>NB</strong> You may use any letter more than once.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "A": "Paragraph A",
+        "B": "Paragraph B",
+        "C": "Paragraph C",
+        "D": "Paragraph D",
+        "E": "Paragraph E",
+        "F": "Paragraph F",
+        "G": "Paragraph G"
+      },
+      "questions": [
+        {
+          "question_number": 1,
+          "question_text": "An overview of the range of methods that have been used over time to document history"
+        },
+        {
+          "question_number": 2,
+          "question_text": "The main reason why many historians are unwilling to use films in their work"
+        },
+        {
+          "question_number": 3,
+          "question_text": "A reference to some differences between oral and written communication"
+        },
+        {
+          "question_number": 4,
+          "question_text": "How most citizens today gain an understanding of history"
+        },
+        {
+          "question_number": 5,
+          "question_text": "How current student events are sometimes captured for future audiences"
+        },
+        {
+          "question_number": 6,
+          "question_text": "Mention of the fact that the advantages of film are greater than the disadvantages"
+        },
+        {
+          "question_number": 7,
+          "question_text": "The claim that there is no official title for film-based historical work"
+        },
+        {
+          "question_number": 8,
+          "question_text": "Reference to the active role the audience plays when watching films"
+        },
+        {
+          "question_number": 9,
+          "question_text": "A list of requirements that historians see as obstacles to their use of film to record history"
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 10-14",
+      "section_instructions": "Do the following statements agree with the claims of the writer in Reading Passage?<br><br>In boxes <strong>10-14</strong> on your answer sheet, write:<br><br><strong>YES</strong> if the statement agrees with the views of the writer<br><strong>NO</strong> if the statement contradicts the views of the writer<br><strong>NOT GIVEN</strong> if it is impossible to say what the writer thinks about this.",
+      "section_question_type": "yes_no_not_given",
+      "questions": [
+        {
+          "question_number": 10,
+          "question_text": "The needs of students in school have led to improvements in the teaching of history."
+        },
+        {
+          "question_number": 11,
+          "question_text": "Academic and popular historians have different attitudes towards the value of innovations in communication."
+        },
+        {
+          "question_number": 12,
+          "question_text": "It is common for historians to play a major role in creating historical documentaries for television."
+        },
+        {
+          "question_number": 13,
+          "question_text": "Articles in American History Review have explored aspects of modern history through popular films."
+        },
+        {
+          "question_number": 14,
+          "question_text": "Developments in technology are influencing a range of academic subjects."
+        }
+      ]
+    }
+  ]
+}

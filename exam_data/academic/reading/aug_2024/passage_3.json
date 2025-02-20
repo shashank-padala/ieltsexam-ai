@@ -1,0 +1,87 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-35",
+      "section_instructions": "Reading Passage has nine paragraphs, <strong>A-I</strong>.<br><br>Choose the correct heading for paragraphs <strong>A</strong> and <strong>C-I</strong> from the list of headings below.<br><br>Write the correct number, <strong>i-xii</strong>, in boxes <strong>30-35</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": {
+        "i": "An analysis of protective coatings",
+        "ii": "Applying technology to violin production",
+        "iii": "Location - a key factor",
+        "iv": "A controversial range of prices",
+        "v": "Techniques of mass production",
+        "vi": "The advantages of older wood",
+        "vii": "A re-evaluation of documentary evidence",
+        "viii": "The mathematical basis of earlier design",
+        "ix": "Manual woodworking techniques",
+        "x": "Preferences of top musicians",
+        "xi": "The use of saturated wood",
+        "xii": "The challenge for scientists"
+      },
+      "questions": [
+        {
+          "question_number": 28,
+          "question_text": "Paragraph A"
+        },
+        {
+          "question_number": 29,
+          "question_text": "Paragraph C"
+        },
+        {
+          "question_number": 30,
+          "question_text": "Paragraph D"
+        },
+        {
+          "question_number": 31,
+          "question_text": "Paragraph E"
+        },
+        {
+          "question_number": 32,
+          "question_text": "Paragraph F"
+        },
+        {
+          "question_number": 33,
+          "question_text": "Paragraph G"
+        },
+        {
+          "question_number": 34,
+          "question_text": "Paragraph H"
+        },
+        {
+          "question_number": 35,
+          "question_text": "Paragraph I"
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 36-40",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage?<br><br>In boxes <strong>36-40</strong> on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> if there is no information on this.",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        {
+          "question_number": 36,
+          "question_text": "The quality of any particular note played on the same violin varies."
+        },
+        {
+          "question_number": 37,
+          "question_text": "Scientific instruments analyse complex sound more accurately than humans."
+        },
+        {
+          "question_number": 38,
+          "question_text": "The quality of handmade violins varies according to the musical ability of the craftsman."
+        },
+        {
+          "question_number": 39,
+          "question_text": "Modern violins seem to improve in their early years."
+        },
+        {
+          "question_number": 40,
+          "question_text": "Modern violins are gaining in popularity amongst the top violinists."
+        }
+      ]
+    }
+  ]
+}
