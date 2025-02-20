@@ -8,7 +8,7 @@ interface MatchingStatementsSectionProps {
     question_text: string;
     question_number: number;
   }>;
-  sharedOptions?: { [key: string]: string } | null;
+  sharedOptions:  Array<{ key: string; text: string }>;
   responses?: { [key: string]: string };
   onAnswerChange?: (questionNumber: string, value: string) => void;
 }
@@ -27,12 +27,12 @@ export default function MatchingStatementsSection({
       <div className="mb-4">
         <table className="w-full border border-gray-300 mt-2">
           <tbody>
-            {Object.entries(options).map(([key, val]) => (
-              <tr key={key} className="border-b border-gray-300">
-                <td className="px-4 py-2 font-bold">{key}.</td>
-                <td className="px-4 py-2">{val}</td>
-              </tr>
-            ))}
+          {(sharedOptions.map((option) => (
+            <tr key={option.key} className="border-b border-gray-300">
+              <td className="px-4 py-2 font-bold">{option.key}.</td>
+              <td className="px-4 py-2">{option.text}</td>
+            </tr>
+          )))}
           </tbody>
         </table>
       </div>

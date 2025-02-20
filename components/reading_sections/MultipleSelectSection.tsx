@@ -5,7 +5,7 @@ import React, { useState } from "react";
 interface MultipleSelectSectionProps {
   sectionId: string;
   questions: Array<{ id: string; question_number: number }>;
-  sharedOptions: { [key: string]: string };
+  sharedOptions: Array<{ key: string; text: string }>;
   sharedQuestionText: string;
   responses: { [key: string]: string };
   onAnswerChange: (questionNumber: string, value: string) => void;
@@ -58,17 +58,17 @@ export default function MultipleSelectSection({
         (Select {maxSelect} letter{maxSelect > 1 ? "s" : ""})
       </p>
       <div className="space-y-2">
-        {Object.entries(sharedOptions).map(([letter, text]) => {
-          const isChecked = selectedLetters.includes(letter);
+        {sharedOptions.map((option) => {
+          const isChecked = selectedLetters.includes(option.key);
           return (
-            <label key={letter} className="flex items-center gap-2">
+            <label key={option.key} className="flex items-center gap-2">
               <input
                 type="checkbox"
                 checked={isChecked}
-                onChange={() => handleCheckboxChange(letter)}
+                onChange={() => handleCheckboxChange(option.key)}
               />
               <span>
-                <strong>{letter}</strong>: {text}
+                <strong>{option.key}</strong>: {option.text}
               </span>
             </label>
           );
