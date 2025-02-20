@@ -46,6 +46,13 @@ def main():
         shared_options = section.get("shared_options")
         content = section.get("content")
         
+        # Convert shared_options from dict to list if needed.
+        if shared_options and isinstance(shared_options, dict):
+            shared_options = [
+                {"key": k, "text": v}
+                for k, v in sorted(shared_options.items())
+            ]
+        
         # Insert section data into reading_sections table.
         insert_section_query = """
             INSERT INTO reading_sections (
