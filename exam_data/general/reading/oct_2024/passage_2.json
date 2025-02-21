@@ -1,0 +1,61 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 14-19",
+      "section_instructions": "Using <strong>NO MORE THAN THREE WORDS FROM THE PASSAGE</strong> answer the following questions.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "What <strong>THREE</strong> pieces of personal equipment do you need to buy before starting the course? {14}.<br>Why should you buy your equipment from a dive store? {15}.<br>Name <strong>ONE</strong> topic studied in the classroom. {16}.<br>What must you show before being allowed to buy scuba diving equipment? {17}.<br>What thing can make you feel more comfortable and safer by possessing it? {18}.<br>What thing do you need to do with the instructor and other experienced divers after being certified? {19}.",
+        "blanks": [14, 15, 16, 17, 18, 19]
+      },
+      "questions": [
+        { "question_number": 14, "question_text": "" },
+        { "question_number": 15, "question_text": "" },
+        { "question_number": 16, "question_text": "" },
+        { "question_number": 17, "question_text": "" },
+        { "question_number": 18, "question_text": "" },
+        { "question_number": 19, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 20-23",
+      "section_instructions": "The passage <strong>Fear No More</strong> on the next page has 5 paragraphs <strong>(A-E)</strong>.<br><br>Choose the most suitable headings for paragraphs <strong>B to E</strong> from the list <strong>(i-ix)</strong> below.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "i", "text": "do not panic" },
+        { "key": "ii", "text": "if you get lost" },
+        { "key": "iii", "text": "do not be trapped" },
+        { "key": "iv", "text": "I won’t be able to swim" },
+        { "key": "v", "text": "if I get the bends" },
+        { "key": "vi", "text": "I won’t be able to see" },
+        { "key": "vii", "text": "don't get eaten" },
+        { "key": "viii", "text": "if you run out of air" }
+      ],
+      "questions": [
+        { "question_number": 20, "question_text": "Paragraph B" },
+        { "question_number": 21, "question_text": "Paragraph C" },
+        { "question_number": 22, "question_text": "Paragraph D" },
+        { "question_number": 23, "question_text": "Paragraph E" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 24-27",
+      "section_instructions": "Complete the notes below using <strong>NO MORE THAN THREE WORDS</strong> from the passage for each answer.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Dive with a buddy.<br>Check your gauges so you don’t run out of air.<br>Dive no deeper than {24} until you feel comfortable.<br>Don’t {25} as mind. Make a 3-minute safety stop at 15 feet.<br>If you see a shark {26}. Avoid splashing, kicking or poking at fish.<br>Visualise emergencies and {27} - your responses. Experience gives you confidence.",
+        "blanks": [24, 25, 26, 27]
+      },
+      "questions": [
+        { "question_number": 24, "question_text": "" },
+        { "question_number": 25, "question_text": "" },
+        { "question_number": 26, "question_text": "" },
+        { "question_number": 27, "question_text": "" }
+      ]
+    }
+  ]
+}

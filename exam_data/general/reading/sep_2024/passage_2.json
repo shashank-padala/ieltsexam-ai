@@ -1,0 +1,71 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 21-25",
+      "section_instructions": "Choose the title which best fits each course and write the number <strong>i to ix</strong> in boxes <strong>21-25</strong> on your answer sheet.<br><br>Note: there are more titles than you will need.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "i", "text": "Managing expansion in your restaurant" },
+        { "key": "ii", "text": "Making career changes for women" },
+        { "key": "iii", "text": "Effective workplace communication" },
+        { "key": "iv", "text": "Exceptional customer service" },
+        { "key": "v", "text": "Advanced computing skills" },
+        { "key": "vi", "text": "Communicating effectively" },
+        { "key": "vii", "text": "Introductory computer skills" },
+        { "key": "viii", "text": "Restaurant management for non-managers" },
+        { "key": "ix", "text": "Business writing course" }
+      ],
+      "questions": [
+        { "question_number": 21, "question_text": "Course A" },
+        { "question_number": 22, "question_text": "Course B" },
+        { "question_number": 23, "question_text": "Course C" },
+        { "question_number": 24, "question_text": "Course D" },
+        { "question_number": 25, "question_text": "Course E" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 26-30",
+      "section_instructions": "From the information about the courses, answer Questions <strong>26-30</strong> by writing the appropriate <strong>LETTER OR LETTERS A-E</strong> in boxes <strong>26-30</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Course A" },
+        { "key": "B", "text": "Course B" },
+        { "key": "C", "text": "Course C" },
+        { "key": "D", "text": "Course D" },
+        { "key": "E", "text": "Course E" }
+      ],
+      "questions": [
+        { "question_number": 26, "question_text": "Which course is not specifically related to people’s jobs?" },
+        { "question_number": 27, "question_text": "In which course are men not invited to participate?" },
+        { "question_number": 28, "question_text": "Which course has course notes and lunch to go with them?" },
+        { "question_number": 29, "question_text": "Which course will deal with writing skills?" },
+        { "question_number": 30, "question_text": "Which course is on at night?" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Question 31",
+      "section_instructions": "Choose the subject from the list below and write its name in box <strong>31</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 31,
+          "question_text": "Three of the courses specifically cover the same subject.",
+          "question_payload": {
+            "options": {
+              "A": "Writing skills",
+              "B": "Computers",
+              "C": "Business Communication",
+              "D": "Finance",
+              "E": "Work goals",
+              "F": "Management"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

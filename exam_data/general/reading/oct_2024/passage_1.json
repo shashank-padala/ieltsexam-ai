@@ -1,0 +1,65 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-5",
+      "section_instructions": "Which accommodation would you choose for each of the requirements below?<br><br>Choose the correct letter <strong>(A-E)</strong> from the list above.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Oceanrest Motel at Sea Bay $205 per person (twin share)" },
+        { "key": "B", "text": "The Ferry hotel in Clifton for $211 per person (twin share)" },
+        { "key": "C", "text": "Seabreeze hotel at Seal Bay for $252 per person (including full breakfast)" },
+        { "key": "D", "text": "Island Escape Lodge at French River for $314 per person (twin share), water view, includes continental breakfast" },
+        { "key": "E", "text": "Sanctuary Beach self-contained cabins for $273.50 per person (twin share) also includes chocolate, wine, 4WD tour of nature reserve and $10 meal" }
+      ],
+      "questions": [
+        { "question_number": 1, "question_text": "You want accommodation close to the ferry boat terminal" },
+        { "question_number": 2, "question_text": "You are looking for the least expensive place to stay" },
+        { "question_number": 3, "question_text": "You have heard that the best spots are on the south coast" },
+        { "question_number": 4, "question_text": "You want to be sure to have a good view from your room" },
+        { "question_number": 5, "question_text": "You like the idea of a big breakfast" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 6-10",
+      "section_instructions": "Look at the travel insurance notice on the following page. Choose the most suitable heading for each of the Frequently Asked Questions <strong>(B-F)</strong> from the list <strong>(i-x)</strong> below.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "i", "text": "Do I have to reveal my medical history?" },
+        { "key": "ii", "text": "Does the plan cover lost luggage?" },
+        { "key": "iii", "text": "If I want to stay longer can I extend my policy?" },
+        { "key": "iv", "text": "Can I travel anywhere in the world?" },
+        { "key": "v", "text": "What is not covered?" },
+        { "key": "vi", "text": "What if I have an emergency or claim?" },
+        { "key": "vii", "text": "How much will it cost?" },
+        { "key": "viii", "text": "Why do I need travel insurance?" },
+        { "key": "ix", "text": "Can I buy insurance after I have begun my travels?" },
+        { "key": "x", "text": "In what situations am I covered when travelling?" }
+      ],
+      "questions": [
+        { "question_number": 6, "question_text": "Part B" },
+        { "question_number": 7, "question_text": "Part C" },
+        { "question_number": 8, "question_text": "Part D" },
+        { "question_number": 9, "question_text": "Part E" },
+        { "question_number": 10, "question_text": "Part F" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 11-13",
+      "section_instructions": "Look at the travel insurance notice on the following page.<br><br>Using <strong>NO MORE THAN THREE WORDS</strong> from the passage, answer each of these questions.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "What item is covered in addition to health and medical expenses? {11}<br>Accidental injury not covered if a person use {12}.<br>What is special about the coverage for the United States? {13}.",
+        "blanks": [11, 12, 13]
+      },
+      "questions": [
+        { "question_number": 11, "question_text": "" },
+        { "question_number": 12, "question_text": "" },
+        { "question_number": 13, "question_text": "" }
+      ]
+    }
+  ]
+}

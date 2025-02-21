@@ -1,0 +1,37 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 29-32",
+      "section_instructions": "Do the following statements agree with the information given <em>in the text</em>?<br><br>In boxes <strong>29-32</strong> on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 29, "question_text": "Cheesemaking doesn’t just rely on purely scientific methods." },
+        { "question_number": 30, "question_text": "Solids are initially separated from liquids through a mechanical process." },
+        { "question_number": 31, "question_text": "Whey contains dissolved milk solids." },
+        { "question_number": 32, "question_text": "Harder cheeses need more maturation than soft cheeses." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 33-40",
+      "section_instructions": "Complete the summary below.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> from the text for each answer.<br><br>Write your answers in boxes <strong>33-40</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Lactic acid bacteria are first added to milk to change milk lactose to lactic acid.<br><br>Rennet is then added. Its active enzyme, rennin, {33} caseinogen, a milk protein.<br><br>As a result, the protein, casein, is formed.<br><br>Being {34} in water, casein precipitates out of the milk, forming curds.<br><br>Left behind after the curds have been removed is {35} termed whey.<br><br>After separation from the whey, the curd is cut in order {36} excess water.<br><br>Addition of salt has {37} acting as a preservative and to add flavour.<br><br>Next the cheese is {38} by being placed into a suitable container.<br><br>In order to achieve {39} the cheese is left to mature.<br><br>Before the cheese is ready it may undergo {40} to achieve the desired result.",
+        "blanks": [33, 34, 35, 36, 37, 38, 39, 40]
+      },
+      "questions": [
+        { "question_number": 33, "question_text": "" },
+        { "question_number": 34, "question_text": "" },
+        { "question_number": 35, "question_text": "" },
+        { "question_number": 36, "question_text": "" },
+        { "question_number": 37, "question_text": "" },
+        { "question_number": 38, "question_text": "" },
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}

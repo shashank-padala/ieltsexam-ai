@@ -27,6 +27,7 @@ interface Passage {
   passage_number: number;
   passage_title: string;
   passage_text: string;
+  passage_image_url?: string;
   created_at: string;
 }
 
@@ -250,8 +251,19 @@ export default function ReadingPage() {
         You should spend about <strong>20 minutes</strong> on Questions <strong>{minQuestion}-{maxQuestion}</strong>, which are based
         on Reading Passage <strong>{currentPassage.passage_number}</strong>.
       </p>
-    </div>
+    </div> 
   );
+
+  const passageImage = (
+    <div className="p-4 bg-gray-50 rounded-lg shadow-md">
+      {/* Diagram Image */}
+      {currentPassage.passage_image_url && (
+        <div className="mb-4">
+          <img src={currentPassage.passage_image_url} alt="Diagram" className="max-w-full h-auto" />
+        </div>
+      )}
+    </div>  
+  )
 
   // Render question based on section's question type using imported components.
   // Pass value and onAnswerChange so that each component updates the global responses state.
@@ -431,6 +443,12 @@ export default function ReadingPage() {
         ref={leftPaneRef}
         className="w-1/2 p-6 overflow-y-scroll border-r pb-32" style={{ maxHeight: "calc(100vh - 160px)" }}>
           {defaultHeader}
+          {currentPassage.passage_image_url && (
+            <>
+              {passageImage}
+              <br />
+            </>
+          )}
           <h1 className="text-3xl font-bold mb-6">{currentPassage.passage_title}</h1>
           <div
             className="whitespace-pre-wrap text-lg leading-relaxed"

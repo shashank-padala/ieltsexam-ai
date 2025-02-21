@@ -1,0 +1,87 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-31",
+      "section_instructions": "The passage ‘Slew Food’ has 8 paragraphs <strong>(A-H)</strong>.<br>In which paragraph can the information below be found?<br>Write the correct letter, <strong>A-H</strong>, in boxes <strong>28-31</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Paragraph A" },
+        { "key": "B", "text": "Paragraph B" },
+        { "key": "C", "text": "Paragraph C" },
+        { "key": "D", "text": "Paragraph D" },
+        { "key": "E", "text": "Paragraph E" },
+        { "key": "F", "text": "Paragraph F" },
+        { "key": "G", "text": "Paragraph G" },
+        { "key": "H", "text": "Paragraph H" }
+      ],
+      "questions": [
+        { "question_number": 28, "question_text": "a catalogue of domestic animals at risk of disappearing" },
+        { "question_number": 29, "question_text": "statistics on the loss of variety in agricultural species" },
+        { "question_number": 30, "question_text": "initiatives to ensure the financial survival of the organisation" },
+        { "question_number": 31, "question_text": "information on the food budget of an average family" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Question 32",
+      "section_instructions": "Which of the following does the Slow Food Movement <strong>NOT</strong> promote?<br><br>The first one has been done for you. Indicate the letters of the remaining <strong>TWO</strong>.",
+      "section_question_type": "multiple_select",
+      "content": {
+        "shared_question_text": "Which of the following does the Slow Food Movement <strong>NOT</strong> promote?"
+      },
+      "shared_options": [
+        { "key": "A", "text": "old-fashioned cooking methods" },
+        { "key": "B", "text": "genetically modified foods" },
+        { "key": "C", "text": "endangered species of edible plants" },
+        { "key": "D", "text": "junk food culture" },
+        { "key": "E", "text": "the enjoyment of good food and drink" },
+        { "key": "F", "text": "high yield industrial farming" },
+        { "key": "G", "text": "rare local domestic animals" },
+        { "key": "H", "text": "organic methods of production" }
+      ],
+      "questions": [
+        { "question_number": 32, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 33-38",
+      "section_instructions": "Choose <strong>ONE</strong> phrase from the list <strong>(A-H)</strong> that matches each of the expressions below.<br>There are more phrases than expressions so you will not use all of them.<br>The first one has been done for you as an example.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "a resource for agricultural biodiversity" },
+        { "key": "B", "text": "a showcase for Italian food products" },
+        { "key": "C", "text": "a database of Slow Food members" },
+        { "key": "D", "text": "helping local producers compete in the international market" },
+        { "key": "E", "text": "published four times a year" },
+        { "key": "F", "text": "operates in Europe, Asia and Australia" },
+        { "key": "G", "text": "promotes protection of the environment and good eating" },
+        { "key": "H", "text": "produces food using industrial methods" }
+      ],
+      "questions": [
+        { "question_number": 33, "question_text": "slow travel" },
+        { "question_number": 34, "question_text": "Ark of Taste" },
+        { "question_number": 35, "question_text": "virtuous globalisation" },
+        { "question_number": 36, "question_text": "Salon de Gusto" },
+        { "question_number": 37, "question_text": "agri-business" },
+        { "question_number": 38, "question_text": "SLOW" }
+      ]
+    },
+    {
+      "section_number": 4,
+      "section_header": "Questions 39-40",
+      "section_instructions": "Answer the following questions using <strong>NO MORE THAN THREE WORDS</strong> from the passage.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Following which crisis did the Slow Food movement become a political force? {39}.<br>This movement was started as a reaction against what? {40}.",
+        "blanks": [39, 40]
+      },
+      "questions": [
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}

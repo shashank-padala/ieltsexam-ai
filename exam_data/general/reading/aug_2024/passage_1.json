@@ -1,0 +1,46 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-8",
+      "section_instructions": "Complete the sentences below.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> from the text for each answer.<br><br>Write your answers in boxes <strong>1-8</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Quotes are given with {1} to buy.<br><br>There is a tendency to {2} drivers over a certain age.<br><br>Those paying in {3} will not be liable for extra interest.<br><br>Provision of {4} will ensure you are not left without a means of transport.<br><br>To receive full benefit from the policy, {5} is required.<br><br>Should {6} be required, medical transfers may be possible.<br><br>Claimants are entitled to a maximum of £100 after a breakdown, should {7} arise.<br><br>By phoning our {8} you can receive a quote today.",
+        "blanks": [1, 2, 3, 4, 5, 6, 7, 8]
+      },
+      "questions": [
+        { "question_number": 1, "question_text": "" },
+        { "question_number": 2, "question_text": "" },
+        { "question_number": 3, "question_text": "" },
+        { "question_number": 4, "question_text": "" },
+        { "question_number": 5, "question_text": "" },
+        { "question_number": 6, "question_text": "" },
+        { "question_number": 7, "question_text": "" },
+        { "question_number": 8, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 9-14",
+      "section_instructions": "Look at the <strong>five</strong> advertisements, <strong>A-E</strong>, referring to winter events in London.<br><br>Which advertisement mentions the following?<br><br>Write the correct letter, <strong>A-E</strong>, in boxes <strong>9-14</strong> on your answer sheet.<br><br>You may use any <strong>letter more than once</strong>.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Advertisement A" },
+        { "key": "B", "text": "Advertisement B" },
+        { "key": "C", "text": "Advertisement C" },
+        { "key": "D", "text": "Advertisement D" },
+        { "key": "E", "text": "Advertisement E" }
+      ],
+      "questions": [
+        { "question_number": 9, "question_text": "Additional costs" },
+        { "question_number": 10, "question_text": "Fluctuation in public attendance" },
+        { "question_number": 11, "question_text": "A possible source of regret" },
+        { "question_number": 12, "question_text": "Seasonal food on offer" },
+        { "question_number": 13, "question_text": "A change in career" },
+        { "question_number": 14, "question_text": "Seasonally induced mood changes" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 29-35",
+      "section_instructions": "The text has eight paragraphs, <strong>A-H</strong>.<br><br>Which paragraph contains the following information?<br><br>Write the correct letter, <strong>A-H</strong>, in boxes <strong>29-35</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Paragraph A" },
+        { "key": "B", "text": "Paragraph B" },
+        { "key": "C", "text": "Paragraph C" },
+        { "key": "D", "text": "Paragraph D" },
+        { "key": "E", "text": "Paragraph E" },
+        { "key": "F", "text": "Paragraph F" },
+        { "key": "G", "text": "Paragraph G" },
+        { "key": "H", "text": "Paragraph H" }
+      ],
+      "questions": [
+        { "question_number": 29, "question_text": "An inconsistency in approach" },
+        { "question_number": 30, "question_text": "Already a new policing system is underway" },
+        { "question_number": 31, "question_text": "A public relations exercise" },
+        { "question_number": 32, "question_text": "Fiction not transferable into fact" },
+        { "question_number": 33, "question_text": "The future foreshadowed in fiction" },
+        { "question_number": 34, "question_text": "Effective but commonplace assessment methods" },
+        { "question_number": 35, "question_text": "Official confirmation of the efficacy of the FAST system" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 36-40",
+      "section_instructions": "Complete the summary below.<br><br>Choose <strong>NO MORE THAN TWO WORDS</strong> from the text for each answer.<br><br>Write your answers in boxes <strong>36-40</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "The dystopian future predicted in Orwell’s novel 1984 may soon become reality. A policing system said to be thought-sensitive is in {36}. It is reputedly able to reveal {37} and so is arguably of use at security checkpoints. Subtle changes in an individual’s behaviour and physiological processes can be measured by the policing system. Until now the project has met with {38} which officials attempted to quell by renaming the project ‘FAST’, a considerably less offensive title than the original ‘Project Hostile Intent’. So far, a {39} has provided tentative confirmation of the efficacy of the FAST system.<br><br>However, it is arguable that simple methods such as reading body language might be equally effective. More problematic is the possibility that the FAST system may uncover health issues an individual is unaware of. Whether to inform the individual or not is subject to {40}.",
+        "blanks": [36, 37, 38, 39, 40]
+      },
+      "questions": [
+        { "question_number": 36, "question_text": "" },
+        { "question_number": 37, "question_text": "" },
+        { "question_number": 38, "question_text": "" },
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}

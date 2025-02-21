@@ -1,0 +1,64 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-6",
+      "section_instructions": "There are <strong>5 advertisements A-E</strong> on the next page.<br><br>Answer the questions below by writing the letters of the appropriate advertisements in boxes <strong>1-6</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Advertisement A" },
+        { "key": "B", "text": "Advertisement B" },
+        { "key": "C", "text": "Advertisement C" },
+        { "key": "D", "text": "Advertisement D" },
+        { "key": "E", "text": "Advertisement E" }
+      ],
+      "questions": [
+        { "question_number": 1, "question_text": "Which advertisement is not for a restaurant?" },
+        { "question_number": 2, "question_text": "Which advertisement offers facilities for parties up to 90 people?" },
+        { "question_number": 3, "question_text": "Which restaurant states that it serves breakfast?" },
+        { "question_number": 4, "question_text": "Which restaurant will give you an extra serving if you present the coupon?" },
+        { "question_number": 5, "question_text": "Which restaurant does not offer a takeaway service?" },
+        { "question_number": 6, "question_text": "Which restaurant will bring the food you order to your house?" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 7-12",
+      "section_instructions": "The following text is a series of general instructions for using a microwave oven.<br><br>Part of each instruction is underlined. In boxes <strong>7-12</strong> on your answer sheet write:<br><br><strong>E.</strong> if the underlined section gives an <strong>EXAMPLE</strong> of the instruction<br><strong>R.</strong> if the underlined section gives a <strong>REASON</strong> for the instruction<br><strong>CP.</strong> if the underlined section is a <strong>CORRECT PROCEDURE</strong>.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "E", "text": "Example" },
+        { "key": "R", "text": "Reason" },
+        { "key": "CP", "text": "Correct Procedure" }
+      ],
+      "questions": [
+        { "question_number": 7, "question_text": "Whilst heating liquids which contain air (e.g. milk or milk-based fluids), stir several times during heating to avoid spillage of the liquid from the container." },
+        { "question_number": 8, "question_text": "Potatoes, apples, egg yolks, whole squash and sausages are all foods with non-porous skins. This type of food must be pierced before cooking, to prevent bursting." },
+        { "question_number": 9, "question_text": "Do not dry clothes or other materials in the oven. They may catch on fire." },
+        { "question_number": 10, "question_text": "Do not cook food directly on a glass oven tray unless indicated in recipes. Food should be placed in a suitable cooking utensil." },
+        { "question_number": 11, "question_text": "Do not hit the control panel. Damage to controls may occur." },
+        { "question_number": 12, "question_text": "Clean the oven, the door and the seals with water and a mild detergent at regular intervals." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 13-20",
+      "section_instructions": "Below is a chart containing some of the Kuringai Chase Park Nature Activities.<br><br>Fill in the blanks using information from the brochure 'Guided Walks and Nature Activities'.<br><br>Write <strong>NO MORE THAN THREE WORDS</strong> in boxes <strong>13-20</strong> on your answer sheet.",
+      "section_question_type": "diagram_labeling",
+      "content": {
+        "image_url": "https://mqzufjbtjwxiylcivyoo.supabase.co/storage/v1/object/sign/exam-images/reading_general_sep2024_p1-s3%20(1).PNG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJleGFtLWltYWdlcy9yZWFkaW5nX2dlbmVyYWxfc2VwMjAyNF9wMS1zMyAoMSkuUE5HIiwiaWF0IjoxNzQwMTczMjk2LCJleHAiOjIwODcwNjkyOTZ9.W0uZn8RFYCjPUKs33qKjgttr0mx4pyAHO_KRmQZRZ8k"
+      },
+      "questions": [
+        { "question_number": 13, "question_text": "" },
+        { "question_number": 14, "question_text": "" },
+        { "question_number": 15, "question_text": "" },
+        { "question_number": 16, "question_text": "" },
+        { "question_number": 17, "question_text": "" },
+        { "question_number": 18, "question_text": "" },
+        { "question_number": 19, "question_text": "" },
+        { "question_number": 20, "question_text": "" }
+      ]
+    }
+  ]
+}

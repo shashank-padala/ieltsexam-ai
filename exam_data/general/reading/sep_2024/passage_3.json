@@ -1,0 +1,36 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 32-37",
+      "section_instructions": "From the information in the reading passage, classify the following events as occurring:<br><br><strong>A.</strong> before the nineteenth century<br><strong>B.</strong> during the nineteenth century<br><strong>C.</strong> in the first half of the twentieth century<br><strong>D.</strong> at the end of the twentieth century<br><br>Write the appropriate letters <strong>A-D</strong> in boxes <strong>32-37</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "before the nineteenth century" },
+        { "key": "B", "text": "during the nineteenth century" },
+        { "key": "C", "text": "in the first half of the twentieth century" },
+        { "key": "D", "text": "at the end of the twentieth century" }
+      ],
+      "questions": [
+        { "question_number": 32, "question_text": "Sundback’s zipper" },
+        { "question_number": 33, "question_text": "the development of nylon" },
+        { "question_number": 34, "question_text": "the development of velcro" },
+        { "question_number": 35, "question_text": "the development of the first typewriter-like machine" },
+        { "question_number": 36, "question_text": "The first appearance of Sholes’ typewriter" },
+        { "question_number": 37, "question_text": "the development of the voice-activated computer" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 38-40",
+      "section_instructions": "Read the passage about Great Inventions and look at the statements below.<br><br>In boxes <strong>38-40</strong> on your answer sheet write:<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 38, "question_text": "The first zipper was successful as a fastener." },
+        { "question_number": 39, "question_text": "Nylon was used a lot during the Second World War, 1939-1945." },
+        { "question_number": 40, "question_text": "The first typewriter’s keyboard was different to the modern keyboard." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-2",
+      "section_instructions": "You should spend about <strong>20 minutes</strong> on Questions <strong>1-14</strong>, which are based on Reading Passage 1.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> from the text, for each answer.<br><br>Write your answers in boxes <strong>1 and 2</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "On which <strong>TWO</strong> days does the newspaper advertise jobs for teachers? {1}<br><br>On which <strong>TWO</strong> days does the newspaper advertise jobs for nurses? {2}",
+        "blanks": [1, 2]
+      },
+      "questions": [
+        { "question_number": 1, "question_text": "" },
+        { "question_number": 2, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 3-8",
+      "section_instructions": "Look at the ten categories of job advertisement <strong>A-J</strong>, in the Saturday Job Guide.<br><br>Write the correct letter <strong>A-J</strong> in boxes <strong>3-8</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Government Positions (New South Wales)" },
+        { "key": "B", "text": "Higher Education (Academic staff)" },
+        { "key": "C", "text": "Primary and Secondary Schools (Academic staff)" },
+        { "key": "D", "text": "Hospitals and Medical (Medical staff)" },
+        { "key": "E", "text": "IT and Computing" },
+        { "key": "F", "text": "Accountancy and Finance (Private)" },
+        { "key": "G", "text": "Hospitality and Kitchen Staff" },
+        { "key": "H", "text": "Self-employment Opportunities" },
+        { "key": "I", "text": "Rural Posts (incl. farm work)" },
+        { "key": "J", "text": "Casual Work Available" }
+      ],
+      "questions": [
+        { "question_number": 3, "question_text": "You are looking for a job as a university lecturer?" },
+        { "question_number": 4, "question_text": "You want to start your own business?" },
+        { "question_number": 5, "question_text": "You want a permanent job in a hotel?" },
+        { "question_number": 6, "question_text": "You are looking for a job in public administration?" },
+        { "question_number": 7, "question_text": "You are looking for agricultural work in the country?" },
+        { "question_number": 8, "question_text": "You are looking for temporary work?" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 9-14",
+      "section_instructions": "Do the following statements agree with the information given in the reading passage.<br><br>In boxes <strong>9-14</strong> on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 9, "question_text": "It is possible to book tickets for performances using the Internet." },
+        { "question_number": 10, "question_text": "60-year-olds who want to book in advance have to prove their age to get a discount." },
+        { "question_number": 11, "question_text": "Someone accompanying a wheelchair user to a performance receives a discount." },
+        { "question_number": 12, "question_text": "Students can get Standby tickets 45 minutes before a performance begins." },
+        { "question_number": 13, "question_text": "A group of ten adults going to a performance can claim a discount." },
+        { "question_number": 14, "question_text": "Theatre-goers who are unexpectedly unable to attend a performance can get their money back." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-34",
+      "section_instructions": "Reading Passage 3 has eleven paragraphs, <strong>A-K</strong>.<br><br>Which paragraph contains the following information?<br><br>Write the correct letter, <strong>A-K</strong>, in boxes <strong>28-34</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Paragraph A" },
+        { "key": "B", "text": "Paragraph B" },
+        { "key": "C", "text": "Paragraph C" },
+        { "key": "D", "text": "Paragraph D" },
+        { "key": "E", "text": "Paragraph E" },
+        { "key": "F", "text": "Paragraph F" },
+        { "key": "G", "text": "Paragraph G" },
+        { "key": "H", "text": "Paragraph H" },
+        { "key": "I", "text": "Paragraph I" },
+        { "key": "J", "text": "Paragraph J" },
+        { "key": "K", "text": "Paragraph K" }
+      ],
+      "questions": [
+        { "question_number": 28, "question_text": "Similarities between pterosaurs and mechanical flight" },
+        { "question_number": 29, "question_text": "The identification of the type of creature a pterosaur actually was" },
+        { "question_number": 30, "question_text": "Conflicting theories about how pterosaurs came to fly" },
+        { "question_number": 31, "question_text": "The cause of widespread destruction of animal life on our planet" },
+        { "question_number": 32, "question_text": "The fact that pterosaurs once existed all over the world" },
+        { "question_number": 33, "question_text": "The first clear proof that pterosaurs could fly" },
+        { "question_number": 34, "question_text": "Concrete evidence that pterosaurs hunted their food from the air" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 35-38",
+      "section_instructions": "Look at the following statements (<strong>Questions 35-38</strong>) and the list of people below.<br><br>Match each statement with the correct person, <strong>A, B, C or D</strong>.<br><br>Write the correct letter, <strong>A, B, C or D</strong>, in boxes <strong>35-38</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Cosimo Alessandro Collini" },
+        { "key": "B", "text": "Georges Cuvier" },
+        { "key": "C", "text": "Fabio dalla Vecchia" },
+        { "key": "D", "text": "Paul MacCready" }
+      ],
+      "questions": [
+        { "question_number": 35, "question_text": "He refers to the difficulty of determining how pterosaurs evolved without further evidence." },
+        { "question_number": 36, "question_text": "He failed to interpret the evidence before him." },
+        { "question_number": 37, "question_text": "He gave an appropriate name to the first pterosaur that was discovered." },
+        { "question_number": 38, "question_text": "He mentions the ability of pterosaurs to take advantage of their environment." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 39-40",
+      "section_instructions": "Answer the questions below.<br><br>Choose <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> from the Reading Passage 3 for each answer.<br><br>Write your answers in boxes <strong>39 and 40</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "So far, evidence of a total of {39} pterosaurs has been discovered.<br><br>The wings of Quetzalcoatlus measured more than {40} across.",
+        "blanks": [39, 40]
+      },
+      "questions": [
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}
