@@ -1,0 +1,43 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-35",
+      "section_instructions": "The passage has seven sections labelled <strong>A-G</strong>.<br><br>Which section contains the following information?<br><br>Write the correct letter <strong>A-G</strong> in boxes <strong>28-35</strong> on your answer sheet.<br><br><strong>NB</strong> You may use any letter <strong>more than once</strong>.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "The different amounts of sleep people require" },
+        { "key": "B", "text": "Investigation into the results of sleep deprivation" },
+        { "key": "C", "text": "Reasons for sleep disorders" },
+        { "key": "D", "text": "Lifestyle changes to overcome sleep problems" },
+        { "key": "E", "text": "How sleep helps mental and physical health" },
+        { "key": "F", "text": "Claims about a man-made sleep product" },
+        { "key": "G", "text": "Processes involved during sleep" }
+      ],
+      "questions": [
+        { "question_number": 28, "question_text": "The different amounts of sleep that people require" },
+        { "question_number": 29, "question_text": "An investigation into the results of sleep deprivation" },
+        { "question_number": 30, "question_text": "Some reasons why people may suffer from sleep disorders" },
+        { "question_number": 31, "question_text": "Lifestyle changes which can help overcome sleep-related problems" },
+        { "question_number": 32, "question_text": "A process by which sleep helps us to remain mentally and physically healthy" },
+        { "question_number": 33, "question_text": "Claims about a commercialised man-made product for sleeplessness" },
+        { "question_number": 34, "question_text": "The role of physical changes in sleeping habits" },
+        { "question_number": 35, "question_text": "The processes involved during sleep" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 36-40",
+      "section_instructions": "Do the following statements agree with the information given in the passage.<br><br>In boxes <strong>36-40</strong> on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 36, "question_text": "Sleep can cure some illnesses." },
+        { "question_number": 37, "question_text": "The various stages of sleep occur more than once a night." },
+        { "question_number": 38, "question_text": "Dreaming and sleep-walking occur at similar stages of sleep." },
+        { "question_number": 39, "question_text": "Sleepers move around a lot during the REM stage of sleep." },
+        { "question_number": 40, "question_text": "The body temperature rises relatively early in elderly people." }
+      ]
+    }
+  ]
+}

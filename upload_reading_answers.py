@@ -14,7 +14,7 @@ PORT = os.getenv("port")
 DBNAME = os.getenv("dbname")
 
 #TODO: Replace with your exam id
-EXAM_ID = "f89d18fc-c273-4b21-9f87-de146b5ddde2"  
+EXAM_ID = "4ab5a862-149f-45a3-b776-768d42ef7e74"  
 
 def load_answers(json_file):
     with open(json_file, "r", encoding="utf-8") as f:
@@ -22,7 +22,7 @@ def load_answers(json_file):
 
 def main():
     #TODO: Change the path to the answers file
-    answers_data = load_answers("exam_data/academic/reading/aug_2024/answers.json")  
+    answers_data = load_answers("exam_data/general/reading/may_2024/answers.json")  
     
     answers = answers_data.get("answers", {})
 

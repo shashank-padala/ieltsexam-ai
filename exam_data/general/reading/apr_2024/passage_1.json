@@ -1,0 +1,48 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-7",
+      "section_instructions": "Do the following statements agree with the information given in the text.<br><br>In boxes <strong>1-7</strong> on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 1, "question_text": "Women's cotton socks cost less than men's." },
+        { "question_number": 2, "question_text": "Men's silk shirts are available in more than five colours." },
+        { "question_number": 3, "question_text": "Children's T-shirts come in a variety of colours." },
+        { "question_number": 4, "question_text": "The child's jacket has four pockets." },
+        { "question_number": 5, "question_text": "If you buy clothes worth $80 in August, you will receive a free alarm clock." },
+        { "question_number": 6, "question_text": "The charge for special next-day delivery in Australia is $7.95." },
+        { "question_number": 7, "question_text": "All clothing is guaranteed to arrive within two months for international delivery." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 8-14",
+      "section_instructions": "The list of New Book Releases on the following page has nine book descriptions <strong>A-I</strong>.<br><br>Choose the correct title for each book from the list of book titles below.<br><br>Write the correct number <strong>i-xi</strong> in boxes <strong>8-14</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "i", "text": "Field Guide to Native Birds of Australia" },
+        { "key": "ii", "text": "The Bush on Two Wheels: 100 Top Rides" },
+        { "key": "iii", "text": "Bush Foods of Australian Aborigines" },
+        { "key": "iv", "text": "A Pictorial History of the Dinosaur in Australia" },
+        { "key": "v", "text": "Bushwalking in Australia" },
+        { "key": "vi", "text": "World Geographica" },
+        { "key": "vii", "text": "Driving Adventures for 4-wheel-drive Vehicles" },
+        { "key": "viii", "text": "Survival Techniques in the Wild" },
+        { "key": "ix", "text": "Encyclopaedia of Australian Wildlife" },
+        { "key": "x", "text": "Guide to the Art of the Australian Desert" },
+        { "key": "xi", "text": "Field Guide to Animals of the World" }
+      ],
+      "questions": [
+        { "question_number": 8, "question_text": "Book A" },
+        { "question_number": 9, "question_text": "Book B" },
+        { "question_number": 10, "question_text": "Book C" },
+        { "question_number": 11, "question_text": "Book E" },
+        { "question_number": 12, "question_text": "Book F" },
+        { "question_number": 13, "question_text": "Book G" },
+        { "question_number": 14, "question_text": "Book H" }
+      ]
+    }
+  ]
+}

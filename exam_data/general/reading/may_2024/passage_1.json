@@ -1,0 +1,64 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-4",
+      "section_instructions": "Reading Passage 1 has seven sections, <strong>A-G</strong>.<br><br>Which paragraph contains the following information?<br><br>Write the correct letter <strong>A-G</strong> in boxes <strong>1-4</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Paragraph A" },
+        { "key": "B", "text": "Paragraph B" },
+        { "key": "C", "text": "Paragraph C" },
+        { "key": "D", "text": "Paragraph D" },
+        { "key": "E", "text": "Paragraph E" },
+        { "key": "F", "text": "Paragraph F" },
+        { "key": "G", "text": "Paragraph G" }
+      ],
+      "questions": [
+        { "question_number": 1, "question_text": "What to do if you need help outside normal working hours" },
+        { "question_number": 2, "question_text": "Who to speak to first for general information" },
+        { "question_number": 3, "question_text": "What happens when you register with the Centre" },
+        { "question_number": 4, "question_text": "What to do if you need to cancel a doctor's appointment" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 5-9",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage 1?<br><br>In boxes <strong>5-9</strong> on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 5, "question_text": "You must always see the same doctor if you visit the Centre." },
+        { "question_number": 6, "question_text": "If you want a repeat prescription you must make an appointment." },
+        { "question_number": 7, "question_text": "Helen Stranger is the Head Nurse." },
+        { "question_number": 8, "question_text": "It is possible that receptionists will ask you to explain your problem." },
+        { "question_number": 9, "question_text": "You should give the Health Centre your new contact details if you move house." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 10-14",
+      "section_instructions": "Complete each sentence with the correct ending, <strong>A-J</strong>, below.<br><br>Write the correct letter, <strong>A-J</strong>, in boxes <strong>10-14</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Talk to a staff co-ordinator." },
+        { "key": "B", "text": "Have two thirty-minute breaks." },
+        { "key": "C", "text": "Not take any breaks for meals." },
+        { "key": "D", "text": "Pay for any meals they have." },
+        { "key": "E", "text": "Get a single one-hour break." },
+        { "key": "F", "text": "Look at the section staffing board." },
+        { "key": "G", "text": "Lose pay for their break times." },
+        { "key": "H", "text": "Tell a member of the Personnel Management team." },
+        { "key": "I", "text": "Have an annual dental examination." },
+        { "key": "J", "text": "Consult their doctor." }
+      ],
+      "questions": [
+        { "question_number": 10, "question_text": "Temporary employees only working 3 hours should" },
+        { "question_number": 11, "question_text": "Employees who work 11 hours should" },
+        { "question_number": 12, "question_text": "To find out when to have their breaks, employees should" },
+        { "question_number": 13, "question_text": "Employees working with food must" },
+        { "question_number": 14, "question_text": "Food handlers who have been ill should" }
+      ]
+    }
+  ]
+}

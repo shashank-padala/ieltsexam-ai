@@ -52,9 +52,9 @@ export default function MatchingStatementsSection({
               }
             >
               <option value=""></option>
-              {Object.entries(options).map(([key]) => (
-                <option key={key} value={key}>
-                  {key}
+              {sharedOptions.map((option) => (
+                <option key={option.key} value={option.key}>
+                  {option.key}
                 </option>
               ))}
             </select>{" "}
