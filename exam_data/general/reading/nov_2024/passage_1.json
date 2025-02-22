@@ -1,0 +1,62 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-7",
+      "section_instructions": "Look at the description of Online Tutors <strong>(A-E)</strong>.<br>Write the appropriate letter <strong>A-E</strong> for each space.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Tutor A" },
+        { "key": "B", "text": "Tutor B" },
+        { "key": "C", "text": "Tutor C" },
+        { "key": "D", "text": "Tutor D" },
+        { "key": "E", "text": "Tutor E" }
+      ],
+      "questions": [
+        { "question_number": 1, "question_text": "If your first language was Spanish?" },
+        { "question_number": 2, "question_text": "To teach young children?" },
+        { "question_number": 3, "question_text": "To improve English for your business?" },
+        { "question_number": 4, "question_text": "If you didn’t have much money?" },
+        { "question_number": 5, "question_text": "If you were bored with the usual language learning exercises?" },
+        { "question_number": 6, "question_text": "Which tutor has language teaching qualifications from the USA?" },
+        { "question_number": 7, "question_text": "Which tutor has more than 26 years’ teaching experience?" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 8-10",
+      "section_instructions": "Choose <strong>ONE</strong> item only from the list below to go in each recycling container.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "telephone book" },
+        { "key": "B", "text": "packing box" },
+        { "key": "C", "text": "old clothing" },
+        { "key": "D", "text": "magazines" },
+        { "key": "E", "text": "wed pizza delivery box" },
+        { "key": "F", "text": "old textbook" },
+        { "key": "G", "text": "ceramic cup" },
+        { "key": "H", "text": "aluminium drink can" },
+        { "key": "I", "text": "heavy cardboard" },
+        { "key": "J", "text": "light bulb" }
+      ],
+      "questions": [
+        { "question_number": 8, "question_text": "In the Blue Box" },
+        { "question_number": 9, "question_text": "In the Yellow Bag" },
+        { "question_number": 10, "question_text": "In the Blue Bag" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 11-14",
+      "section_instructions": "Look at the following statements and decide if they are <strong>YES</strong>, <strong>NO</strong>, or <strong>NOT GIVEN</strong>.",
+      "section_question_type": "yes_no_not_given",
+      "questions": [
+        { "question_number": 11, "question_text": "Do I put out items for recycling every other week?" },
+        { "question_number": 12, "question_text": "Should I remove labels from food cans?" },
+        { "question_number": 13, "question_text": "Can I recycle a broken window?" },
+        { "question_number": 14, "question_text": "Is there a separate collection for large household items?" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 15-18",
+      "section_instructions": "Choose <strong>ONE</strong> phrase from the list below <strong>(A-J)</strong> to complete each of the following sentences.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "...includes work experience placements overseas." },
+        { "key": "B", "text": "...can be done by distance mode." },
+        { "key": "C", "text": "...requires foreign language studies." },
+        { "key": "D", "text": "...has links with overseas institutions." },
+        { "key": "E", "text": "...must be completed in Australia." },
+        { "key": "F", "text": "...combines study with industry placements." },
+        { "key": "G", "text": "...offers expanding opportunities for employment." },
+        { "key": "H", "text": "...must be completed in one year." },
+        { "key": "I", "text": "...takes 3 years to complete, part-time." },
+        { "key": "J", "text": "...consists of several campuses." }
+      ],
+      "questions": [
+        { "question_number": 15, "question_text": "The hospitality industry" },
+        { "question_number": 16, "question_text": "The College" },
+        { "question_number": 17, "question_text": "The Diploma course" },
+        { "question_number": 18, "question_text": "The Degree course" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 19-23",
+      "section_instructions": "Look at the following statements and decide if they are <strong>YES</strong>, <strong>NO</strong>, or <strong>NOT GIVEN</strong>.",
+      "section_question_type": "yes_no_not_given",
+      "questions": [
+        { "question_number": 19, "question_text": "The training facility has 10 kitchens." },
+        { "question_number": 20, "question_text": "All students in the program live at International House." },
+        { "question_number": 21, "question_text": "Four students share a unit in the residence." },
+        { "question_number": 22, "question_text": "The residence is used as part of the training program." },
+        { "question_number": 23, "question_text": "All meals in the residence are prepared by the students." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 24-27",
+      "section_instructions": "Four short courses <strong>(A-D)</strong> from the ‘International Hotel Management Diploma’ are outlined on the opposite page. Choose the correct title <strong>(i-viii)</strong> for each course.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "i", "text": "Food and Wine Service" },
+        { "key": "ii", "text": "Housekeeping Procedures" },
+        { "key": "iii", "text": "Cocktails and Mixed Drinks" },
+        { "key": "iv", "text": "Hotel Front Office Management" },
+        { "key": "v", "text": "Bars and Service of Drinks" },
+        { "key": "vi", "text": "Resort Operation and Management" },
+        { "key": "vii", "text": "Catering Control" },
+        { "key": "viii", "text": "Hotel Front Office Reception" }
+      ],
+      "questions": [
+        { "question_number": 24, "question_text": "Course A" },
+        { "question_number": 25, "question_text": "Course B" },
+        { "question_number": 26, "question_text": "Course C" },
+        { "question_number": 27, "question_text": "Course D" }
+      ]
+    }
+  ]
+}

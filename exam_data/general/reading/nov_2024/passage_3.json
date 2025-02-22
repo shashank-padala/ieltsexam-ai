@@ -1,0 +1,90 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-31",
+      "section_instructions": "Choose the correct letter, <strong>A, B, C or D</strong>.<br>Write the correct letter in boxes 28-31 on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 28,
+          "question_text": "How much funds would you gain by now, if you had invested 1000$ in the Amazon in 1997?",
+          "question_payload": {
+            "options": {
+              "A": "nearly 250,000$",
+              "B": "close to 500,000$",
+              "C": "It is not stated in the text",
+              "D": "No funds"
+            }
+          }
+        },
+        {
+          "question_number": 29,
+          "question_text": "Nowadays founders talk about going public as a:",
+          "question_payload": {
+            "options": {
+              "A": "necessity.",
+              "B": "benefit.",
+              "C": "troublesome thing",
+              "D": "profit."
+            }
+          }
+        },
+        {
+          "question_number": 30,
+          "question_text": "In which time period was the biggest number of companies going public?",
+          "question_payload": {
+            "options": {
+              "A": "early 1990s",
+              "B": "late 1990s and 2000s",
+              "C": "1980s",
+              "D": "late 1990s"
+            }
+          }
+        },
+        {
+          "question_number": 31,
+          "question_text": "According to the text, which of the following is true?",
+          "question_payload": {
+            "options": {
+              "A": "Private valuations may be forever higher than public ones.",
+              "B": "Public valuations eventually will become even less valuable.",
+              "C": "The main question is whether the public market increase or the private market decrease.",
+              "D": "The pressure might last for a long time."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 32-36",
+      "section_instructions": "Complete the sentences below.<br><br>Write <strong>ONLY ONE WORD</strong> from the passage for each answer.<br><br>Write your answers in boxes 32-36.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Skepticism was always expected by the {32} of tech industry.<br>The new aversion to initial offerings has its {33}.<br>Selling shares on a secondary market is considered a {34} mechanism.<br>Workers' compensation might be an {35}.<br>The public investors who failed to participate in the next big thing might be the ones wearing the {36}.",
+        "blanks": [32, 33, 34, 35, 36]
+      },
+      "questions": [
+        { "question_number": 32, "question_text": "" },
+        { "question_number": 33, "question_text": "" },
+        { "question_number": 34, "question_text": "" },
+        { "question_number": 35, "question_text": "" },
+        { "question_number": 36, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 37-40",
+      "section_instructions": "Do the following statements agree with the information in the IELTS reading text?<br>In boxes <strong>37-40</strong> on your answer sheet, write",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 37, "question_text": "Private investors are bearing most of the risk." },
+        { "question_number": 38, "question_text": "Not many investors were willing to speak on the record." },
+        { "question_number": 39, "question_text": "The typical tech company hitting the markets in 1990s was 5 years old." },
+        { "question_number": 40, "question_text": "Marc Andreessen, the firm’s co-founder, expressed amazement with divergency in how investors treat public." }
+      ]
+    }
+  ]
+}
