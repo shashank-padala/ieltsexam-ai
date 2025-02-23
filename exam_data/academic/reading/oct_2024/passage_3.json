@@ -1,0 +1,51 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 27-29",
+      "section_instructions": "Do the following statements agree with the information given in the Reading Passage?<br><br>In boxes <strong>27-29</strong> on your answer sheet, write:<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 27, "question_text": "Hettwer accidentally found human remains in the desert." },
+        { "question_number": 28, "question_text": "Sereno and Garcea have cooperated in some archaeological activities before." },
+        { "question_number": 29, "question_text": "The pictures of rock engravings found in Green Sahara is similar to other places." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 30-33",
+      "section_instructions": "Answer the questions below.<br><br>Choose <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> from the passage for each answer.<br><br>Write your answers in boxes <strong>30-33</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "What did Sereno and Garcea produce in the initial weeks before digging work? {30}.<br>For what purpose did Sereno send one tooth from each of four skulls to the laboratory? {31}.<br>How old are the bigger tightly bundled burials being identified? {32}.<br>What part of the body remains did the scientists send for inspection to find out the genetic origins of the Kiffian and Tenerian? {33}.",
+        "blanks": [30, 31, 32, 33]
+      },
+      "questions": [
+        { "question_number": 30, "question_text": "" },
+        { "question_number": 31, "question_text": "" },
+        { "question_number": 32, "question_text": "" },
+        { "question_number": 33, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 34-40",
+      "section_instructions": "Complete the following summary of the paragraphs of Reading Passage, using <strong>NO MORE THAN TWO WORDS</strong> from the passage for each answer.<br><br>Write your answers in boxes <strong>34-40</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "On the basis of bone judgment, Kiffian seemed to be {34} hardworking people, because we did not find {35} on head and forearm.<br>Through observation of the huge leg muscles, it can be inferred that their diet had plenty of {36} and their lifestyle was {37}. All evidence pointed to compliance with a fishing way of life.<br>On the other hand, Stojanowski presumed that Tenerian preferred to live on herding over {38}, but only some animal bones such as {39} were found, which Sereno supposed that Tenerian at Gobero lived in a {40} group at that time.",
+        "blanks": [34, 35, 36, 37, 38, 39, 40]
+      },
+      "questions": [
+        { "question_number": 34, "question_text": "" },
+        { "question_number": 35, "question_text": "" },
+        { "question_number": 36, "question_text": "" },
+        { "question_number": 37, "question_text": "" },
+        { "question_number": 38, "question_text": "" },
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}

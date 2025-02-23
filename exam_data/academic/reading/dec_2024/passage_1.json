@@ -1,0 +1,52 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-6",
+      "section_instructions": "Use the information in the passage to match the people (listed <strong>A-D</strong>) with opinions or deeds below.<br><br>Write the appropriate letters <strong>A-D</strong> in boxes 1-6 on your answer sheet.<br><br><strong>NB you may use any letter more than once.</strong>",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "George W. Huber" },
+        { "key": "B", "text": "James Gaddy" },
+        { "key": "C", "text": "Richard Tobey" },
+        { "key": "D", "text": "Charles Wyman" }
+      ],
+      "questions": [
+        { "question_number": 1, "question_text": "A key component to gain success lies in the place where the organisms survive." },
+        { "question_number": 2, "question_text": "Engaged in separating fixed procedures to produce ethanol in the homologous biochemical way." },
+        { "question_number": 3, "question_text": "Assists to develop certain skills." },
+        { "question_number": 4, "question_text": "It needs arduous efforts to achieve highly efficient transfer." },
+        { "question_number": 5, "question_text": "There is no shortcut to expedite the production process." },
+        { "question_number": 6, "question_text": "A combination of chemistry and biology can considerably lower the cost needed for the production company." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 7-10",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage 1?<br><br>In boxes 7-10 on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> if there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 7, "question_text": "A shift from conventionally targeted areas of the vegetation to get ethanol takes place." },
+        { "question_number": 8, "question_text": "It takes a considerably long way before a completely mature process is reached." },
+        { "question_number": 9, "question_text": "The Coskata group sees no bright future for the cost advantage available in the production of greener ethanol." },
+        { "question_number": 10, "question_text": "Some enterprises are trying to buy the shares of Coskata group." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 11-13",
+      "section_instructions": "Complete the following summary of the paragraphs of Reading Passage, using <strong>NO MORE THAN THREE WORDS</strong> from the Reading Passage for each answer.<br><br>Write your answers in boxes 11-13 on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Tobey has noticed that the Coskata process can achieve huge success because it utilizes {11} as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated {12}. To produce the ethanol into the water outside which researchers will later {13} by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel which is actually very difficult to achieve.",
+        "blanks": [11, 12, 13]
+      },
+      "questions": [
+        { "question_number": 11, "question_text": "" },
+        { "question_number": 12, "question_text": "" },
+        { "question_number": 13, "question_text": "" }
+      ]
+    }
+  ]
+}

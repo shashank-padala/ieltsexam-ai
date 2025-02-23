@@ -1,0 +1,86 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 14-15",
+      "section_instructions": "What <strong>two features</strong> do record retention possess in nature?",
+      "section_question_type": "multiple_select",
+      "content": {
+        "shared_question_text": "What two features do record retention possess in nature?"
+      },
+      "shared_options": [
+        { "key": "A", "text": "Easier and faster" },
+        { "key": "B", "text": "Capaciousness" },
+        { "key": "C", "text": "Portable" },
+        { "key": "D", "text": "Convenient" },
+        { "key": "E", "text": "Iterance" }
+      ],
+      "questions": [
+        { "question_number": 14, "question_text": "" },
+        { "question_number": 15, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Question 16",
+      "section_instructions": "Choose the correct letter, <strong>A, B, C or D</strong>.<br><br>Write the correct letter in box <strong>16</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 16,
+          "question_text": "What hurts the technique of producing wooden paper from popularity for a long time?",
+          "question_payload": {
+            "options": {
+              "A": "Scarcity",
+              "B": "Complexity",
+              "C": "Confidentiality by the inventors",
+              "D": "High cost"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 17-23",
+      "section_instructions": "The reading Passage has eleven paragraphs <strong>A-I</strong>.<br><br>Which paragraph contains the following information?<br><br>Write the correct letter <strong>A-I</strong>, in boxes <strong>17-23</strong> on your answer sheet.<br><br><strong>NB You may use any letter more than once.</strong>",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Paragraph A" },
+        { "key": "B", "text": "Paragraph B" },
+        { "key": "C", "text": "Paragraph C" },
+        { "key": "D", "text": "Paragraph D" },
+        { "key": "E", "text": "Paragraph E" },
+        { "key": "F", "text": "Paragraph F" },
+        { "key": "G", "text": "Paragraph G" },
+        { "key": "H", "text": "Paragraph H" },
+        { "key": "I", "text": "Paragraph I" }
+      ],
+      "questions": [
+        { "question_number": 17, "question_text": "The working principle of the primitive pens made of plant stems" },
+        { "question_number": 18, "question_text": "A writing tool commonly implemented for the longest time" },
+        { "question_number": 19, "question_text": "Liquid for writing firstly devised by Chinese" },
+        { "question_number": 20, "question_text": "Majuscule scripts as the unique written form originally" },
+        { "question_number": 21, "question_text": "The original invention of today’s correspondences" },
+        { "question_number": 22, "question_text": "The mention of two basic writing instruments being invented coordinately" },
+        { "question_number": 23, "question_text": "A design to safeguard the written content" }
+      ]
+    },
+    {
+      "section_number": 4,
+      "section_header": "Questions 24-26",
+      "section_instructions": "Answer the questions below.<br><br>Choose <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> from the passage for each answer.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "What makes it not so convenient to use the quill pens? {24}<br><br>When did one more breakthrough occur following the popularity of paper of plant fibres? {25}<br><br>What inventions were the results of human’s creative instinct of developing writing tools? {26}",
+        "blanks": [24, 25, 26]
+      },
+      "questions": [
+        { "question_number": 24, "question_text": "" },
+        { "question_number": 25, "question_text": "" },
+        { "question_number": 26, "question_text": "" }
+      ]
+    }
+  ]
+}

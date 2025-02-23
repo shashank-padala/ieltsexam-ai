@@ -1,0 +1,44 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-5",
+      "section_instructions": "Do the following statements agree with the information given in the text above?<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 1, "question_text": "Children must go to the school where they are registered." },
+        { "question_number": 2, "question_text": "All arrivals after the register has closed are recorded as ‘unauthorised’ absences." },
+        { "question_number": 3, "question_text": "If your child is absent from school, you must send the school a letter to explain why." },
+        { "question_number": 4, "question_text": "Staff who think a child is having difficulties at school will contact the parents." },
+        { "question_number": 5, "question_text": "Schools will contact other authorities about children who take frequent unauthorised absences." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 6-14",
+      "section_instructions": "The text has seven sections, <strong>A-G</strong>.<br><br>For which apartment are the following statements true?<br><br>Write the correct letter, <strong>A-G</strong>, in boxes <strong>6-14</strong> on your answer sheet.<br><br><strong>NB</strong> You may use any letter <strong>more than once</strong>.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Apartment A" },
+        { "key": "B", "text": "Apartment B" },
+        { "key": "C", "text": "Apartment C" },
+        { "key": "D", "text": "Apartment D" },
+        { "key": "E", "text": "Apartment E" },
+        { "key": "F", "text": "Apartment F" },
+        { "key": "G", "text": "Apartment G" }
+      ],
+      "questions": [
+        { "question_number": 6, "question_text": "It overlooks a golf course." },
+        { "question_number": 7, "question_text": "It has its own parking space." },
+        { "question_number": 8, "question_text": "It is in the centre of a town." },
+        { "question_number": 9, "question_text": "The sea can be seen from it." },
+        { "question_number": 10, "question_text": "There is a swimming pool for residents of the apartment complex." },
+        { "question_number": 11, "question_text": "It is in a new apartment complex." },
+        { "question_number": 12, "question_text": "It is part of an apartment complex with its own supermarket." },
+        { "question_number": 13, "question_text": "It has a private outdoor area where you can sit." },
+        { "question_number": 14, "question_text": "The owners will organise parking on request." }
+      ]
+    }
+  ]
+}

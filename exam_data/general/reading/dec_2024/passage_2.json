@@ -1,0 +1,41 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 15-21",
+      "section_instructions": "Complete the flow-chart below.<br><br>Choose <strong>NO MORE THAN THREE WORDS</strong> from the text for each answer.<br><br>Write your answers in boxes <strong>15-21</strong> on your answer sheet.",
+      "section_question_type": "diagram_labeling",
+      "content": {
+        "image_url": "https://mqzufjbtjwxiylcivyoo.supabase.co/storage/v1/object/sign/exam-images/reading_general_dec2024_p2-s1.PNG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJleGFtLWltYWdlcy9yZWFkaW5nX2dlbmVyYWxfZGVjMjAyNF9wMi1zMS5QTkciLCJpYXQiOjE3NDAyNTM1NjgsImV4cCI6MjA4NzE0OTU2OH0.vSYk-ITk2DaKYvuD9iBRoGPDK3R2z7w9GoSaFi52D4g"
+      },
+      "questions": [
+        { "question_number": 15, "question_text": "" },
+        { "question_number": 16, "question_text": "" },
+        { "question_number": 17, "question_text": "" },
+        { "question_number": 18, "question_text": "" },
+        { "question_number": 19, "question_text": "" },
+        { "question_number": 20, "question_text": "" },
+        { "question_number": 21, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 22-27",
+      "section_instructions": "Complete the sentences below.<br><br>Choose <strong>NO MORE THAN TWO WORDS</strong> from the text for each answer.<br><br>Write your answers in boxes <strong>22-27</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "There are certain places in the building that staff should avoid unless they have {22}.<br>To ensure people can get out easily, it is important that there are no {23} to exits.<br>Items which could cause injury must be {24} before they are disposed of.<br>Not all departments have the same system for dealing with {25} so you need to check before throwing things away.<br>{26} are available to make tasks, which require moving objects easier.<br>You should have {27} while you are working.",
+        "blanks": [22, 23, 24, 25, 26, 27]
+      },
+      "questions": [
+        { "question_number": 22, "question_text": "" },
+        { "question_number": 23, "question_text": "" },
+        { "question_number": 24, "question_text": "" },
+        { "question_number": 25, "question_text": "" },
+        { "question_number": 26, "question_text": "" },
+        { "question_number": 27, "question_text": "" }
+      ]
+    }
+  ]
+}

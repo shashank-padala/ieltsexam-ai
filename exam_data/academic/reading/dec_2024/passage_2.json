@@ -1,0 +1,58 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 14-19",
+      "section_instructions": "The reading passage has seven paragraphs, <strong>A-G</strong>.<br><br>Choose the correct heading for paragraphs <strong>A-G</strong> from the list below.<br><br>Write the correct number, <strong>i-x</strong>, in boxes 14-19 on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "i", "text": "The search for the better-fit matching between the model and the gained figures to foresee the activities of the genes" },
+        { "key": "ii", "text": "The definition of MEDUSA" },
+        { "key": "iii", "text": "A flashback of commencement for a far-reaching breakthrough" },
+        { "key": "iv", "text": "A drawing of the gene map" },
+        { "key": "v", "text": "An algorithm used to construct a specific model to discern the appearance of something new by the joint effort of Wiggins and another scientist" },
+        { "key": "vi", "text": "An introduction of a background tracing back to the availability of mature techniques for detailed research on genes" },
+        { "key": "vii", "text": "A way out to face the challenge confronting the scientist on the deciding of researchable data" },
+        { "key": "viii", "text": "A failure to find out some specific genes controlling the production of certain proteins" },
+        { "key": "ix", "text": "The use of a means from another domain for reference" },
+        { "key": "x", "text": "A tough hurdle on the way to find the law governing the activities of the genes" }
+      ],
+      "questions": [
+        { "question_number": 14, "question_text": "Paragraph B" },
+        { "question_number": 15, "question_text": "Paragraph C" },
+        { "question_number": 16, "question_text": "Paragraph D" },
+        { "question_number": 17, "question_text": "Paragraph E" },
+        { "question_number": 18, "question_text": "Paragraph F" },
+        { "question_number": 19, "question_text": "Paragraph G" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 20-22",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage 1?<br><br>In boxes 20-22 on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> if there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 20, "question_text": "Wiggins is the first man to use DNA microarrays for the research on genes." },
+        { "question_number": 21, "question_text": "There is almost no possibility for the effort to decrease the patterns of interaction between DNA, RNA, and proteins." },
+        { "question_number": 22, "question_text": "Wiggins holds a very positive attitude on the future of genetic research." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 23-26",
+      "section_instructions": "Complete the following summary of the paragraphs of Reading Passage, using <strong>NO MORE THAN THREE WORDS</strong> from the Reading Passage for each answer.<br><br>Write your answers in boxes 23-26 on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at {23} from a totally new way.<br>{24} is the heart and soul of these techniques and no matter what the {25} were, at the same time they can offer a whole picture of the genes’ activities as well as {26} in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins.",
+        "blanks": [23, 24, 25, 26]
+      },
+      "questions": [
+        { "question_number": 23, "question_text": "" },
+        { "question_number": 24, "question_text": "" },
+        { "question_number": 25, "question_text": "" },
+        { "question_number": 26, "question_text": "" }
+      ]
+    }
+  ]
+}

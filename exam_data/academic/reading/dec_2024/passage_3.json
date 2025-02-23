@@ -1,0 +1,72 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 27-33",
+      "section_instructions": "Write the correct letter, <strong>A–O</strong>, in boxes 27-33 on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "melt" },
+        { "key": "B", "text": "element" },
+        { "key": "C", "text": "process" },
+        { "key": "D", "text": "centre" },
+        { "key": "E", "text": "acceleration" },
+        { "key": "F", "text": "surface" },
+        { "key": "G", "text": "factor" },
+        { "key": "H", "text": "hollow" },
+        { "key": "I", "text": "matter" },
+        { "key": "J", "text": "circulation" },
+        { "key": "K", "text": "limit" },
+        { "key": "L", "text": "significance" },
+        { "key": "M", "text": "theory" },
+        { "key": "N", "text": "difference" },
+        { "key": "O", "text": "result" },
+        { "key": "P", "text": "temperature" }
+      ],
+      "questions": [
+        { "question_number": 27, "question_text": "For more than 2000 years people have wondered why raising the ___ of cold water before cooling it results in more rapid cooling." },
+        { "question_number": 28, "question_text": "At first researchers thought that a warm container created its own icy ___, which made the water freeze faster,"}, 
+        { "question_number": 29, "question_text": "but comparisons with containers resting on a dry ___ indicated that this was inaccurate." },
+        { "question_number": 30, "question_text": "Evaporation of water proved not to be a ___.Temperature measurements showed that, although the water in the cooler container reached 0C before the warmer one, it took longer to actually solidify. " },
+        { "question_number": 31, "question_text": "The water temperature drops the most at the top and sides of the container. Provided there is a temperature ___, the water will continue to circulate and to cool down." },
+        { "question_number": 32, "question_text": "Cooler water will have less water ___, and thus a slower rate of freezing." },
+        { "question_number": 33, "question_text": "If ice forms on the top of the water, this will further slow the ___ of freezing, but if it forms on the bottom and the sides of the container, this will increase the rate of cooling." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 34-39",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage 1?<br><br>In boxes 34-39 on your answer sheet, write:<br><br><strong>TRUE</strong> if the statement agrees with the information<br><strong>FALSE</strong> if the statement contradicts the information<br><strong>NOT GIVEN</strong> if there is no information on this.",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 34, "question_text": "The Mpemba Effect cannot be seen when comparing liquids with an extreme temperature difference." },
+        { "question_number": 35, "question_text": "Osborne and Mpemba’s results are still widely accepted today." },
+        { "question_number": 36, "question_text": "The size of the container does not alter the Mpemba Effect." },
+        { "question_number": 37, "question_text": "Osborne and Mpemba experimented on both pure and impure water." },
+        { "question_number": 38, "question_text": "One variable is the timing of containers in a freezer." },
+        { "question_number": 39, "question_text": "Physicists now agree that supercooling accounts for the Mpemba Effect." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Question 40",
+      "section_instructions": "Choose the correct letter, <strong>A, B, C or D</strong>.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 40,
+          "question_text": "The Mpemba Effect is best summed up as the observation that",
+          "question_payload": {
+            "options": {
+              "A": "ice cream freezes at different temperatures.",
+              "B": "different sources of heat result in water cooling at different rates.",
+              "C": "salt water freezes at a lower temperature than ordinary water.",
+              "D": "warmer water can freeze faster than colder water."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

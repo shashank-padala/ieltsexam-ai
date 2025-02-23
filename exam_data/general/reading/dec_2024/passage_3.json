@@ -1,0 +1,91 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-34",
+      "section_instructions": "The text has seven sections, <strong>A-G</strong>.<br><br>Choose the correct heading for each section from the list of headings below.<br><br>Write the correct number <strong>i-x</strong>, in boxes <strong>28-34</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "i", "text": "A decrease in the zebra population" },
+        { "key": "ii", "text": "An obstruction on the traditional route" },
+        { "key": "iii", "text": "An unknown species" },
+        { "key": "iv", "text": "Some confusing information" },
+        { "key": "v", "text": "Staying permanently in the Makgadikgadi" },
+        { "key": "vi", "text": "Nearly a record in the zebra world" },
+        { "key": "vii", "text": "Three different ways of living" },
+        { "key": "viii", "text": "The original aim of the work" },
+        { "key": "ix", "text": "How was the information passed on?" },
+        { "key": "x", "text": "Why it is important to study zebras" }
+      ],
+      "questions": [
+        { "question_number": 28, "question_text": "Section A" },
+        { "question_number": 29, "question_text": "Section B" },
+        { "question_number": 30, "question_text": "Section C" },
+        { "question_number": 31, "question_text": "Section D" },
+        { "question_number": 32, "question_text": "Section E" },
+        { "question_number": 33, "question_text": "Section F" },
+        { "question_number": 34, "question_text": "Section G" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 35-37",
+      "section_instructions": "Complete the summary below.<br><br>Choose <strong>ONE WORD ONLY</strong> from the text for each answer.<br><br>Write your answers in boxes <strong>35-37</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Zebras tend to live together in small units, which experts call {35}.<br>Here, a male zebra has charge of a number of adult {36} and their young. These units sometimes assemble in bigger groupings or {37}, but it is still clear that the zebras’ loyalty only extends to the small unit they live in.",
+        "blanks": [35, 36, 37]
+      },
+      "questions": [
+        { "question_number": 35, "question_text": "" },
+        { "question_number": 36, "question_text": "" },
+        { "question_number": 37, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 38-40",
+      "section_instructions": "Choose the correct letter, <strong>A, B, C or D</strong>.<br><br>Write the correct letter in boxes <strong>38-40</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 38,
+          "question_text": "How did Hattie feel when she heard some of the zebras had travelled so far?",
+          "question_payload": {
+            "options": {
+              "A": "annoyed because she would have to follow them to Makgadikgadi",
+              "B": "disappointed that not all of them made it back to Okavango",
+              "C": "frustrated as the rains had made the roads unusable",
+              "D": "unsure as to their real motivation for going"
+            }
+          }
+        },
+        {
+          "question_number": 39,
+          "question_text": "When describing the different Botswana zebra populations, the writer indicates",
+          "question_payload": {
+            "options": {
+              "A": "his admiration for the ones who migrate the furthest distance.",
+              "B": "his sympathy for the ones who stay by the Okavango River.",
+              "C": "his disbelief that those by the Boteti have difficulty finding food.",
+              "D": "his anxiety that their migration patterns may not be able to continue."
+            }
+          }
+        },
+        {
+          "question_number": 40,
+          "question_text": "What does the writer suggest in the final paragraph?",
+          "question_payload": {
+            "options": {
+              "A": "Too much time has been wasted on research into the predators like lions.",
+              "B": "It is sometimes necessary to go against the trend in research matters.",
+              "C": "Research will result in a ban on fences in areas where zebras live.",
+              "D": "Research into animals which are not endangered will increase."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

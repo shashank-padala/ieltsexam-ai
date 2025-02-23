@@ -1,0 +1,43 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 28-34",
+      "section_instructions": "Reading Passage has 7 paragraphs <strong>A-G</strong>.<br><br>Which paragraph contains the following information?<br><br>Write your answers in boxes <strong>28-34</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Paragraph A" },
+        { "key": "B", "text": "Paragraph B" },
+        { "key": "C", "text": "Paragraph C" },
+        { "key": "D", "text": "Paragraph D" },
+        { "key": "E", "text": "Paragraph E" },
+        { "key": "F", "text": "Paragraph F" },
+        { "key": "G", "text": "Paragraph G" }
+      ],
+      "questions": [
+        { "question_number": 28, "question_text": "recipes to conceal facial defects caused by aging" },
+        { "question_number": 29, "question_text": "perfumes were presented to conquerors in war" },
+        { "question_number": 30, "question_text": "long hair of girls had special meanings in marriage" },
+        { "question_number": 31, "question_text": "evidence exists in abundance showing cosmetics use in ancient times" },
+        { "question_number": 32, "question_text": "protecting eyes from fly-transmitted diseases" },
+        { "question_number": 33, "question_text": "from witchcraft to beautification" },
+        { "question_number": 34, "question_text": "more expensive than gold" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 35-40",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage?<br><br>In boxes <strong>35-40</strong> on your answer sheet, write:<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 35, "question_text": "The written record for cosmetics and perfumes dates back to the third millennium BC." },
+        { "question_number": 36, "question_text": "Since perfumes and spices were luxury products, their use was exclusive to the noble and the wealthy." },
+        { "question_number": 37, "question_text": "In the ancient Far East, fish fats were used as a cream by a woman from poor households." },
+        { "question_number": 38, "question_text": "The teachings in the Bible were repeatedly against the use of kohl for painting the eyes." },
+        { "question_number": 39, "question_text": "Long hair as a symbol of beauty was worn solely by women of ancient cultures." },
+        { "question_number": 40, "question_text": "The Egyptian Queen Hatshepsut sent a royal expedition to Punt to establish a trade route for myrrh." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-5",
+      "section_instructions": "Complete the notes below.<br><br>Write <strong>NO MORE THAN TWO WORDS OR A NUMBER</strong> for each answer.<br><br>Write your answers in boxes <strong>1-5</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "<strong>Origins</strong><br>• Word ‘Viking’ is {1}.<br>• Vikings came from Scandinavia.<br><br><strong>Dates of the Viking Age</strong><br>• In Britain: AD {2} - 1066<br>• Length varies elsewhere<br><br><strong>Territorial extent</strong><br>• In doubt – but most of Europe<br>• Possibly raided as far away as {3}.<br><br><strong>End of the Viking Age</strong><br>• Vikings had assimilated into {4}, & adopted a new {5} system.",
+        "blanks": [1, 2, 3, 4, 5]
+      },
+      "questions": [
+        { "question_number": 1, "question_text": "" },
+        { "question_number": 2, "question_text": "" },
+        { "question_number": 3, "question_text": "" },
+        { "question_number": 4, "question_text": "" },
+        { "question_number": 5, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 6-13",
+      "section_instructions": "Look at the following statements and the list of times and places below.<br><br>Match each statement with the correct place or time: <strong>A-H</strong>.<br><br>Write the correct letter, <strong>A-H</strong>, in boxes <strong>6-13</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "In the UK today" },
+        { "key": "B", "text": "In 19th-century Norway" },
+        { "key": "C", "text": "In 19th-century Sweden" },
+        { "key": "D", "text": "In 19th-century England" },
+        { "key": "E", "text": "In Denmark today" },
+        { "key": "F", "text": "In 9th-century Persia" },
+        { "key": "G", "text": "In mid-20th century Soviet Union" },
+        { "key": "H", "text": "In Russia today" }
+      ],
+      "questions": [
+        { "question_number": 6, "question_text": "A geographer documents Viking culture as it happens." },
+        { "question_number": 7, "question_text": "A philosopher classifies cultures hierarchically." },
+        { "question_number": 8, "question_text": "Historians assert that Viking history is based more on legends than facts." },
+        { "question_number": 9, "question_text": "Young people learn about Viking cultural and economic activities." },
+        { "question_number": 10, "question_text": "People see themselves as unrelated to Vikings." },
+        { "question_number": 11, "question_text": "An historian claims Viking colonists to modern-day Canada came from his land." },
+        { "question_number": 12, "question_text": "Viking conquests are exaggerated to bolster the country’s ego after a territorial loss." },
+        { "question_number": 13, "question_text": "DNA tests show locals are closely related to Swedes." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Question 14",
+      "section_instructions": "Choose the correct letter <strong>A-E</strong>.<br><br>Write the correct letter in box <strong>14</strong> on your answer sheet.",
+      "section_question_type": "multiple_choice",
+      "questions": [
+        {
+          "question_number": 14,
+          "question_text": "Which might be a suitable title for passage?",
+          "question_payload": {
+            "options": {
+              "A": "A brief history of Vikings",
+              "B": "Recent Viking discoveries",
+              "C": "A modern fascination with Vikings",
+              "D": "Interpretations of Viking history",
+              "E": "Viking history and nationalism"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

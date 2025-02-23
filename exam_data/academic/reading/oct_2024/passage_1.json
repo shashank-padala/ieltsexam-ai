@@ -1,0 +1,49 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-4",
+      "section_instructions": "Complete the table now.<br><br>Choose <strong>NO MORE THAN TWO WORDS</strong> from Reading Passage 1 for each answer.<br><br>Write your answers in boxes <strong>1-4</strong> on your answer sheet.",
+      "section_question_type": "diagram_labeling",
+      "content": {
+        "image_url": "https://mqzufjbtjwxiylcivyoo.supabase.co/storage/v1/object/sign/exam-images/reading_academic_oct2024_p1-s1.PNG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJleGFtLWltYWdlcy9yZWFkaW5nX2FjYWRlbWljX29jdDIwMjRfcDEtczEuUE5HIiwiaWF0IjoxNzQwMjY3MDIzLCJleHAiOjIwODcxNjMwMjN9.-LXfYUAY0l5DzVSP3251kW3keLNhqxxclM40DIvsy7M"
+      },
+      "questions": [
+        { "question_number": 1, "question_text": "" },
+        { "question_number": 2, "question_text": "" },
+        { "question_number": 3, "question_text": "" },
+        { "question_number": 4, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 5-8",
+      "section_instructions": "Complete the following summary of the paragraphs of Reading Passage 1.<br><br>Using <strong>NO MORE THAN TWO WORDS</strong> from the Reading Passage for each answer.<br><br>Write your answers in boxes <strong>5-8</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "On the remote island of Santa Cruz, Andrew Hendry and Jeffrey Podos conducted a study on reversal {5} due to human activity. In the early 1960s medium ground finches were found to have a larger or smaller beak. But in the late 1960s and early 70s, finches with {6} flourished. The study speculates that it is due to the growing {7} who brought in alien plants with intermediate-size seeds into the area and the birds ate {8} sometimes.",
+        "blanks": [5, 6, 7, 8]
+      },
+      "questions": [
+        { "question_number": 5, "question_text": "" },
+        { "question_number": 6, "question_text": "" },
+        { "question_number": 7, "question_text": "" },
+        { "question_number": 8, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 9-13",
+      "section_instructions": "Do the following statements agree with the claims of the writer in Reading Passage 1?<br><br>In boxes <strong>9-13</strong> on your answer sheet, write:<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 9, "question_text": "Grants’ discovery has questioned Darwin’s theory." },
+        { "question_number": 10, "question_text": "The cactus finches are less affected by food than the medium ground finch." },
+        { "question_number": 11, "question_text": "In 2002 and 2003, all the birds were affected by the drought." },
+        { "question_number": 12, "question_text": "The discovery of Andrew Hendry and Jeffrey Podos was the same as that of the previous studies." },
+        { "question_number": 13, "question_text": "It is shown that the revolution in finches on Santa Cruz is likely a response to human intervention." }
+      ]
+    }
+  ]
+}

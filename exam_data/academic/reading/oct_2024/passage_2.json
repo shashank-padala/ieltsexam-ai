@@ -1,0 +1,53 @@
+{
+  "passage_number": 2,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 14-17",
+      "section_instructions": "Complete the following summary of the paragraphs of Reading Passage.<br><br>Using <strong>NO MORE THAN THREE WORDS</strong> from the Reading Passage for each answer.<br><br>Write your answers in boxes <strong>14-17</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "The would-be risk surely exists, since the avionic systems on modern aircraft are used to manage flight and deal with {14}.<br>Those devices are designed to meet the safety criteria which should be free from interrupting {15} or interior emission.<br>The personal use of a mobile phone may cause the sophisticated {16} outside of the plane to dysfunction.<br>Though definite interference in piloting devices has not been scientifically testified, the devices such as those which detect {17} or indicate fuel load could be affected.",
+        "blanks": [14, 15, 16, 17]
+      },
+      "questions": [
+        { "question_number": 14, "question_text": "" },
+        { "question_number": 15, "question_text": "" },
+        { "question_number": 16, "question_text": "" },
+        { "question_number": 17, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 18-22",
+      "section_instructions": "Use the information in the passage to match the Organization (listed <strong>A-E</strong>) with opinions or deeds below.<br><br>Write the appropriate letters <strong>A-E</strong> in boxes <strong>18-22</strong> on your answer sheet.",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "British Civil Aviation Authority" },
+        { "key": "B", "text": "Maryanne Greczyn" },
+        { "key": "C", "text": "RTCA" },
+        { "key": "D", "text": "Marshall Cross" },
+        { "key": "E", "text": "Boeing company" }
+      ],
+      "questions": [
+        { "question_number": 18, "question_text": "Mobile usages should be forbidden in specific fame." },
+        { "question_number": 19, "question_text": "Computers are more dangerous than cell phones." },
+        { "question_number": 20, "question_text": "Finding that the mobile phones pose little risk on flight’s navigation devices." },
+        { "question_number": 21, "question_text": "The disruption of laptops is not as dangerous as cellphones." },
+        { "question_number": 22, "question_text": "The mobile signal may have an impact on earlier devices." }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 23-26",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage?<br><br>In boxes <strong>23-26</strong> on your answer sheet, write:<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 23, "question_text": "Almost all scientists accept that cellphones have higher emission than that of personal computers." },
+        { "question_number": 24, "question_text": "Some people believe that radio emission will interrupt the equipment on the plane." },
+        { "question_number": 25, "question_text": "The signal interference-detecting device has not yet been developed because they are in priority for neither administrative department nor offer an economic incentive." },
+        { "question_number": 26, "question_text": "FAA initialed open debate with Federal Communications Commission." }
+      ]
+    }
+  ]
+}

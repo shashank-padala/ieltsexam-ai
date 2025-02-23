@@ -1,0 +1,69 @@
+{
+  "passage_number": 1,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 1-4",
+      "section_instructions": "Choose the correct letter, <strong>A-G</strong>?<br><br>Write your answers in boxes <strong>1-4</strong> on your answer sheet.",
+      "section_question_type": "multiple_select",
+      "content": {
+        "shared_question_text": "What four statements are correct concerning Nash’s story?"
+      },
+      "shared_options": [
+        { "key": "A", "text": "He did not make an effort after becoming a high-ranking official in the army." },
+        { "key": "B", "text": "He had a dream since his childhood." },
+        { "key": "C", "text": "He once temporarily ceased his painting career for some reason." },
+        { "key": "D", "text": "He was not affected by certain shows attractive to his other peers." },
+        { "key": "E", "text": "He had cooperation in art with his relative." },
+        { "key": "F", "text": "Some of his paintings were presented in a chaotic way." },
+        { "key": "G", "text": "His achievement after being enlisted in the army did not as much attention as his previous work." }
+      ],
+      "questions": [
+        { "question_number": 1, "question_text": "" },
+        { "question_number": 2, "question_text": "" },
+        { "question_number": 3, "question_text": "" },
+        { "question_number": 4, "question_text": "" }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 5-10",
+      "section_instructions": "The reading Passage has eleven paragraphs <strong>A-I</strong>.<br><br>Write the correct letter <strong>A-I</strong>, in boxes <strong>5-10</strong> on your answer sheet.<br><br>Which paragraph contains the following information?<br><br><strong>NB You may use any letter more than once.</strong>",
+      "section_question_type": "matching_statements",
+      "shared_options": [
+        { "key": "A", "text": "Paragraph A" },
+        { "key": "B", "text": "Paragraph B" },
+        { "key": "C", "text": "Paragraph C" },
+        { "key": "D", "text": "Paragraph D" },
+        { "key": "E", "text": "Paragraph E" },
+        { "key": "F", "text": "Paragraph F" },
+        { "key": "G", "text": "Paragraph G" },
+        { "key": "H", "text": "Paragraph H" },
+        { "key": "I", "text": "Paragraph I" }
+      ],
+      "questions": [
+        { "question_number": 5, "question_text": "a charming lady in Nash’s eyes" },
+        { "question_number": 6, "question_text": "Nash’s passion for following particularly appreciated artists" },
+        { "question_number": 7, "question_text": "Nash’s works with contrast elements" },
+        { "question_number": 8, "question_text": "the true cause for Nash to join the military service" },
+        { "question_number": 9, "question_text": "the noticeable impact on Nash’s growth exerted from the rearing environment" },
+        { "question_number": 10, "question_text": "high praise for Nash’s unique taste of presenting his works" }
+      ]
+    },
+    {
+      "section_number": 3,
+      "section_header": "Questions 11-13",
+      "section_instructions": "Answer the questions below.<br><br>Choose <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> from the passage for each answer.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "Because of a popular display of Nash’s works created in the army, what did his leader designate him as? {11}<br><br>How did Nash learn oil painting? {12}<br><br>What change took place for Nash’s painting style in the late second decade of the twentieth century? {13}",
+        "blanks": [11, 12, 13]
+      },
+      "questions": [
+        { "question_number": 11, "question_text": "" },
+        { "question_number": 12, "question_text": "" },
+        { "question_number": 13, "question_text": "" }
+      ]
+    }
+  ]
+}

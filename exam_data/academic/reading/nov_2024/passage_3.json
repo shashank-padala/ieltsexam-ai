@@ -1,0 +1,39 @@
+{
+  "passage_number": 3,
+  "sections": [
+    {
+      "section_number": 1,
+      "section_header": "Questions 27-35",
+      "section_instructions": "Do the following statements agree with the information given in Reading Passage?<br><br>In boxes <strong>27-35</strong> on your answer sheet, write:<br><br><strong>TRUE.</strong> if the statement agrees with the information<br><strong>FALSE.</strong> if the statement contradicts the information<br><strong>NOT GIVEN.</strong> If there is no information on this",
+      "section_question_type": "true_false_not_given",
+      "questions": [
+        { "question_number": 27, "question_text": "Michael was unluckily hit by electric shocks and nearly lost his life during his vacation." },
+        { "question_number": 28, "question_text": "The disease Michael had suffered from for eight years was caused by an accident." },
+        { "question_number": 29, "question_text": "Michael is grateful for the bark scorpion bite because it helped him recover from the ankylosing spondylitis." },
+        { "question_number": 30, "question_text": "No venom is just responsible for one job." },
+        { "question_number": 31, "question_text": "There is no difference between venom and poison." },
+        { "question_number": 32, "question_text": "Venom can kill while it can also be used as medicine to save." },
+        { "question_number": 33, "question_text": "New treatments for cancer are now available in the market." },
+        { "question_number": 34, "question_text": "So far 20 million venom toxins have been checked for medical use." },
+        { "question_number": 35, "question_text": "The majority of mammals carry venom inside their bodies." }
+      ]
+    },
+    {
+      "section_number": 2,
+      "section_header": "Questions 36-40",
+      "section_instructions": "Complete the sentences below.<br><br>Choose <strong>NO MORE THAN TWO WORDS</strong> from the Reading Passage for each answer.<br><br>Write your answers in boxes <strong>36-40</strong> on your answer sheet.",
+      "section_question_type": "summary_completion",
+      "content": {
+        "paragraph": "The way how venom works can be utilised to create... {36}<br><br>A venom source such as has helped to present complex facts about how nerve cells convey information to each other. {37}<br><br>Tens of thousands of animals have developed and which are respectively responsible for storing and letting out venom. {38}<br><br>The makeup of venom of a snake may change with places, ages and . {39}<br><br>Some animal uses venom to warn of its exclusive power during the mating season. {40}",
+        "blanks": [36, 37, 38, 39, 40]
+      },
+      "questions": [
+        { "question_number": 36, "question_text": "" },
+        { "question_number": 37, "question_text": "" },
+        { "question_number": 38, "question_text": "" },
+        { "question_number": 39, "question_text": "" },
+        { "question_number": 40, "question_text": "" }
+      ]
+    }
+  ]
+}
