@@ -33,19 +33,48 @@ export default function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <h1 className="text-2xl font-bold mb-4">Login</h1>
-      <form onSubmit={handleLogin} className="flex flex-col gap-3 w-80">
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required className="p-2 border rounded"/>
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required className="p-2 border rounded"/>
-        <button type="submit" disabled={loading} className="p-2 bg-blue-500 text-white rounded">
-          {loading ? "Logging in..." : "Login"}
-        </button>
-      </form>
-      {message && <p className="text-red-500 mt-3">{message}</p>}
-      <p className="mt-4 text-gray-600">
-        Don’t have an account? <Link href="/signup" className="text-blue-500">Sign Up</Link>
-      </p>
+    <div className="min-h-screen bg-white flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-white border border-gray-200 rounded shadow p-8">
+        <h1 className="text-2xl font-bold text-gray-900 mb-6">Login</h1>
+
+        {message && <p className="text-red-600 mb-4">{message}</p>}
+
+        <form onSubmit={handleLogin} className="flex flex-col gap-4">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="p-2 border border-gray-300 rounded text-gray-800
+                       focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="p-2 border border-gray-300 rounded text-gray-800
+                       focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700
+                       focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
+          >
+            {loading ? "Logging in..." : "Login"}
+          </button>
+        </form>
+
+        <p className="mt-4 text-gray-700">
+          Don’t have an account?{" "}
+          <Link href="/signup" className="text-blue-600 hover:underline">
+            Sign Up
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }
