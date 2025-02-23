@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /my-profile
+Disallow: /exams
+
+# Host
+Host: https://www.ieltsexam.ai
+
+# Sitemaps
+Sitemap: https://www.ieltsexam.ai/sitemap.xml
