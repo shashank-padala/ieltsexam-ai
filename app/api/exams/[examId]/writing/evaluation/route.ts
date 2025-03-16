@@ -66,11 +66,41 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Evaluate both tasks in parallel using OpenAI API
-    const [task1Evaluation, task2Evaluation] = await Promise.all([
-      evaluateTask(task_1_answer, 1, task_1_question),
-      evaluateTask(task_2_answer, 2, task_2_question)
-    ]);
+    // Evaluate each task with fallback on error
+    let task1Evaluation, task2Evaluation;
+    let evaluationFailed = false;
+
+    try {
+      task1Evaluation = await evaluateTask(task_1_answer, 1, task_1_question);
+    } catch (e) {
+      evaluationFailed = true;
+      task1Evaluation = {
+        band: 0,
+        feedback: {
+          task_response: "Evaluation failed due to technical error.",
+          coherence_cohesion: "Evaluation failed due to technical error.",
+          grammatical_accuracy: "Evaluation failed due to technical error.",
+          lexical_resource: "Evaluation failed due to technical error."
+        },
+        improved_response: task_1_answer
+      };
+    }
+
+    try {
+      task2Evaluation = await evaluateTask(task_2_answer, 2, task_2_question);
+    } catch (e) {
+      evaluationFailed = true;
+      task2Evaluation = {
+        band: 0,
+        feedback: {
+          task_response: "Evaluation failed due to technical error.",
+          coherence_cohesion: "Evaluation failed due to technical error.",
+          grammatical_accuracy: "Evaluation failed due to technical error.",
+          lexical_resource: "Evaluation failed due to technical error."
+        },
+        improved_response: task_2_answer
+      };
+    }
 
     const overallBand = Math.round(((task1Evaluation.band + (2 * task2Evaluation.band)) / 3) * 2) / 2;
 
@@ -132,7 +162,7 @@ export async function POST(req: NextRequest, { params }: { params: { examId: str
       console.error("Error inserting user_exam_summary:", summaryInsertError);
     }
     
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, evaluationFailed });
   } catch (error) {
     console.error("Error in writing evaluation POST request:", error);
     return NextResponse.json({ error: "Failed to evaluate writing response" }, { status: 500 });
