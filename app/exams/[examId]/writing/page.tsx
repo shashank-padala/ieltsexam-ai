@@ -239,45 +239,27 @@ export default function WritingModule() {
       </div>
 
       {/* Intermediate Evaluation Modal - Loading Spinner */}
-      {(isEvaluating || evaluationFailed) && (
+      {isEvaluating && (
         <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-75 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-md mx-4">
             <p className="text-lg mb-4">{LoaderMessage}</p>
-            {isEvaluating && !evaluationFailed && (
-              <div className="flex justify-center items-center">
-                <svg className="animate-spin h-8 w-8 text-blue-600" viewBox="0 0 24 24">
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8v8H4z"
-                  ></path>
-                </svg>
-              </div>
-            )}
-            {evaluationFailed && (
-              <div className="mt-4 flex justify-center gap-4">
-                <button
-                  onClick={handleSubmitTest}
-                  className="px-4 py-2 bg-blue-600 text-white rounded text-base hover:bg-blue-700"
-                >
-                  Resubmit
-                </button>
-                <button
-                  onClick={() => router.push("/")}
-                  className="px-4 py-2 bg-green-600 text-white rounded text-base hover:bg-green-700"
-                >
-                  Return to Home Page
-                </button>
-              </div>
-            )}
+            <div className="flex justify-center items-center">
+              <svg className="animate-spin h-8 w-8 text-blue-600" viewBox="0 0 24 24">
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8H4z"
+                ></path>
+              </svg>
+            </div>
           </div>
         </div>
       )}

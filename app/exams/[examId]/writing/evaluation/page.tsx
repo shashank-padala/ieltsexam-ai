@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
@@ -27,56 +27,125 @@ const EvalPage = () => {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("task_1");
 
-  useEffect(() => {
+  // Check if any task's band score is 0
+  const evaluationFailed =
+    evaluation && (evaluation.task_1_band === 0 || evaluation.task_2_band === 0);
+
+  // Function to fetch evaluation data from API
+  const fetchEvaluation = useCallback(async () => {
     if (!examId) return;
-  
-    const fetchEvaluation = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      if (error || !data?.session?.user) {
-        console.error("User session is invalid or expired", error);
+    setLoading(true);
+    try {
+      const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+      if (sessionError || !sessionData?.session?.user) {
+        console.error("User session is invalid or expired", sessionError);
         setLoading(false);
         return;
       }
       
-      const token = data.session.access_token;
+      const token = sessionData.session.access_token;
       if (!token) {
         console.error("Failed to retrieve authentication token");
         setLoading(false);
         return;
       }
       
-      try {
-        const response = await fetch(`/api/exams/${examId}/writing/evaluation`, {
-          method: "GET",
-          headers: {
-            "Authorization": `Bearer ${token}`,
-          },
-        });
+      const response = await fetch(`/api/exams/${examId}/writing/evaluation`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
+      });
   
-        if (!response.ok) {
-          const errorText = await response.text();
-          console.error(`API Error (Status: ${response.status}):`, errorText);
-          throw new Error("Failed to fetch evaluation data");
-        }
-  
-        const dataJson = await response.json();
-        setEvaluation(dataJson);
-      } catch (error) {
-        console.error("Error fetching evaluation data:", error);
-      } finally {
-        setLoading(false);
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`API Error (Status: ${response.status}):`, errorText);
+        throw new Error("Failed to fetch evaluation data");
       }
-    };
   
-    fetchEvaluation();
+      const dataJson = await response.json();
+      setEvaluation(dataJson);
+    } catch (error) {
+      console.error("Error fetching evaluation data:", error);
+    } finally {
+      setLoading(false);
+    }
   }, [examId]);
+
+  useEffect(() => {
+    fetchEvaluation();
+  }, [fetchEvaluation, examId]);
   
+  // Function to resubmit evaluation if previous evaluation failed
+  const handleResubmitEvaluation = async () => {
+    if (!examId || !evaluation) return;
+    setLoading(true);
+    try {
+      // Fetch the writing questions to get the original task questions
+      const { data: questionsData, error: questionsError } = await supabase
+        .from("writing_questions")
+        .select("task_number, content")
+        .eq("exam_id", examId);
+      if (questionsError || !questionsData) {
+        console.error("Error fetching questions", questionsError);
+        setLoading(false);
+        return;
+      }
+      const task1Question = questionsData.find((q: any) => q.task_number === 1)?.content || "";
+      const task2Question = questionsData.find((q: any) => q.task_number === 2)?.content || "";
+      
+      // Use the candidate answers stored in evaluation record (fallback value)
+      const payload = {
+        task_1_question: task1Question,
+        task_2_question: task2Question,
+        task_1_answer: evaluation.task_1_rewrite,
+        task_2_answer: evaluation.task_2_rewrite,
+      };
+  
+      const { data: sessionData } = await supabase.auth.getSession();
+      const token = sessionData?.session?.access_token;
+      if (!token) {
+        console.error("Missing authentication token");
+        setLoading(false);
+        return;
+      }
+  
+      const response = await fetch(`/api/exams/${examId}/writing/evaluation`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        console.error("Failed to resubmit evaluation");
+        setLoading(false);
+        return;
+      }
+      // On successful re-evaluation, re-fetch evaluation data
+      await fetchEvaluation();
+    } catch (error) {
+      console.error("Error in resubmitting evaluation:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   if (loading) {
-    return <div className="text-center text-blue-500 text-lg font-semibold">Loading evaluation data...</div>;
+    return (
+      <div className="text-center text-blue-500 text-lg font-semibold">
+        Loading evaluation data...
+      </div>
+    );
   }
   
   if (!evaluation) {
-    return <div className="text-center text-red-500 text-lg font-semibold">Failed to load evaluation data.</div>;
+    return (
+      <div className="text-center text-red-500 text-lg font-semibold">
+        Failed to load evaluation data.
+      </div>
+    );
   }
   
   return (
@@ -137,6 +206,18 @@ const EvalPage = () => {
           />
         )}
       </div>
+
+      {/* Resubmit Button if Evaluation Failed (i.e. any task band score is 0) */}
+      {evaluationFailed && (
+        <div className="mt-6 text-center">
+          <button
+            onClick={handleResubmitEvaluation}
+            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          >
+            Resubmit Evaluation
+          </button>
+        </div>
+      )}
     </div>
   );
 };
@@ -177,8 +258,20 @@ const FeedbackSection = ({
 );
 
 /* Individual Feedback Cards */
-const FeedbackCard = ({ title, content, fullWidth }: { title: string; content: string; fullWidth?: boolean }) => (
-  <div className={`p-5 bg-white rounded-lg shadow-md border border-gray-200 transition transform hover:scale-105 ${fullWidth ? "col-span-2" : ""}`}>
+const FeedbackCard = ({
+  title,
+  content,
+  fullWidth,
+}: {
+  title: string;
+  content: string;
+  fullWidth?: boolean;
+}) => (
+  <div
+    className={`p-5 bg-white rounded-lg shadow-md border border-gray-200 transition transform hover:scale-105 ${
+      fullWidth ? "col-span-2" : ""
+    }`}
+  >
     <h5 className="font-semibold text-gray-900">{title}</h5>
     <p className="mt-3 text-gray-700 leading-relaxed whitespace-pre-line">{content}</p>
   </div>
