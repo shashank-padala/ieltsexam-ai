@@ -1,9 +1,12 @@
-'use client';
+// app/layout.tsx
+"use client";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { usePathname } from "next/navigation";
 import "./globals.css";
 import HeaderNav from "@/components/HeaderNav";
+import Footer from "@/components/Footer";
+import { AuthProvider } from "@/context/AuthContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,17 +20,34 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const pathname = usePathname();
-  const isTestPage = pathname.match(/^\/exams\/[^/]+\/(listening|reading|writing|speaking)$/); 
+  const isTestPage = pathname.match(
+    /^\/exams\/[^/]+\/(listening|reading|writing|speaking)$/
+  );
 
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {!isTestPage && <HeaderNav />} {/* Hide header only on test pages */}
-        {children}
+      <body
+        className={`
+          ${geistSans.variable} 
+          ${geistMono.variable} 
+          antialiased 
+          min-h-screen 
+          flex 
+          flex-col 
+          bg-gray-50
+        `}
+      >
+        <AuthProvider>
+          {!isTestPage && <HeaderNav />}
+          <main className="flex-grow">
+            {children}
+          </main>
+          {!isTestPage && <Footer />}
+        </AuthProvider>
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+// components/HeaderNav.tsx
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -84,11 +85,13 @@ export default function HeaderNav() {
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-2">
-          <BookOpenIcon className="h-8 w-8 text-blue-600" />
-          <span className="text-xl font-bold text-black">IELTSExam.ai</span>
-        </Link>
+        {/* Logo and Main Links */}
+        <div className="flex items-center gap-6">
+          <Link href="/" className="flex items-center gap-2">
+            <BookOpenIcon className="h-8 w-8 text-blue-600" />
+            <span className="text-xl font-bold text-black">IELTSExam.ai</span>
+          </Link>
+        </div>
 
         {/* Right Side: User Session Check */}
         <div className="relative">

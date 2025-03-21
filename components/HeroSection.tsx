@@ -1,4 +1,14 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function HeroSection() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/login");
+  };
+
   return (
     <section className="bg-gradient-to-b from-[#E6FAF5] to-white py-16">
       <div className="max-w-7xl mx-auto px-4 text-center">
@@ -27,7 +37,10 @@ export default function HeroSection() {
         </h1>
 
         {/* CTA Button */}
-        <button className="inline-flex items-center bg-[#F79009] hover:bg-[#e07808] text-white px-6 py-3 rounded-full font-semibold transition-colors">
+        <button
+          onClick={handleClick}
+          className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors"
+        >
           Get started for free
           {/* Right Arrow Icon */}
           <svg
@@ -38,7 +51,11 @@ export default function HeroSection() {
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 12h12" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13 7l5 5-5 5M6 12h12"
+            />
           </svg>
         </button>
       </div>
