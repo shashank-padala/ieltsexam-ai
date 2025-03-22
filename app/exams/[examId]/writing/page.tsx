@@ -25,8 +25,9 @@ export default function WritingModule() {
   const [user, setUser] = useState<User | null>(null);
   const [examSubmitted, setExamSubmitted] = useState(false);
   const [isEvaluating, setIsEvaluating] = useState(false);
-  const [LoaderMessage, setLoaderMessage] = useState("Your writing exam is being evaluated using AI powered evaluator. Please wait up to 30 seconds.");
-  const [evaluationFailed, setEvaluationFailed] = useState(false);
+  const [loaderMessage, setLoaderMessage] = useState(
+    "Your writing exam is being evaluated using AI powered evaluator. Please wait up to 30 seconds."
+  );
 
   // Fetch user session
   useEffect(() => {
@@ -89,7 +90,6 @@ export default function WritingModule() {
     if (examSubmitted) return; // Prevent multiple submissions
     setExamSubmitted(true);
     setIsEvaluating(true);
-    setEvaluationFailed(false);
 
     // Get the current session to extract the fresh token
     const { data } = await supabase.auth.getSession();
@@ -112,30 +112,24 @@ export default function WritingModule() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`, // token sent to API
+          Authorization: `Bearer ${token}`, // token sent to API
         },
         body: JSON.stringify(payload),
       });
 
       const result = await response.json();
-      if (response.ok) {
-        if (result.evaluation_failed) {
-          // Evaluation call failed but we still saved data.
-          setLoaderMessage("Evaluation failed. Please try again or return to the home page.");
-          setEvaluationFailed(true);
-          setIsEvaluating(false);
-        } else {
-            setIsEvaluating(false);
-            router.push(`/exams/${examId}/writing/evaluation`);
-          }
-        } else {
-          setLoaderMessage("Evaluation failed. Please try again or return to the home page.");
-          console.error("Evaluation failed:", result.error);
-        }
-      } catch (error) {
+      if (!response.ok) {
+        console.error("Evaluation failed:", result.error);
         setLoaderMessage("Evaluation failed. Please try again or return to the home page.");
-        console.error("Error submitting test:", error);
       }
+    } catch (error) {
+      console.error("Error submitting test:", error);
+      setLoaderMessage("Evaluation failed. Please try again or return to the home page.");
+    } finally {
+      // Always navigate to the evaluation page, regardless of eval success or failure.
+      setIsEvaluating(false);
+      router.push(`/exams/${examId}/writing/evaluation`);
+    }
   };
 
   if (!examId) return <div className="text-red-500">Invalid Exam</div>;
@@ -157,9 +151,7 @@ export default function WritingModule() {
         </div>
         <div className="flex items-center gap-2">
           {examSubmitted ? (
-            <span className="text-lg font-semibold text-green-600">
-              Exam Submitted
-            </span>
+            <span className="text-lg font-semibold text-green-600">Exam Submitted</span>
           ) : (
             <>
               <ClockIcon className="w-6 h-6 text-blue-600" />
@@ -242,7 +234,7 @@ export default function WritingModule() {
       {isEvaluating && (
         <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-75 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-md mx-4">
-            <p className="text-lg mb-4">{LoaderMessage}</p>
+            <p className="text-lg mb-4">{loaderMessage}</p>
             <div className="flex justify-center items-center">
               <svg className="animate-spin h-8 w-8 text-blue-600" viewBox="0 0 24 24">
                 <circle

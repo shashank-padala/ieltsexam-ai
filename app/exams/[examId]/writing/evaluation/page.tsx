@@ -19,6 +19,8 @@ interface EvaluationData {
   task_2_feedback: Feedback;
   task_1_rewrite: string;
   task_2_rewrite: string;
+  task_1_answer: string; // Candidate's original answer for Task 1
+  task_2_answer: string; // Candidate's original answer for Task 2
 }
 
 const EvalPage = () => {
@@ -98,8 +100,8 @@ const EvalPage = () => {
       const payload = {
         task_1_question: task1Question,
         task_2_question: task2Question,
-        task_1_answer: evaluation.task_1_rewrite,
-        task_2_answer: evaluation.task_2_rewrite,
+        task_1_answer: evaluation.task_1_answer,
+        task_2_answer: evaluation.task_2_answer,
       };
   
       const { data: sessionData } = await supabase.auth.getSession();
@@ -207,7 +209,21 @@ const EvalPage = () => {
         )}
       </div>
 
-      {/* Resubmit Button if Evaluation Failed (i.e. any task band score is 0) */}
+      {/* Response Comparison Section */}
+      {activeTab === "task_1" && (
+        <ResponseComparison
+          original={evaluation.task_1_answer}
+          improved={evaluation.task_1_rewrite}
+        />
+      )}
+      {activeTab === "task_2" && (
+        <ResponseComparison
+          original={evaluation.task_2_answer}
+          improved={evaluation.task_2_rewrite}
+        />
+      )}
+
+      {/* Resubmit Button if Evaluation Failed */}
       {evaluationFailed && (
         <div className="mt-6 text-center">
           <button
@@ -244,16 +260,6 @@ const FeedbackSection = ({
       <FeedbackCard title="Grammatical Range and Accuracy" content={feedback.grammatical_accuracy} />
       <FeedbackCard title="Lexical Resource" content={feedback.lexical_resource} />
     </div>
-
-    {/* Boost Score Section */}
-    <div className="mt-8 text-center">
-      <h3 className="text-xl font-bold text-gray-900">Boost Your Score by Re-Writing Your Essay</h3>
-    </div>
-
-    {/* Full-Width Improved Response Section */}
-    <div className="mt-6">
-      <FeedbackCard title="Improved Response" content={rewrite} fullWidth />
-    </div>
   </div>
 );
 
@@ -274,6 +280,29 @@ const FeedbackCard = ({
   >
     <h5 className="font-semibold text-gray-900">{title}</h5>
     <p className="mt-3 text-gray-700 leading-relaxed whitespace-pre-line">{content}</p>
+  </div>
+);
+
+/* Response Comparison Section */
+const ResponseComparison = ({
+  original,
+  improved,
+}: {
+  original: string;
+  improved: string;
+}) => (
+  <div className="mt-8">
+    <h3 className="text-xl font-bold text-gray-900 text-center mb-4">Response Comparison</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+        <h4 className="text-lg font-semibold text-gray-900">Your Original Response</h4>
+        <p className="mt-3 text-gray-700 whitespace-pre-line">{original}</p>
+      </div>
+      <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+        <h4 className="text-lg font-semibold text-gray-900">AI Improved Response</h4>
+        <p className="mt-3 text-gray-700 whitespace-pre-line">{improved}</p>
+      </div>
+    </div>
   </div>
 );
 
