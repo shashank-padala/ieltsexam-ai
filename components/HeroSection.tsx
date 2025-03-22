@@ -5,8 +5,13 @@ import { useRouter } from "next/navigation";
 export default function HeroSection() {
   const router = useRouter();
 
-  const handleClick = () => {
+  // Handlers for each button
+  const handleGetStarted = () => {
     router.push("/login");
+  };
+
+  const handleMockExams = () => {
+    router.push("/ielts-mock-tests");
   };
 
   return (
@@ -16,7 +21,7 @@ export default function HeroSection() {
           Your path to a perfect{" "}
           <span className="relative text-teal-600 inline-block">
             IELTS Score
-            {/* Remove this <svg> if you don't want the scribble underline */}
+            {/* Scribble underline SVG */}
             <svg
               className="absolute -bottom-2 left-1/2 -translate-x-1/2"
               width="120"
@@ -36,28 +41,52 @@ export default function HeroSection() {
           begins here!
         </h1>
 
-        {/* CTA Button */}
-        <button
-          onClick={handleClick}
-          className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors"
-        >
-          Get started for free
-          {/* Right Arrow Icon */}
-          <svg
-            className="ml-2 w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+        {/* Buttons container */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          {/* Button 1: Get started for free */}
+          <button
+            onClick={handleGetStarted}
+            className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13 7l5 5-5 5M6 12h12"
-            />
-          </svg>
-        </button>
+            Get started for free
+            <svg
+              className="ml-2 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13 7l5 5-5 5M6 12h12"
+              />
+            </svg>
+          </button>
+
+          {/* Button 2: Try Mock Exams */}
+          <button
+            onClick={handleMockExams}
+            className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full font-semibold transition-colors"
+          >
+            Try Mock Exams
+            <svg
+              className="ml-2 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13 7l5 5-5 5M6 12h12"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   );
