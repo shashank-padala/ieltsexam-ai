@@ -7,6 +7,7 @@ import "./globals.css";
 import HeaderNav from "@/components/HeaderNav";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/context/AuthContext";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
         `}
       >
         <AuthProvider>
+          <Analytics />
           {!isTestPage && <HeaderNav />}
           <main className="flex-grow">
             {children}
