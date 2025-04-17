@@ -88,7 +88,7 @@ export default function IELTSExamLibrary() {
     <section className="max-w-7xl mx-auto px-4 py-12">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl font-bold text-gray-900">
-          IELTS Exam Library (Mock Tests)
+          IELTS Mock Tests 2024
         </h2>
         <div className="flex items-center gap-4">
           {/* Toggle between Academic & General */}
@@ -108,13 +108,13 @@ export default function IELTSExamLibrary() {
             ))}
           </div>
           {/* Year Selector */}
-          <select
+          {/* <select
             value={selectedYear}
             onChange={(e) => setSelectedYear(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-700"
           >
             <option>2024</option>
-          </select>
+          </select> */}
         </div>
       </div>
       <div className="space-y-6">
