@@ -3,34 +3,73 @@ import { MetadataRoute } from 'next';
 import fs from 'fs/promises';
 import path from 'path';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.ieltsexam.ai';
+const baseUrl = 'https://www.ieltsexam.ai';
+const lastModified = new Date();
 
-  // 1) PUBLIC top‑level routes (no /my‑profile, no /exams)
+async function walkArticles(dir: string, urlPrefix: string): Promise<MetadataRoute.SitemapItem[]> {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  let urls: MetadataRoute.SitemapItem[] = [];
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+
+    const subdir = path.join(dir, entry.name);
+    const files  = await fs.readdir(subdir);
+
+    // if this folder has a page.tsx, emit it
+    if (files.includes('page.tsx') || files.includes('page.js')) {
+      urls.push({
+        url: `${baseUrl}${urlPrefix}/${entry.name}`,
+        lastModified,
+      });
+    }
+
+    // recurse into it for deeper nesting
+    urls = urls.concat(
+      await walkArticles(subdir, `${urlPrefix}/${entry.name}`)
+    );
+  }
+
+  return urls;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // 1) PUBLIC top‑level routes
   const staticPaths = [
-    '',                  // home
+    '',
     '/about',
     '/privacy-policy',
     '/login',
     '/signup',
-    '/ielts-mock-exams',
-    '/ielts-exam-tips'
-    // …any other fully public pages
+    '/ielts-mock-tests',
+    '/ielts-exam-tips',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified,
   }));
 
-  // 2) Auto‑discover your article folders under ielts-exam-tips
+  // 2) Pillar pages + nested articles under /ielts-exam-tips
   const tipsDir = path.join(process.cwd(), 'app', 'ielts-exam-tips');
-  const entries = await fs.readdir(tipsDir, { withFileTypes: true });
+  const pillars = await fs.readdir(tipsDir, { withFileTypes: true });
 
-  const tipUrls = entries
-    .filter((e) => e.isDirectory())
-    .map((dir) => ({
-      url: `${baseUrl}/ielts-exam-tips/${dir.name}`,
-      lastModified: new Date(),
+  const pillarUrls = pillars
+    .filter((d) => d.isDirectory())
+    .map((d) => ({
+      url: `${baseUrl}/ielts-exam-tips/${d.name}`,
+      lastModified,
     }));
 
-  return [...staticPaths, ...tipUrls];
+  // 3) Walk each pillar folder for article slugs
+  const articleUrls = await Promise.all(
+    pillars
+      .filter((d) => d.isDirectory())
+      .map((d) =>
+        walkArticles(
+          path.join(tipsDir, d.name),
+          `/ielts-exam-tips/${d.name}`
+        )
+      )
+  ).then((arrays) => arrays.flat());
+
+  return [...staticPaths, ...pillarUrls, ...articleUrls];
 }
