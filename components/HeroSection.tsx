@@ -13,7 +13,7 @@ export default function HeroSection() {
         {/* Left: Testimonial Image */}
         <div className="w-full md:w-1/2 flex-shrink-0">
           <img
-            src="/IELTS Testimonial - Aish.png"
+            src="/ielts-testimonial-aish.png"
             alt="Aishwarya IELTS Testimonial"
             className="w-full h-auto rounded-xl shadow-lg object-cover aspect-[4/3]"
           />
