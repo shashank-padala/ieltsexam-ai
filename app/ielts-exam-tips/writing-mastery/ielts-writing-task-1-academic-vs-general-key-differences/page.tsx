@@ -3,7 +3,9 @@ import Link from "next/link";
 export default function Page() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-10 text-gray-900">
-      <Link href="/ielts-exam-tips">← Back to IELTS Exam Tips</Link>
+      <Link href="/ielts-exam-tips" className="text-gray-700 hover:text-blue-600 transition-all duration-200 px-3 py-2 rounded-md hover:bg-blue-50 font-bold relative group">←  Back to IELTS Exam Tips</Link>
+      <br/>
+      <br/>
       <article>
         <header>
           <h1 className="text-3xl font-bold mb-4">
@@ -168,7 +170,7 @@ export default function Page() {
           <h2 className="text-2xl font-semibold mt-10 mb-4">🎯 Ready to Boost Your Band Score?</h2>
           <p className="text-base text-gray-700 mb-4">
             Practice with <strong>realistic, examiner-style mock exams</strong> for both Academic and General IELTS at <br />
-            👉 <a href="https://ieltsexam.ai/ielts-mock-exams/" className="underline">ieltsexam.ai/ielts-mock-exams/</a><br />
+            👉 <a href="https://ieltsexam.ai/ielts-mock-exams/" className="underline">ieltsexam.ai/ielts-mock-exams/</a><br/>
             Get instant feedback, scoring, and detailed sample answers for Writing Task 1 & 2!
           </p>
         </section>
