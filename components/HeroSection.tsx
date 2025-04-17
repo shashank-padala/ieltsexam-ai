@@ -22,7 +22,7 @@ export default function HeroSection() {
         {/* Right: Quote + CTAs */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
           <h1 className="text-4xl font-bold text-gray-800 leading-tight">
-            “My score went from <br/>Band 6 to 8 in just 4 weeks!”
+            “My IELTS score went from <br/>Band 6 to 8 in just 4 weeks!”
           </h1>
           <p className="text-black">
             “I struggled with coherence in Writing until I tried IELTSExam.ai’s AI‑powered feedback.
