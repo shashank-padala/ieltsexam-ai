@@ -6,9 +6,9 @@ import path from 'path';
 const baseUrl = 'https://www.ieltsexam.ai';
 const lastModified = new Date();
 
-async function walkArticles(dir: string, urlPrefix: string): Promise<MetadataRoute.SitemapItem[]> {
+async function walkArticles(dir: string, urlPrefix: string): Promise<MetadataRoute.Sitemap[number][]> {
   const entries = await fs.readdir(dir, { withFileTypes: true });
-  let urls: MetadataRoute.SitemapItem[] = [];
+  let urls: MetadataRoute.Sitemap[number][] = [];
 
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
