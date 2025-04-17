@@ -40,5 +40,13 @@ export const BlogList = [
     date: "2025-04-16",
     excerpt: "Learn the essential differences between IELTS Academic and General Writing Task 1 to avoid mistakes and improve your score."
   },
+  {
+    "title": "20 Common IELTS Speaking Part 1 Questions (With Answers)",
+    "slug": "20-common-ielts-speaking-part-1-questions-with-answers",
+    "category": "speaking-confidence",
+    "categoryLabel": "IELTS Speaking",
+    "date": "2025-04-16",
+    "excerpt": "Worried about IELTS Speaking Part 1? Here are 20 common questions with Band 8+ answers and fluency tips to help you prepare."
+  },  
   // Add more blogs...
 ];
