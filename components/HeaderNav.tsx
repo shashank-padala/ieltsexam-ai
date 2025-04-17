@@ -83,6 +83,24 @@ export default function HeaderNav() {
           </Link>
         </div>
 
+        {/* Center Navigation Links */}
+        <div className="hidden md:flex items-center gap-8">
+          <Link 
+            href="/ielts-exam-tips" 
+            className="text-gray-700 hover:text-blue-600 transition-all duration-200 px-3 py-2 rounded-md hover:bg-blue-50 font-bold relative group"
+          >
+            IELTS Exam Tips
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+          <Link 
+            href="/ielts-mock-tests" 
+            className="text-gray-700 hover:text-blue-600 transition-all duration-200 px-3 py-2 rounded-md hover:bg-blue-50 font-bold relative group"
+          >
+            IELTS Mock Tests
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+        </div>
+
         {/* Desktop Nav & Auth Buttons */}
         <div className="hidden md:flex items-center gap-6">
           {user ? (
@@ -161,6 +179,22 @@ export default function HeaderNav() {
               </Link>
             </div>
           )}
+          
+          {/* Mobile Navigation Links */}
+          <div className="mt-4 flex flex-col gap-3">
+            <Link 
+              href="/ielts-exam-tips" 
+              className="text-gray-700 hover:text-blue-600 transition-all duration-200 px-3 py-2 rounded-md hover:bg-blue-50 font-bold"
+            >
+              IELTS Exam Tips
+            </Link>
+            <Link 
+              href="/ielts-mock-tests" 
+              className="text-gray-700 hover:text-blue-600 transition-all duration-200 px-3 py-2 rounded-md hover:bg-blue-50 font-bold"
+            >
+              IELTS Mock Tests
+            </Link>
+          </div>
         </div>
       )}
     </nav>
