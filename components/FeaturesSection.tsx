@@ -15,7 +15,7 @@ export default function FeaturesSection() {
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">
               AI-Powered Feedback
             </h3>
-            <p className="text-gray-600">
+            <p className="text-black">
               Get instant, detailed feedback on your IELTS writing tasks,
               powered by cutting-edge AI. Identify errors, receive suggestions
               to refine your writing, and watch your skills improve rapidly.
@@ -38,7 +38,7 @@ export default function FeaturesSection() {
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">
               Band Score Predictions
             </h3>
-            <p className="text-gray-600">
+            <p className="text-black">
               Understand your projected Band Score so you know where you stand
               and how to improve. Our AI estimates your performance based on
               official IELTS criteria, giving you a clear roadmap to success.
