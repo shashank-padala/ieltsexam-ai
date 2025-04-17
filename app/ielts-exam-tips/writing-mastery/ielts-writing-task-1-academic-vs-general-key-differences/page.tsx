@@ -155,9 +155,6 @@ export default function Page() {
             <li>You missed a friend’s birthday party. Apologize and suggest a way to make it up.</li>
           </ul>
 
-          <blockquote className="border-l-4 border-blue-300 pl-4 italic text-gray-600 my-6">
-            🔽 Download a FREE PDF with <strong>10 Task 1 Academic</strong> and <strong>10 General prompts</strong> with band 9 model answers: <a href="https://ieltsexam.ai/ielts-mock-exams/" className="underline">Get the PDF</a>
-          </blockquote>
         </section>
 
         <section>
