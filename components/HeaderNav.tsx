@@ -73,13 +73,16 @@ export default function HeaderNav() {
   };
 
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-200">
+    <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 hover:bg-blue-100 font-bold relative group">
             <BookOpenIcon className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-black">IELTSExam.ai</span>
+            <span className="text-xl font-bold">
+              <span className="text-white bg-teal-500 px-1 rounded">IELTS</span>
+              <span className="text-black">Exam.ai</span>
+            </span>
           </Link>
         </div>
 

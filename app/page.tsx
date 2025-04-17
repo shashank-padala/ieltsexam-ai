@@ -6,7 +6,6 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import IELTSExamLibrary from "@/components/IELTSExamLibrary";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import AishwaryaTestimonialSection from "@/components/AishwaryaTestimonialSection";
 
 export default function Home() {
   const { user } = useAuth();

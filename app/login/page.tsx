@@ -68,6 +68,21 @@ export default function Login() {
           </button>
         </form>
 
+        {/* <button
+          onClick={() =>
+            supabase.auth.signInWithOAuth({
+              provider: "google",
+              options: {
+                redirectTo: `${window.location.origin}/`, // After login, redirect to home
+              },
+            })
+          }
+          className="mt-4 w-full p-2 border border-gray-300 rounded flex items-center justify-center gap-2 hover:bg-gray-100 transition"
+        >
+          <img src="/google-icon.png" alt="Google" className="w-5 h-5" />
+          <span className="text-gray-700">Sign in with Google</span>
+        </button> */}
+
         <p className="mt-4 text-gray-700">
           Don’t have an account?{" "}
           <Link href="/signup" className="text-blue-600 hover:underline">
