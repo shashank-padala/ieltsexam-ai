@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IELTS Exam Tips & Resources 📚
 
-## Getting Started
+A modern web platform providing comprehensive IELTS exam preparation resources, tips, and practice materials.
 
-First, run the development server:
+## About the Website 🌐
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This website offers:
+- Detailed IELTS exam tips and strategies
+- Blog articles covering all IELTS sections
+- Free IELTS writing & speaking practice tests
+- User-friendly interface for easy navigation
+
+## How to Publish a Blog Article 📝
+
+### Step 1: Create Your Article File 📄
+1. Go to the `_posts` folder
+2. Create a new file with the format: `YYYY-MM-DD-article-title.md`
+   Example: `2024-03-20-ielts-writing-tips.md`
+
+### Step 2: Add Article Details ✍️
+At the top of your file, add these details:
+```markdown
+---
+title: "Your Article Title"
+excerpt: "A brief description of your article (1-2 sentences)"
+date: "2024-03-20"
+category: "writing"
+categoryLabel: "IELTS Writing"
+---
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 3: Write Your Content 📖
+- Write your article content below the details section
+- Use markdown formatting:
+  - `# ` for main headings
+  - `## ` for subheadings
+  - `- ` for bullet points
+  - `**text**` for bold text
+  - `*text*` for italic text
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Step 4: Add Images (Optional) 🖼️
+1. Save your image in the `public/images/blog` folder
+2. Reference it in your article using:
+   ```markdown
+   ![Description](/images/blog/your-image-name.jpg)
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Step 5: Preview & Publish 🚀
+1. Save your file
+2. The article will automatically appear in the correct category section
+3. It will be sorted by date (newest first)
 
-## Learn More
+## Creating New Categories 📑
 
-To learn more about Next.js, take a look at the following resources:
+### Available Categories
+Current categories include:
+- `writing` (IELTS Writing)
+- `speaking` (IELTS Speaking)
+- `reading` (IELTS Reading)
+- `listening` (IELTS Listening)
+- `general` (General Tips)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Adding a New Category 🆕
+1. Choose a simple, lowercase category name (e.g., `grammar`)
+2. Choose a display name (e.g., "IELTS Grammar")
+3. Use these in your article's front matter:
+   ```markdown
+   ---
+   category: "grammar"
+   categoryLabel: "IELTS Grammar"
+   ---
+   ```
+4. The website will automatically create a new category section
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Category Best Practices ✨
+- Use short, descriptive category names
+- Keep category names in lowercase
+- Make sure categoryLabel is clear and user-friendly
+- Stick to IELTS-related categories
+- Avoid creating duplicate categories
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Need Help? 💡
+Contact the development team for any technical assistance or questions about publishing articles.

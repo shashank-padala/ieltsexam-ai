@@ -1,8 +1,11 @@
 // app/ielts-exam-tips/page.tsx
 import Link from "next/link";
-import { PillarCategories, BlogList } from "@/components/ielts-exam-tips/blog-data"; 
+import { PillarCategories } from "@/components/ielts-exam-tips/blog-data";
+import { getAllBlogPosts } from "@/lib/markdown";
 
 export default function IELTSExamTipsPage() {
+  const blogPosts = getAllBlogPosts();
+
   return (
     <main className="max-w-6xl mx-auto px-4 py-10 text-gray-900">
       <section className="mb-12 text-center">
@@ -29,7 +32,7 @@ export default function IELTSExamTipsPage() {
       <section>
         <h2 className="text-2xl font-bold mb-6">Recent Posts</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {BlogList.slice(0, 6).map((post) => (
+          {blogPosts.slice(0, 6).map((post) => (
             <Link key={post.slug} href={`/ielts-exam-tips/${post.category}/${post.slug}`}>
               <article className="rounded-lg border border-gray-200 p-5 hover:shadow-md transition bg-white">
                 <p className="text-sm text-gray-500 mb-1">{post.categoryLabel} · {post.date}</p>

@@ -1,11 +1,17 @@
 // app/ielts-exam-tips/exam-strategy/page.tsx
 import Link from "next/link";
-import { PillarCategories, BlogList } from "@/components/ielts-exam-tips/blog-data";
+import { PillarCategories } from "@/components/ielts-exam-tips/blog-data";
+import { getBlogPostsByCategory } from "@/lib/markdown";
+import { notFound } from "next/navigation";
 
 export default function ExamStrategyPage() {
   const slug = "exam-strategy";
-  const pillar = PillarCategories.find((p) => p.slug === slug)!;
-  const posts = BlogList.filter((post) => post.category === slug);
+  const pillar = PillarCategories.find((p) => p.slug === slug);
+  const posts = getBlogPostsByCategory(slug);
+
+  if (!pillar) {
+    notFound();
+  }
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 text-gray-900">
@@ -24,7 +30,7 @@ export default function ExamStrategyPage() {
         {posts.map((post) => (
           <Link
             key={post.slug}
-            href={`/ielts-exam-tips/${slug}/${post.slug}`}
+            href={`/ielts-exam-tips/${post.category}/${post.slug}`}
             className="block rounded-lg border border-gray-200 p-5 hover:shadow-md transition bg-white"
           >
             <p className="text-sm text-gray-500 mb-1">{post.date}</p>
