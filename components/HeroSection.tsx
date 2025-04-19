@@ -35,7 +35,7 @@ export default function HeroSection() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 pt-4">
             <button
-              onClick={() => router.push("/login")}
+              onClick={() => router.push("/signup")}
               className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors"
             >
               Get started for free
